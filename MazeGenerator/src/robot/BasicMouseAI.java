@@ -5,6 +5,11 @@ import java.util.List;
 import smartmouse.Direction;
 import smartmouse.Vertex;
 
+/**
+ * Simplests of implementation of the mouse
+ * @author Nican
+ *
+ */
 public class BasicMouseAI extends MouseBaseAI {
 
 	public BasicMouseAI(Mouse m) {
@@ -15,10 +20,12 @@ public class BasicMouseAI extends MouseBaseAI {
 	public Direction getNextMove() {
 		List<Direction> directions = possibleMoves();
 		
+		//Look for all possible movements we can do (N,S,W,E)
 		for( Direction direction : directions ){
 			
-			Vertex relative = mouse.current.getRelative(direction);
+			Vertex relative = getRelative(direction);
 			
+			//If we already have not gone there
 			if( !mouse.inHistory(relative)){
 				return direction;
 			}

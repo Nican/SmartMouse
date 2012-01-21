@@ -45,7 +45,6 @@ public class Main {
 			
 			@Override
 			public void mousePressed(MouseEvent e) {
-				System.out.println("Mouse pressed!");
 				ai.think();
 				frame.repaint();
 			}

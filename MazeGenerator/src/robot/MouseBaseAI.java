@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import smartmouse.Direction;
+import smartmouse.Vertex;
 
 public abstract class MouseBaseAI {
 	
@@ -13,12 +14,15 @@ public abstract class MouseBaseAI {
 		this.mouse = m;
 	}
 	
+	/**
+	 * Returns a list of moves that the mouse can do
+	 * @return
+	 */
 	public List<Direction> possibleMoves(){
 		List<Direction> directions = new ArrayList<>();
 		
-		for( Direction direction : Direction.values() ){
-			
-			if( mouse.current.hasNeighbor(direction) )
+		for( Direction direction : Direction.values() ){	
+			if( canTravel(direction) )
 				directions.add(direction);
 			
 		}
@@ -35,5 +39,28 @@ public abstract class MouseBaseAI {
 		
 	}
 	
+	/**
+	 * Checks if the mouse can travel in the given direction
+	 * @param direction the given direction
+	 * @return 
+	 */
+	public boolean canTravel( Direction direction ){
+		return mouse.current.hasNeighbor(direction);
+	}
+	
+	/**
+	 * Get the relative block to the one the mouse is now
+	 * NOTE: It does not check if the mouse can travel there directly!
+	 * @param direction relative N,S,W,E
+	 * @return null if the block does not exist (Outside of the map), the relative vertex otherwise
+	 */
+	public Vertex getRelative( Direction direction ){
+		return mouse.current.getRelative(direction);
+	}
+	
+	/**
+	 * Makes the AI think of the next move
+	 * @return
+	 */
 	public abstract Direction getNextMove();
 }

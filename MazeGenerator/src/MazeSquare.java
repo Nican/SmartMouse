@@ -8,7 +8,11 @@ import robot.Mouse;
 import smartmouse.Direction;
 import smartmouse.Vertex;
 
-
+/**
+ * An UI element representing a given vertex
+ * @author Nican
+ *
+ */
 public class MazeSquare extends Component {
 	
 	private static final Font font = new Font("Serif", Font.PLAIN, 12);

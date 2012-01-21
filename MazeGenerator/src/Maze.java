@@ -4,6 +4,11 @@ import java.awt.GridLayout;
 import robot.Mouse;
 import smartmouse.Graph;
 
+/**
+ * Container that will have all the drawing blocks
+ * @author Nican
+ *
+ */
 public class Maze extends Container {
 
 	/**

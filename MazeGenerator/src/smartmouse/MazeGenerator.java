@@ -3,6 +3,11 @@ package smartmouse;
 import java.util.ArrayList;
 import java.util.Random;
 
+/**
+ * Implementation of: http://weblog.jamisbuck.org/2011/1/24/maze-generation-hunt-and-kill-algorithm 
+ * @author Nican
+ *
+ */
 public class MazeGenerator {
 
 	public final Graph graph;
@@ -18,15 +23,20 @@ public class MazeGenerator {
 		int startY = random.nextInt(Graph.SIZE);
 		
 		Vertex start = this.graph.get(startX, startY);
-
+		
+		//Create new paths, while vertex without connections exist
 		do{
 			walk(start);
 		} while( ( start = hunt() ) != null );
 
 	}
-
-
 	
+	/**
+	 * Finds vertecies around the start, that either are empty, or already have connections
+	 * @param start The vertex to look around
+	 * @param empty Graph vertex that are empty, or already have edges
+	 * @return
+	 */
 	public ArrayList<Vertex> findNeighbors( Vertex start, boolean empty ){
 		ArrayList<Vertex> possibilies = new ArrayList<>();
 

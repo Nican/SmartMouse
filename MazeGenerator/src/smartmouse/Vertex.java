@@ -1,10 +1,11 @@
 package smartmouse;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Vertex {
 	
-	ArrayList<Vertex> neighbors = new ArrayList<>();
+	Set<Vertex> neighbors = new HashSet<>();
 	
 	final int x;
 	final int y;
@@ -16,6 +17,11 @@ public class Vertex {
 		this.graph = g;
 	}
 	
+	/**
+	 * Adds a neighbor to this vertex
+	 * Do not forget to add a neighor from that vertex to this one
+	 * @param vertex
+	 */
 	void addNeighbor( Vertex vertex ){
 		
 		if(vertex.equals(this) ){
@@ -30,10 +36,19 @@ public class Vertex {
 		
 	}
 	
+	/**
+	 * Checks if the vertex has no connected edges
+	 * @return
+	 */
 	public boolean emptyNeighbors(){
 		return neighbors.isEmpty();
 	}
 	
+	/**
+	 * Gets the vertex relative to this one, null if such vertex does not exist (Outside of the map)
+	 * @param direction
+	 * @return
+	 */
 	public Vertex getRelative(Direction direction) {
 		int x2 = this.x + direction.x;
 		int y2 = this.y + direction.y;
@@ -47,6 +62,11 @@ public class Vertex {
 		return graph.get(x2, y2);
 	}
 
+	/**
+	 * Checks if the vertex has a edge to the given direction
+	 * @param direction
+	 * @return
+	 */
 	public boolean hasNeighbor(Direction direction) {
 		Vertex relative = getRelative(direction);
 		
