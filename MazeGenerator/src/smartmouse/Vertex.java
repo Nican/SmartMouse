@@ -40,7 +40,7 @@ public class Vertex {
 	 * Checks if the vertex has no connected edges
 	 * @return
 	 */
-	public boolean emptyNeighbors(){
+	public boolean emptyEdges(){
 		return neighbors.isEmpty();
 	}
 	

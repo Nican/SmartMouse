@@ -43,7 +43,7 @@ public class MazeGenerator {
 		for( Direction direction : Direction.values() ){
 			Vertex relative = start.getRelative(direction);
 			
-			if( relative != null && relative.emptyNeighbors() == empty ){
+			if( relative != null && relative.emptyEdges() == empty ){
 				possibilies.add(relative);
 			}					
 		}
@@ -82,7 +82,7 @@ public class MazeGenerator {
 				
 				Vertex vertex = graph.get(x, y);
 				
-				if( !vertex.emptyNeighbors() )
+				if( !vertex.emptyEdges() )
 					continue;
 				
 				ArrayList<Vertex> possibilies = findNeighbors(vertex, false);

@@ -57,7 +57,7 @@ public class MazeSquare extends Component {
 	public void paint( Graphics g ){
 		Vertex vertex = getVertex();
 
-		if( vertex.emptyNeighbors() ){
+		if( vertex.emptyEdges() ){
 			g.setColor(Color.black);
 			g.fillRect(0, 0, getWidth(), getHeight());
 			
