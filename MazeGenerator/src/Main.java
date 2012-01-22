@@ -23,7 +23,7 @@ public class Main {
 		
 		generator.generate();
 		
-		Mouse m = new Mouse(g.get(0, 0));
+		Mouse m = new Mouse(g.get(Graph.SIZE-1, Graph.SIZE-1));
 		maze = new Maze(g, m);
 		
 		final MouseBaseAI ai = new BasicMouseAI(m);

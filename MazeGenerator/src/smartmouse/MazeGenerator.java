@@ -1,6 +1,7 @@
 package smartmouse;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 import java.util.Stack;
@@ -60,7 +61,7 @@ public class MazeGenerator {
 			int pointY = random.nextInt(Graph.SIZE);
 			Vertex vertex = graph.get(pointX, pointY);
 
-			if (newPath(vertex, Graph.SIZE * 5))
+			if (newPath(vertex, Graph.SIZE * 3))
 				successLeft--;
 			else
 				failCount++;
@@ -119,11 +120,14 @@ public class MazeGenerator {
 
 			Vertex neighbor = current.getRelative(direction);
 
+			//Avoid vertixes outside of the map
 			if (neighbor == null)
 				continue;
 
+			//If it does not have an edge between them
 			if (!current.hasNeighbor(direction)) {
-
+				
+				//If we are far away enough, and it is a good cut
 				if (stackSize >= size && goodCut(current, direction)) {
 
 					int search = stack.indexOf(neighbor);
@@ -142,6 +146,7 @@ public class MazeGenerator {
 				continue;
 			}
 
+			//Do not go back where we already visited
 			if (stack.contains(neighbor))
 				continue;
 
@@ -235,6 +240,22 @@ public class MazeGenerator {
 
 		return possibilies;
 	}
+	
+	public boolean isCorner( Vertex vertex ){
+		if( vertex.x == 0 && vertex.y == 0 )
+			return true;
+		
+		if( vertex.x == 0 && vertex.y == Graph.SIZE - 1 )
+			return true;
+		
+		if( vertex.x == Graph.SIZE - 1 && vertex.y == 0 )
+			return true;
+		
+		if( vertex.x == Graph.SIZE - 1 && vertex.y == Graph.SIZE - 1 )
+			return true;
+		
+		return false;		
+	}
 
 	public void walk(Vertex start) {
 
@@ -251,6 +272,10 @@ public class MazeGenerator {
 			Vertex next = possibilies.get(random.nextInt(possibilies.size()));
 
 			next.addNeighbor(start);
+			
+			//According the rules, we can not have "L" on the corner, just a dead end
+			if( isCorner(next))
+				return;
 
 			start = next;
 		}
@@ -273,17 +298,24 @@ public class MazeGenerator {
 
 				if (possibilies.isEmpty())
 					continue;
-
+				
 				// Graph a random one to start from to.
-				Vertex previus = possibilies.get(random.nextInt(possibilies
-						.size()));
-
-				if (center.contains(vertex) || center.contains(previus))
-					continue;
-
-				previus.addNeighbor(vertex);
-
-				return vertex;
+				Collections.shuffle(possibilies);
+				
+				for( Vertex next : possibilies ){
+					
+					//Do not touch the middle, that is reserved for the trophy
+					if (center.contains(vertex) || center.contains(next))
+						continue;
+					
+					if( isCorner(next) && possibilies.size() > 1 )
+						continue;
+	
+					next.addNeighbor(vertex);
+	
+					return vertex;
+				}
+				
 			}
 		}
 
