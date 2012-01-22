@@ -41,6 +41,10 @@ public class Mouse {
 		discover(current);
 	}
 	
+	public boolean knowsEdge( Vertex v1, Vertex v2 ){
+		return inHistory(v1) || inHistory(v2) || (inDiscovered(v1) && inDiscovered(v2));		
+	}
+	
 	/**
 	 * Checks if the mouse has already traveled that vertex
 	 * @param vertex

@@ -1,11 +1,11 @@
 package smartmouse;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Vertex {
 	
-	Set<Vertex> neighbors = new HashSet<>();
+	List<Vertex> neighbors = new ArrayList<>();
 	
 	final int x;
 	final int y;
@@ -28,11 +28,16 @@ public class Vertex {
 			throw new IllegalStateException("This is not a loop edge!");
 		}
 		
-		if( Math.abs(x - vertex.x) > 1 || Math.abs(y - vertex.y) > 1  ){
+		int deltaX = Math.abs(x - vertex.x);
+		int deltaY = Math.abs(y - vertex.y);
+		
+		//Make sure it is not too far away, or diagonal from each other
+		if( deltaX > 1 || deltaY > 1 || deltaX == deltaY ){
 			throw new IllegalStateException("Connecting vertexes that are too far away!");
 		}
 		
-		neighbors.add(vertex);
+		this.neighbors.add(vertex);
+		vertex.neighbors.add(this);
 		
 	}
 	
@@ -71,6 +76,11 @@ public class Vertex {
 		Vertex relative = getRelative(direction);
 		
 		return relative != null && neighbors.contains(relative);		
+	}
+	
+	@Override
+	public String toString(){
+		return String.format("Vertex(%d,%d)", x, y);
 	}
 	
 }
