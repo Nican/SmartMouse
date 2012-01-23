@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Vertex {
 
-	List<Vertex> neighbors = new ArrayList<>();
+	public List<Vertex> neighbors = new ArrayList<>();
 
 	public final int x;
 	public final int y;

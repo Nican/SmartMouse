@@ -4,14 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import smartmouse.Direction;
+import smartmouse.Graph;
 import smartmouse.Vertex;
 
 public abstract class MouseBaseAI {
 	
-	final Mouse mouse;
+	public final Mouse mouse;
 	
 	public MouseBaseAI( Mouse m ){
 		this.mouse = m;
+	}
+	
+	public Graph getGraph(){
+		return mouse.graph;
 	}
 	
 	/**
@@ -19,15 +24,30 @@ public abstract class MouseBaseAI {
 	 * @return
 	 */
 	public List<Direction> possibleMoves(){
+		return possibleMoves(mouse.current);
+	}
+	
+	public List<Direction> possibleMoves( Vertex vertex ){
 		List<Direction> directions = new ArrayList<>();
 		
 		for( Direction direction : Direction.values() ){	
-			if( canTravel(direction) )
+			if( vertex.hasNeighbor(direction) )
+				directions.add(direction);
+		}
+		
+		return directions;
+	}
+	
+	public List<Direction> possibleNewMoves(){
+		List<Direction> directions = new ArrayList<>();
+		
+		for( Direction direction : Direction.values() ){	
+			if( canTravel(direction) && mouse.inHistory(mouse.current.getRelative(direction)) )
 				directions.add(direction);
 			
 		}
 		
-		return directions;
+		return directions;		
 	}
 	
 	public void think(){

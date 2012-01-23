@@ -54,6 +54,21 @@ public class MazeSquare extends Component {
 	public Mouse getMouse(){
 		return maze.mouse;
 	}
+	
+	public Color edgeColor( Direction direction ){
+		
+		Vertex vertex = getVertex();
+		Vertex relative =vertex.getRelative(direction);
+		
+		if( relative == null )
+			return Color.BLACK;
+		
+		if( getMouse().knowsEdge(vertex, relative) )
+			return Color.RED;
+		
+		return Color.BLACK;
+		
+	}
 
 	@Override
 	public void paint( Graphics g ){
@@ -71,18 +86,22 @@ public class MazeSquare extends Component {
 			g.setColor(Color.black);
 			
 			if( !vertex.hasNeighbor(Direction.NORTH)){
+				g.setColor( edgeColor(Direction.NORTH) );
 				g.fillRect(0, 0, getWidth(), borderSize);
 			}
 			
 			if( !vertex.hasNeighbor(Direction.SOUTH)){
+				g.setColor( edgeColor(Direction.SOUTH) );
 				g.fillRect(0, this.getHeight() - borderSize, getWidth(), borderSize);
 			}
 			
 			if( !vertex.hasNeighbor(Direction.WEST)){
+				g.setColor( edgeColor(Direction.WEST) );
 				g.fillRect(0, 0, borderSize, getHeight());
 			}
 			
 			if( !vertex.hasNeighbor(Direction.EAST)){
+				g.setColor( edgeColor(Direction.EAST) );
 				g.fillRect(getWidth() - borderSize, 0, borderSize, getHeight());
 			}
 			
