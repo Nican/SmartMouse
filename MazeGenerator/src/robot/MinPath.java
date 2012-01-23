@@ -1,0 +1,74 @@
+package robot;
+
+import java.util.Stack;
+
+import smartmouse.Direction;
+import smartmouse.Graph;
+import smartmouse.Vertex;
+
+public class MinPath {
+
+	public final Graph graph;
+	public final Mouse mouse;
+	public final Stack<Vertex> path = new Stack<>();
+
+	public MinPath(Graph g, Mouse m) {
+		this.graph = g;
+		this.mouse = m;
+	}
+
+	public WeightMap getWeightMap() {
+		return mouse.weightMap;
+	}
+
+	public void generate() {
+
+		WeightMap map = getWeightMap();
+
+		path.clear();
+
+		Vertex current = null;
+
+		for (Vertex vertex : this.graph.centerVerticies) {
+			if (current == null || map.get(current) > map.get(vertex)) {
+				current = vertex;
+			}
+		}
+
+		path.push(current);
+
+		while (map.get(current) > 0) {
+			Vertex min = getMinNeighbor( current );
+			path.push(min);
+			current = min;
+		}
+
+	}
+
+	private Vertex getMinNeighbor(Vertex vertex) {
+		Vertex min = null;
+		WeightMap map = getWeightMap();
+
+		for (Direction direction : Direction.values()) {
+			Vertex relative = vertex.getRelative(direction);
+
+			if (relative == null)
+				continue;
+
+			if (mouse.knowsEdge(vertex, relative))
+				continue;
+
+			if (min == null || map.get(min) > map.get(relative))
+				min = relative;
+		}
+
+		return min;
+
+	}
+	
+	@Override
+	public String toString(){
+		return String.format("MinPath<%s>", path.toString() );
+	}
+
+}

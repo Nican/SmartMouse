@@ -139,7 +139,7 @@ public class WeightMap {
 					continue;
 
 				// The center is where we want to go!
-				if (Graph.isCenter(next))
+				if (graph.isCenter(next))
 					continue;
 
 				possibleNext.add(next);

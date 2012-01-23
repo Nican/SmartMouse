@@ -27,17 +27,20 @@ public class Mouse {
 	public final Graph graph;
 	
 	public WeightMap weightMap;
+	public MinPath minPath;
 
 	public Mouse(Graph g, Vertex start) {
 		current = start;
 		graph = g;
 		
-		weightMap = new WeightMap(graph, this);;
+		weightMap = new WeightMap(graph, this);
+		minPath = new MinPath(graph, this);
 
 		history.add(current);
 		discover(start);
 		
 		weightMap.generate();
+		minPath.generate();
 	}
 
 	public Vertex first() {
@@ -62,6 +65,9 @@ public class Mouse {
 		discover(current);
 		
 		weightMap.generate();
+		minPath.generate();
+		
+		System.out.println(minPath);
 	}
 
 	/**

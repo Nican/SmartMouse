@@ -2,7 +2,6 @@ package smartmouse;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.List;
 import java.util.Random;
 import java.util.Stack;
 
@@ -17,7 +16,6 @@ public class MazeGenerator {
 
 	public final Graph graph;
 	final Random random = new Random();
-	List<Vertex> center = new ArrayList<>();
 
 	public MazeGenerator(Graph g) {
 		this.graph = g;
@@ -25,33 +23,34 @@ public class MazeGenerator {
 
 	public void generate() {
 
-		// Start at the top half of the maze
-		int startX = random.nextInt(Graph.SIZE / 2);
-		int startY = random.nextInt(Graph.SIZE / 2);
 
-		// First generate the center square
-		Vertex center1 = this.graph.get(Graph.SIZE / 2 - 1, Graph.SIZE / 2 - 1);
-		Vertex center2 = this.graph.get(Graph.SIZE / 2, Graph.SIZE / 2 - 1);
-		Vertex center3 = this.graph.get(Graph.SIZE / 2, Graph.SIZE / 2);
-		Vertex center4 = this.graph.get(Graph.SIZE / 2 - 1, Graph.SIZE / 2);
 
-		center.add(center1);
-		center.add(center2);
-		center.add(center3);
-		center.add(center4);
-
-		center1.addNeighbor(center2);
-		center2.addNeighbor(center3);
-		center3.addNeighbor(center4);
-		center4.addNeighbor(center1);
-
-		Vertex start = this.graph.get(startX, startY);
+		//First, make sure the center is connected with itself
+		for( Vertex center : graph.centerVerticies ){
+			for( Direction direction : Direction.values() ){
+				Vertex relative = center.getRelative(direction);
+				if( graph.isCenter(relative) && !relative.hasNeighbor(center)){
+					center.addNeighbor(relative);
+				}
+			}			
+		}
+		
+		//Make sure we do not start from the reserved center.
+		Vertex start;
+		do{ 
+			// Start at the top half of the maze
+			int startX = random.nextInt(Graph.SIZE / 2);
+			int startY = random.nextInt(Graph.SIZE / 2);
+			
+			start = this.graph.get(startX, startY);
+		} while( graph.isCenter(start) ); //If the start is the center, try again
 
 		// Create new paths, while vertex without connections exist
 		do {
 			walk(start);
 		} while ((start = hunt()) != null);
 
+		//Add some more paths so the wall-hugging robot can not find the center
 		int successLeft = 6;
 		int failCount = 0;
 
@@ -76,12 +75,12 @@ public class MazeGenerator {
 
 	private void checkCenter() {
 
-		Vertex toConnect = center.get(random.nextInt(center.size()));
+		Vertex toConnect = graph.centerVerticies.get(random.nextInt(graph.centerVerticies.size()));
 
 		for (Direction direction : Direction.values()) {
 			Vertex relative = toConnect.getRelative(direction);
 
-			if (!center.contains(relative)) {
+			if (!graph.centerVerticies.contains(relative)) {
 				toConnect.addNeighbor(relative);
 				return;
 			}
@@ -305,7 +304,7 @@ public class MazeGenerator {
 				for( Vertex next : possibilies ){
 					
 					//Do not touch the middle, that is reserved for the trophy
-					if (center.contains(vertex) || center.contains(next))
+					if (graph.centerVerticies.contains(vertex) || graph.centerVerticies.contains(next))
 						continue;
 					
 					if( isCorner(next) && possibilies.size() > 1 )
