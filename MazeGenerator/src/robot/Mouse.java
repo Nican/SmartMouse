@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Set;
 
 import smartmouse.Direction;
+import smartmouse.Graph;
 import smartmouse.Vertex;
 
 /**
@@ -18,15 +19,29 @@ import smartmouse.Vertex;
 public class Mouse {
 
 	public Vertex current;
+
 	public List<Vertex> history = new ArrayList<>();
 	public Set<Vertex> discovered = new HashSet<>();
 	public HashMap<Vertex, Integer> weights = new HashMap<>();
 
-	public Mouse(Vertex start) {
+	public final Graph graph;
+	
+	public WeightMap weightMap;
+
+	public Mouse(Graph g, Vertex start) {
 		current = start;
+		graph = g;
+		
+		weightMap = new WeightMap(graph, this);;
 
 		history.add(current);
 		discover(start);
+		
+		weightMap.generate();
+	}
+
+	public Vertex first() {
+		return history.get(0);
 	}
 
 	/**
@@ -45,6 +60,8 @@ public class Mouse {
 		history.add(current);
 
 		discover(current);
+		
+		weightMap.generate();
 	}
 
 	/**
@@ -52,22 +69,62 @@ public class Mouse {
 	 * the edges around it. Now consider:
 	 * 
 	 * <code>
-	 * | 1 |___ ___
-	 * |  
-	 * | 2  ___ ___
-	 * |     
-	 * | 3  ___ ___
+	 * | 1 |
+	 * |   |___ ___
+	 * | 2   B
+	 * |    ___ ___
+	 * | 3   A 
+	 * |    ___ ___
+	 * | 4 |
 	 * |   |
-	 * </code> Since the mouse travels down from 1 to 3, he knows that must be a
-	 * wall between besides 2.
+	 * </code> Since the mouse travels down from 1 to 4, he knows that must be a
+	 * wall between A and B.
+	 * 
+	 * How about: If the robot has walked 1 2 3 7 8 9, we do not know if there
+	 * is a wall between A and B <code>
+	 *      ___ ___
+	 * | 1 |   |   | 9 |
+	 * |   |   |   |   |
+	 * | 2   A ?  B  8 |   
+	 * |       ?       |
+	 * | 3 |   |   | 7 |
+	 * |   |___|___|   |
+	 * </code> (There is the expection of the center)
 	 * 
 	 * @param v1
 	 * @param v2
 	 * @return
 	 */
 	public boolean knowsEdge(Vertex v1, Vertex v2) {
-		return inHistory(v1) || inHistory(v2)
-				|| (inDiscovered(v1) && inDiscovered(v2));
+
+		Direction direction = v1.getDirection(v2);
+
+		if (direction == null)
+			throw new IllegalStateException("Vertexes are not near each other!");
+
+		if (inHistory(v1) || inHistory(v2))
+			return !v1.hasNeighbor(v2);
+
+		if (isDiscovered(v1) && isDiscovered(v2)) {
+
+			for (Direction perpendicular : Direction
+					.getPerpendicular(direction)) {
+
+				Vertex relative1 = v1.getRelative(perpendicular);
+				Vertex relative2 = v2.getRelative(perpendicular);
+
+				if (history.contains(relative1) && history.contains(relative2)
+						&& relative1.hasNeighbor(direction))
+					return true;
+			}
+
+		}
+
+		return false;
+	}
+
+	public WeightMap getWeightMap() {
+		return weightMap;
 	}
 
 	/**
@@ -86,7 +143,7 @@ public class Mouse {
 	 * @param vertex
 	 * @return
 	 */
-	public boolean inDiscovered(Vertex vertex) {
+	public boolean isDiscovered(Vertex vertex) {
 		return discovered.contains(vertex);
 	}
 

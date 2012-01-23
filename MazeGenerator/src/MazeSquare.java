@@ -27,6 +27,8 @@ public class MazeSquare extends Component {
 	public final int x;
 	public final int y;
 	public final Maze maze;
+
+	public int weightValue;
 	
 	public MazeSquare( Maze maze, int x, int y ){
 		this.maze = maze;
@@ -42,7 +44,7 @@ public class MazeSquare extends Component {
 	
 	public Color getBackgroundColor(){
 		
-		if( getMouse().inDiscovered(getVertex()))
+		if( getMouse().isDiscovered(getVertex()))
 			return Color.green;
 		
 		return Color.white;
@@ -94,6 +96,7 @@ public class MazeSquare extends Component {
 		g.setFont(font);
 		g.setColor(Color.red);
 		g.drawString(x + ", " + y, 15, 15);
+		g.drawString(Integer.toString(weightValue), 15, 28);
 		
 	}
 

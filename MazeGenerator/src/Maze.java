@@ -2,6 +2,7 @@ import java.awt.Container;
 import java.awt.GridLayout;
 
 import robot.Mouse;
+import robot.WeightMap;
 import smartmouse.Graph;
 
 /**
@@ -43,6 +44,18 @@ public class Maze extends Container {
 	
 	public MazeSquare get( int x, int y ){
 		return squares[x][y];
+	}
+
+	public void updateValues() {
+		
+		WeightMap map = mouse.getWeightMap();
+		
+		for (int y = 0; y < size; y++) {
+			for (int x = 0; x < size; x++) {
+				squares[x][y].weightValue = map.get(x,y);
+			}
+		}
+		
 	}
 
 }
