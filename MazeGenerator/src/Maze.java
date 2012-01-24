@@ -1,9 +1,12 @@
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.util.Stack;
 
+import robot.BasicMouseAI;
 import robot.Mouse;
 import robot.WeightMap;
 import robot.graph.Graph;
+import robot.graph.Vertex;
 
 /**
  * Container that will have all the drawing blocks
@@ -22,12 +25,16 @@ public class Maze extends Container {
 	
 	public final Graph graph;
 	public final Mouse mouse;
+	public final BasicMouseAI ai;
+	
+	public Stack<Vertex> pathToMinPath;
 
-	public Maze( Graph g, Mouse m ) {
+	public Maze( Graph g, Mouse m, BasicMouseAI ai ) {
 		GridLayout layout = new GridLayout(size, size);
 		
 		this.graph = g;
 		this.mouse = m;
+		this.ai = ai;
 		
 		setLayout(layout);
 
@@ -47,6 +54,12 @@ public class Maze extends Container {
 	}
 
 	public void updateValues() {
+		
+		pathToMinPath = null;
+		
+		if( !mouse.inPath() ){
+			pathToMinPath = ai.getPath();
+		}
 		
 		WeightMap map = mouse.getWeightMap();
 		

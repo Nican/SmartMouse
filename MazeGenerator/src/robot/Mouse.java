@@ -41,12 +41,15 @@ public class Mouse {
 		history.add(current);
 		discover(start);
 
-		weightMap.generate();
-		minPath.generate();
+		update();
 	}
 
 	public Vertex first() {
 		return history.get(0);
+	}
+	
+	public boolean inPath(){
+		return minPath.path.contains(current);
 	}
 
 	/**
@@ -69,12 +72,15 @@ public class Mouse {
 		if (visitedCenter == false && graph.isCenter(current))
 			visitedCenter = true;
 
+		update();
+	}
+	
+	public void update(){
 		System.out.println("Generating weight map");
 		weightMap.generate();
 		System.out.println("Generating min path");
 		minPath.generate();
 		System.out.println("\t Min path of size: " + minPath.path.size());
-
 	}
 
 	/**

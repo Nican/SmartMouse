@@ -9,7 +9,6 @@ import javax.swing.JFrame;
 
 import robot.BasicMouseAI;
 import robot.Mouse;
-import robot.MouseBaseAI;
 import robot.graph.Graph;
 import robot.graph.MazeGenerator;
 
@@ -22,6 +21,7 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		Graph g;
+		
 		g = new Graph();
 		MazeGenerator generator = new MazeGenerator(g);
 		
@@ -45,7 +45,7 @@ public class Main {
 		FileInputStream fileStream;
 		ObjectInputStream objectStream;
 		try {
-			fileStream = new FileInputStream( new File("testmaze/1327377497920") );
+			fileStream = new FileInputStream( new File("testmaze/1327379754108") );
 			objectStream = new ObjectInputStream(fileStream);
 			
 			g = (Graph) objectStream.readObject();
@@ -56,10 +56,13 @@ public class Main {
 		}
 		*/
 		
-		Mouse m = new Mouse(g, g.get(Graph.SIZE-1, Graph.SIZE-1));
-		maze = new Maze(g, m);
 		
-		final MouseBaseAI ai = new BasicMouseAI(m);
+		Mouse m = new Mouse(g, g.get(Graph.SIZE-1, Graph.SIZE-1));
+		final BasicMouseAI ai = new BasicMouseAI(m);
+		
+		maze = new Maze(g, m, ai);
+		
+		
 		
 		final JFrame frame = new JFrame("Maze");
 

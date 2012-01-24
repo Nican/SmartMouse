@@ -56,9 +56,8 @@ public abstract class MouseBaseAI {
 		
 		if( direction != null )
 			mouse.move(direction);
-		
 	}
-	
+
 	/**
 	 * Checks if the mouse can travel in the given direction
 	 * @param direction the given direction

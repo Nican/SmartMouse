@@ -77,6 +77,7 @@ public class MazeSquare extends Component {
 	@Override
 	public void paint(Graphics g) {
 		Vertex vertex = getVertex();
+		Mouse mouse = getMouse();
 
 		if (vertex.emptyEdges()) {
 			g.setColor(Color.black);
@@ -91,23 +92,26 @@ public class MazeSquare extends Component {
 
 			if (!vertex.hasNeighbor(Direction.NORTH)) {
 				g.setColor(edgeColor(Direction.NORTH));
-				g.fillRect(borderSize, 0, getWidth() - borderSize, borderSize * 2);
+				g.fillRect(borderSize, 0, getWidth() - borderSize,
+						borderSize * 2);
 			}
 
 			if (!vertex.hasNeighbor(Direction.SOUTH)) {
 				g.setColor(edgeColor(Direction.SOUTH));
-				g.fillRect(borderSize, this.getHeight() - borderSize, getWidth() - borderSize * 2,
-						borderSize);
+				g.fillRect(borderSize, this.getHeight() - borderSize,
+						getWidth() - borderSize * 2, borderSize);
 			}
 
 			if (!vertex.hasNeighbor(Direction.WEST)) {
 				g.setColor(edgeColor(Direction.WEST));
-				g.fillRect(0, borderSize, borderSize, getHeight() - borderSize * 2);
+				g.fillRect(0, borderSize, borderSize, getHeight() - borderSize
+						* 2);
 			}
 
 			if (!vertex.hasNeighbor(Direction.EAST)) {
 				g.setColor(edgeColor(Direction.EAST));
-				g.fillRect(getWidth() - borderSize, borderSize, borderSize, getHeight() - borderSize * 2);
+				g.fillRect(getWidth() - borderSize, borderSize, borderSize,
+						getHeight() - borderSize * 2);
 			}
 
 		}
@@ -122,18 +126,21 @@ public class MazeSquare extends Component {
 		g.setColor(Color.red);
 		g.drawString(x + ", " + y, 3, 12);
 		g.drawString(Integer.toString(weightValue), 3, 24);
-		
-		drawCurve((Graphics2D) g);
+
+		drawPath((Graphics2D) g, mouse.minPath.path, Color.blue);
+
+		Stack<Vertex> pathToMinPath = maze.pathToMinPath;
+
+		if (pathToMinPath != null)
+			drawPath((Graphics2D) g, pathToMinPath, Color.gray);
 	}
 
-	public void drawCurve(Graphics2D g) {
-		
+	public void drawPath(Graphics2D g, Stack<Vertex> path, Color color) {
+
 		g.setStroke(new BasicStroke(2.0f));
-		g.setColor(Color.blue);
+		g.setColor(color);
 
 		Vertex vertex = getVertex();
-		Mouse mouse = getMouse();
-		Stack<Vertex> path = mouse.minPath.path;
 
 		int index = path.indexOf(vertex);
 
@@ -158,20 +165,30 @@ public class MazeSquare extends Component {
 
 			return;
 		}
-		
-		//Check if it is the middle of the road
-		if( index > 0 && index < path.size() - 1 ){
-			Vertex previus = path.get(index-1);
-			Vertex next = path.get(index+1);
-			
+
+		// Check if it is the middle of the road
+		if (index > 0 && index < path.size() - 1) {
+			Vertex previus = path.get(index - 1);
+			Vertex next = path.get(index + 1);
+
 			Direction direction1 = vertex.getDirection(previus);
 			Direction direction2 = vertex.getDirection(next);
-			
+
 			g.drawLine(centerX, centerY, centerX + centerX * direction1.x,
 					centerY + centerY * direction1.y);
 			g.drawLine(centerX, centerY, centerX + centerX * direction2.x,
 					centerY + centerY * direction2.y);
-			
+
+		}
+
+		// The end of the maze
+		if (index == path.size() - 1) {
+			Vertex previus = path.get(index - 1);
+			Direction direction = vertex.getDirection(previus);
+
+			g.drawLine(centerX, centerY, centerX + centerX * direction.x,
+					centerY + centerY * direction.y);
+
 		}
 
 	}
