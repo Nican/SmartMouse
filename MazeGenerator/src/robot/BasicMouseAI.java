@@ -197,7 +197,7 @@ public class BasicMouseAI extends MouseBaseAI {
 
 			// Magical variable of 3/4 of a weight not to travel in the same
 			// path
-			double weight = mouse.isDiscovered(relative) ? 1.0 : 0.5;
+			double weight = getWeight(relative);
 
 			if (depthMinMovementSearch(path, depth - weight) == true)
 				return true;
@@ -208,6 +208,13 @@ public class BasicMouseAI extends MouseBaseAI {
 
 		return false;
 
+	}
+	
+	public double getWeight( Vertex vertex ){
+		if( direction == -1 )
+			return 1.0;
+		
+		return mouse.isDiscovered(vertex) ? 1.0 : 0.5;
 	}
 
 }
