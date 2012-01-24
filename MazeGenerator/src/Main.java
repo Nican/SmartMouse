@@ -1,8 +1,9 @@
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.ObjectInputStream;
+import java.io.FileOutputStream;
+import java.io.ObjectOutputStream;
+import java.util.Date;
 
 import javax.swing.JFrame;
 
@@ -10,6 +11,7 @@ import robot.BasicMouseAI;
 import robot.Mouse;
 import robot.MouseBaseAI;
 import robot.graph.Graph;
+import robot.graph.MazeGenerator;
 
 public class Main {
 
@@ -20,7 +22,6 @@ public class Main {
 	 */
 	public static void main(String[] args) {
 		Graph g;
-		/*
 		g = new Graph();
 		MazeGenerator generator = new MazeGenerator(g);
 		
@@ -40,7 +41,7 @@ public class Main {
 			System.out.println(ex);
 		}
 		
-		*/
+		/*
 		FileInputStream fileStream;
 		ObjectInputStream objectStream;
 		try {
@@ -53,6 +54,7 @@ public class Main {
 			System.out.println(ex);
 			return;
 		}
+		*/
 		
 		Mouse m = new Mouse(g, g.get(Graph.SIZE-1, Graph.SIZE-1));
 		maze = new Maze(g, m);

@@ -11,6 +11,7 @@ public class MinPath {
 	public final Graph graph;
 	public final Mouse mouse;
 	public final Stack<Vertex> path = new Stack<>();
+	public final int maxSearch = Graph.SIZE ^ 2;
 
 	public MinPath(Graph g, Mouse m) {
 		this.graph = g;
@@ -38,14 +39,14 @@ public class MinPath {
 
 		path.push(current);
 
-		while (map.get(current) > 0 && count++ < 1000 ) {
+		while (map.get(current) > 0 && count++ < maxSearch ) {
 			Vertex min = getMinNeighbor( current );
 			path.push(min);
 			current = min;
 		}
 		
-		if( count >= 1000 ){
-			System.out.println("Such a long min path! " + path );
+		if( count >= maxSearch ){
+			throw new IllegalStateException("MinPath can not be longer than there are blocks in the maze!");
 		}
 
 	}
