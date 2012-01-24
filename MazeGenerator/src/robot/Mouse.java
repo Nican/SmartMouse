@@ -120,8 +120,7 @@ public class Mouse {
 
 		if (isDiscovered(v1) && isDiscovered(v2)) {
 
-			for (Direction perpendicular : Direction
-					.getPerpendicular(direction)) {
+			for (Direction perpendicular : direction.getPerpendicular()) {
 
 				Vertex relative1 = v1.getRelative(perpendicular);
 				Vertex relative2 = v2.getRelative(perpendicular);

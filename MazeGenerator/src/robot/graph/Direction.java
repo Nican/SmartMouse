@@ -1,36 +1,35 @@
 package robot.graph;
 
-
 public enum Direction {
-	NORTH(0,-1),
-	SOUTH(0,1),
-	WEST(-1,0),
-	EAST(1,0);
-	
+	NORTH(0, -1), SOUTH(0, 1), WEST(-1, 0), EAST(1, 0);
+
 	public final int x;
 	public final int y;
-	
-	Direction( int x, int y ){
+
+	Direction(int x, int y) {
 		this.x = x;
 		this.y = y;
 	}
-	
-	public static Direction getOpposite( Direction direction ){
-		switch( direction ){
-		case EAST: return WEST;
-		case NORTH: return SOUTH;
-		case SOUTH: return NORTH;
-		case WEST: return EAST;
+
+	public Direction getOpposite() {
+		switch (this) {
+		case EAST:
+			return WEST;
+		case NORTH:
+			return SOUTH;
+		case SOUTH:
+			return NORTH;
+		case WEST:
+			return EAST;
 		}
 		throw new IllegalStateException("What direction are you going?");
 	}
-	
 
-	public static Direction[] latPerpendiular = new Direction[]{NORTH,SOUTH};
-	public static Direction[] horPerpendiular = new Direction[]{EAST,WEST};
-	
-	public static Direction[] getPerpendicular( Direction direction ){
-		switch( direction ){
+	public static Direction[] latPerpendiular = new Direction[] { NORTH, SOUTH };
+	public static Direction[] horPerpendiular = new Direction[] { EAST, WEST };
+
+	public Direction[] getPerpendicular() {
+		switch (this) {
 		case EAST:
 		case WEST:
 			return latPerpendiular;
@@ -40,6 +39,6 @@ public enum Direction {
 		}
 		throw new IllegalStateException("What direction are you going?");
 	}
-	
+
 	public static final Direction[] vals = Direction.values();
 }

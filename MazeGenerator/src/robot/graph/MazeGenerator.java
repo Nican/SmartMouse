@@ -23,38 +23,37 @@ public class MazeGenerator {
 
 	public void generate() {
 
-
-
-		//First, make sure the center is connected with itself
-		for( Vertex center : graph.centerVerticies ){
-			for( Direction direction : Direction.values() ){
+		// First, make sure the center is connected with itself
+		for (Vertex center : graph.centerVerticies) {
+			for (Direction direction : Direction.values()) {
 				Vertex relative = center.getRelative(direction);
-				if( graph.isCenter(relative) && !relative.hasNeighbor(center)){
+				if (graph.isCenter(relative) && !relative.hasNeighbor(center)) {
 					center.addNeighbor(relative);
 				}
-			}			
+			}
 		}
-		
-		//Make sure we do not start from the reserved center.
+
+		// Make sure we do not start from the reserved center.
 		Vertex start;
-		do{ 
+		do {
 			// Start at the top half of the maze
 			int startX = random.nextInt(Graph.SIZE / 2);
 			int startY = random.nextInt(Graph.SIZE / 2);
-			
+
 			start = this.graph.get(startX, startY);
-		} while( graph.isCenter(start) ); //If the start is the center, try again
+		} while (graph.isCenter(start)); // If the start is the center, try
+											// again
 
 		// Create new paths, while vertex without connections exist
 		do {
 			walk(start);
 		} while ((start = hunt()) != null);
 
-		//Add some more paths so the wall-hugging robot can not find the center
+		// Add some more paths so the wall-hugging robot can not find the center
 		int successLeft = 6;
 		int failCount = 0;
 
-		while (successLeft > 0 && failCount < 100 ) {
+		while (successLeft > 0 && failCount < 100) {
 
 			int pointX = random.nextInt(Graph.SIZE);
 			int pointY = random.nextInt(Graph.SIZE);
@@ -75,7 +74,8 @@ public class MazeGenerator {
 
 	private void checkCenter() {
 
-		Vertex toConnect = graph.centerVerticies.get(random.nextInt(graph.centerVerticies.size()));
+		Vertex toConnect = graph.centerVerticies.get(random
+				.nextInt(graph.centerVerticies.size()));
 
 		for (Direction direction : Direction.values()) {
 			Vertex relative = toConnect.getRelative(direction);
@@ -105,6 +105,7 @@ public class MazeGenerator {
 
 	/**
 	 * Adds a edge between two verticies that are far apart!
+	 * 
 	 * @param stack
 	 * @param size
 	 * @return
@@ -119,14 +120,14 @@ public class MazeGenerator {
 
 			Vertex neighbor = current.getRelative(direction);
 
-			//Avoid vertixes outside of the map
+			// Avoid vertixes outside of the map
 			if (neighbor == null)
 				continue;
 
-			//If it does not have an edge between them
+			// If it does not have an edge between them
 			if (!current.hasNeighbor(direction)) {
-				
-				//If we are far away enough, and it is a good cut
+
+				// If we are far away enough, and it is a good cut
 				if (stackSize >= size && goodCut(current, direction)) {
 
 					int search = stack.indexOf(neighbor);
@@ -145,7 +146,7 @@ public class MazeGenerator {
 				continue;
 			}
 
-			//Do not go back where we already visited
+			// Do not go back where we already visited
 			if (stack.contains(neighbor))
 				continue;
 
@@ -164,7 +165,8 @@ public class MazeGenerator {
 	}
 
 	/**
-	 * Hard to explain. So, here is a picture. Consider the following part of the maze: <code>
+	 * Hard to explain. So, here is a picture. Consider the following part of
+	 * the maze: <code>
 	 * ___ ___ ___ 
 	 *            |
 	 * ___ ___    | 
@@ -197,7 +199,7 @@ public class MazeGenerator {
 		boolean[] goodCuts = new boolean[2];
 		int i = 0;
 
-		for (Direction perpendicular : Direction.getPerpendicular(direction)) {
+		for (Direction perpendicular : direction.getPerpendicular()) {
 
 			Vertex perpendiularVertex = vertex.getRelative(perpendicular);
 
@@ -239,21 +241,21 @@ public class MazeGenerator {
 
 		return possibilies;
 	}
-	
-	public boolean isCorner( Vertex vertex ){
-		if( vertex.x == 0 && vertex.y == 0 )
+
+	public boolean isCorner(Vertex vertex) {
+		if (vertex.x == 0 && vertex.y == 0)
 			return true;
-		
-		if( vertex.x == 0 && vertex.y == Graph.SIZE - 1 )
+
+		if (vertex.x == 0 && vertex.y == Graph.SIZE - 1)
 			return true;
-		
-		if( vertex.x == Graph.SIZE - 1 && vertex.y == 0 )
+
+		if (vertex.x == Graph.SIZE - 1 && vertex.y == 0)
 			return true;
-		
-		if( vertex.x == Graph.SIZE - 1 && vertex.y == Graph.SIZE - 1 )
+
+		if (vertex.x == Graph.SIZE - 1 && vertex.y == Graph.SIZE - 1)
 			return true;
-		
-		return false;		
+
+		return false;
 	}
 
 	public void walk(Vertex start) {
@@ -271,9 +273,10 @@ public class MazeGenerator {
 			Vertex next = possibilies.get(random.nextInt(possibilies.size()));
 
 			next.addNeighbor(start);
-			
-			//According the rules, we can not have "L" on the corner, just a dead end
-			if( isCorner(next))
+
+			// According the rules, we can not have "L" on the corner, just a
+			// dead end
+			if (isCorner(next))
 				return;
 
 			start = next;
@@ -297,24 +300,25 @@ public class MazeGenerator {
 
 				if (possibilies.isEmpty())
 					continue;
-				
+
 				// Graph a random one to start from to.
 				Collections.shuffle(possibilies);
-				
-				for( Vertex next : possibilies ){
-					
-					//Do not touch the middle, that is reserved for the trophy
-					if (graph.centerVerticies.contains(vertex) || graph.centerVerticies.contains(next))
+
+				for (Vertex next : possibilies) {
+
+					// Do not touch the middle, that is reserved for the trophy
+					if (graph.centerVerticies.contains(vertex)
+							|| graph.centerVerticies.contains(next))
 						continue;
-					
-					if( isCorner(next) && possibilies.size() > 1 )
+
+					if (isCorner(next) && possibilies.size() > 1)
 						continue;
-	
+
 					next.addNeighbor(vertex);
-	
+
 					return vertex;
 				}
-				
+
 			}
 		}
 
