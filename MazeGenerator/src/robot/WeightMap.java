@@ -27,10 +27,13 @@ public class WeightMap {
 
 	public void generate() {
 
-		for (int x = 0; x < Graph.SIZE; x++)
-			for (int y = 0; y < Graph.SIZE; y++)
-				weights[x][y] = -1;
-
+		for (int x = 0; x < Graph.SIZE; x++){
+			for (int y = 0; y < Graph.SIZE; y++){
+				if( weights[x][y] != Integer.MAX_VALUE )				
+					weights[x][y] = -1;
+			}
+		}
+			
 		// First we generate the weights from the known graph, using a DFS
 		Vertex start = mouse.first();
 		set(start, 0);
