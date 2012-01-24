@@ -99,10 +99,10 @@ public class WeightMap {
 				continue;
 			}
 
-			//if (get(relative) == Integer.MAX_VALUE) {
-			//	count++;
-			//	continue;
-			//}
+			if (get(relative) == Integer.MAX_VALUE && !mouse.knowsEdge(vertex, relative)) {
+				count++;
+				continue;
+			}
 
 			if (mouse.knowsEdge(vertex, relative)) {
 				count++;
@@ -139,10 +139,6 @@ public class WeightMap {
 
 				// Has the mouse learned there is a wall between these two?
 				if (mouse.knowsEdge(current, next))
-					continue;
-
-				// The center is where we want to go!
-				if (graph.isCenter(next))
 					continue;
 
 				possibleNext.add(next);

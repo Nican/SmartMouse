@@ -1,15 +1,18 @@
 package robot.graph;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Graph {
+public class Graph implements Serializable{
 
+	private static final long serialVersionUID = 8368671287672227182L;
 	public final static int SIZE = 16;
 
 	final Vertex verticies[][] = new Vertex[SIZE][SIZE];
-
+	
 	public final List<Vertex> centerVerticies = new ArrayList<>();
+	public final List<Vertex> allVerticies = new ArrayList<>(SIZE * SIZE);
 
 	public Graph() {
 
@@ -17,7 +20,10 @@ public class Graph {
 
 		for (x = 0; x < SIZE; x++) {
 			for (y = 0; y < SIZE; y++) {
-				verticies[x][y] = new Vertex(x, y, this);
+				Vertex vertex = new Vertex(x, y, this);
+				
+				verticies[x][y] = vertex;
+				allVerticies.add(vertex);
 			}
 		}
 
@@ -40,6 +46,12 @@ public class Graph {
 
 	public boolean isCenter(Vertex v) {
 		return centerVerticies.contains(v);
+	}
+	
+	public void reset(){
+		for( Vertex vertex : allVerticies ){
+			vertex.neighbors.clear();
+		}
 	}
 
 }

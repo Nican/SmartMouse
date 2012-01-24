@@ -69,8 +69,11 @@ public class Mouse {
 		if (visitedCenter == false && graph.isCenter(current))
 			visitedCenter = true;
 
+		System.out.println("Generating weight map");
 		weightMap.generate();
+		System.out.println("Generating min path");
 		minPath.generate();
+		System.out.println("\t Min path of size: " + minPath.path.size());
 
 	}
 
@@ -114,9 +117,12 @@ public class Mouse {
 
 		if (inHistory(v1) || inHistory(v2))
 			return !v1.hasNeighbor(v2);
-
-		if (visitedCenter && (graph.isCenter(v1) || graph.isCenter(v2)))
-			return v1.hasNeighbor(v2);
+		
+		boolean center1 = graph.isCenter(v1);
+		boolean center2 = graph.isCenter(v2);
+		
+		if (visitedCenter && (center1 || center2))
+			return center1 != center2 && !v1.hasNeighbor(v2); //They can not both be true
 
 		if (isDiscovered(v1) && isDiscovered(v2)) {
 

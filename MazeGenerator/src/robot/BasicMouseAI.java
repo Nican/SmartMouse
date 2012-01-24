@@ -42,6 +42,11 @@ public class BasicMouseAI extends MouseBaseAI {
 			return mouse.current.getDirection( minPath.get(index-direction) );
 		}
 		
+		//Check if the min path is not infact empty, if it is, what the hell is happening?!
+		if( minPath.isEmpty() ){
+			throw new IllegalStateException("We can not find our way to the 'non-existant' min path!");
+		}
+		
 		Stack<Vertex> path = pathToMinpath();		
 		
 		if( path.size() == 1 ){

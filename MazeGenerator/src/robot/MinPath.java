@@ -24,6 +24,7 @@ public class MinPath {
 	public void generate() {
 
 		WeightMap map = getWeightMap();
+		int count = 0;
 
 		path.clear();
 
@@ -37,10 +38,14 @@ public class MinPath {
 
 		path.push(current);
 
-		while (map.get(current) > 0) {
+		while (map.get(current) > 0 && count++ < 1000 ) {
 			Vertex min = getMinNeighbor( current );
 			path.push(min);
 			current = min;
+		}
+		
+		if( count >= 1000 ){
+			System.out.println("Such a long min path! " + path );
 		}
 
 	}

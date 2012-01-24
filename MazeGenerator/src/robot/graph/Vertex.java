@@ -1,10 +1,12 @@
 package robot.graph;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Vertex {
+public class Vertex implements Serializable {
 
+	private static final long serialVersionUID = 6437384775241005915L;
 	public List<Vertex> neighbors = new ArrayList<>();
 
 	public final int x;

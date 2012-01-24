@@ -91,23 +91,23 @@ public class MazeSquare extends Component {
 
 			if (!vertex.hasNeighbor(Direction.NORTH)) {
 				g.setColor(edgeColor(Direction.NORTH));
-				g.fillRect(0, 0, getWidth(), borderSize);
+				g.fillRect(borderSize, 0, getWidth() - borderSize, borderSize * 2);
 			}
 
 			if (!vertex.hasNeighbor(Direction.SOUTH)) {
 				g.setColor(edgeColor(Direction.SOUTH));
-				g.fillRect(0, this.getHeight() - borderSize, getWidth(),
+				g.fillRect(borderSize, this.getHeight() - borderSize, getWidth() - borderSize * 2,
 						borderSize);
 			}
 
 			if (!vertex.hasNeighbor(Direction.WEST)) {
 				g.setColor(edgeColor(Direction.WEST));
-				g.fillRect(0, 0, borderSize, getHeight());
+				g.fillRect(0, borderSize, borderSize, getHeight() - borderSize * 2);
 			}
 
 			if (!vertex.hasNeighbor(Direction.EAST)) {
 				g.setColor(edgeColor(Direction.EAST));
-				g.fillRect(getWidth() - borderSize, 0, borderSize, getHeight());
+				g.fillRect(getWidth() - borderSize, borderSize, borderSize, getHeight() - borderSize * 2);
 			}
 
 		}
