@@ -25,20 +25,22 @@ public class Mouse {
 	public HashMap<Vertex, Integer> weights = new HashMap<>();
 
 	public final Graph graph;
-	
+
 	public WeightMap weightMap;
 	public MinPath minPath;
+
+	public boolean visitedCenter = false;
 
 	public Mouse(Graph g, Vertex start) {
 		current = start;
 		graph = g;
-		
+
 		weightMap = new WeightMap(graph, this);
 		minPath = new MinPath(graph, this);
 
 		history.add(current);
 		discover(start);
-		
+
 		weightMap.generate();
 		minPath.generate();
 	}
@@ -63,11 +65,13 @@ public class Mouse {
 		history.add(current);
 
 		discover(current);
-		
+
+		if (visitedCenter == false && graph.isCenter(current))
+			visitedCenter = true;
+
 		weightMap.generate();
 		minPath.generate();
-		
-		System.out.println(minPath);
+
 	}
 
 	/**
@@ -111,6 +115,9 @@ public class Mouse {
 		if (inHistory(v1) || inHistory(v2))
 			return !v1.hasNeighbor(v2);
 
+		if (visitedCenter && (graph.isCenter(v1) || graph.isCenter(v2)))
+			return true;
+
 		if (isDiscovered(v1) && isDiscovered(v2)) {
 
 			for (Direction perpendicular : Direction
@@ -118,6 +125,9 @@ public class Mouse {
 
 				Vertex relative1 = v1.getRelative(perpendicular);
 				Vertex relative2 = v2.getRelative(perpendicular);
+
+				if (!v1.hasNeighbor(relative1) || !v2.hasNeighbor(relative2))
+					continue;
 
 				if (history.contains(relative1) && history.contains(relative2)
 						&& relative1.hasNeighbor(direction))

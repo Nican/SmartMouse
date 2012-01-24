@@ -11,6 +11,8 @@ import smartmouse.Vertex;
  *
  */
 public class BasicMouseAI extends MouseBaseAI {
+	
+	int direction = 1;
 
 	public BasicMouseAI(Mouse m) {
 		super(m);
@@ -26,10 +28,18 @@ public class BasicMouseAI extends MouseBaseAI {
 		if( index != -1 ){
 			System.out.println("Found mouse at index: " + index);
 			
-			if( index == 0 )
-				return null;
+			if( index == 0 ){
+				if( direction == 1 ){
+					direction *= -1;
+					return null;
+				}
+			} else if ( index == minPath.size() - 1 ){
+				if( direction == -1 ){
+					return null;
+				}
+			}
 			
-			return mouse.current.getDirection( minPath.get(index-1) );
+			return mouse.current.getDirection( minPath.get(index-direction) );
 		}
 		
 		Stack<Vertex> path = pathToMinpath();		
@@ -69,7 +79,7 @@ public class BasicMouseAI extends MouseBaseAI {
 	public Stack<Vertex> pathToMinpath(){
 		
 		Stack<Vertex> path = new Stack<>();
-		int depth = 1;
+		double depth = 1;
 		
 		path.push(mouse.current);
 		
@@ -77,17 +87,19 @@ public class BasicMouseAI extends MouseBaseAI {
 		//http://en.wikipedia.org/wiki/Iterative_deepening_depth-first_search
 		//It is inefficient, but it will have to do for now
 		
-		while( !DepthSearch( path, depth++ ) );
+		while( !depthSearch( path, depth ) ){
+			depth += 1.0;
+		}
 		
 		return path;
 		
 	}
 	
-	public boolean DepthSearch( Stack<Vertex> path, int depth ){
+	public boolean depthSearch( Stack<Vertex> path, double depth ){
 		
 		Stack<Vertex> minPath = getMinPath();
 		
-		if( depth <= 0 )
+		if( depth < 1.0 )
 			return false;
 		
 		Vertex current = path.peek();
@@ -108,7 +120,10 @@ public class BasicMouseAI extends MouseBaseAI {
 				return true;
 			}
 			
-			if( DepthSearch(path, depth - 1) == true )
+			//Magical variable of 3/4 of a weight not to travel in the same path
+			double weight = mouse.isDiscovered(relative) ? 1.25 : 1.0;
+			
+			if( depthSearch(path, depth - weight) == true )
 				return true;
 			
 			path.pop();

@@ -87,6 +87,9 @@ public class WeightMap {
 
 	private boolean isDeadEnd(Vertex vertex) {
 		int count = 0;
+		
+		if( graph.isCenter(vertex))
+			return false;
 
 		for (Direction direction : Direction.values()) {
 			Vertex relative = vertex.getRelative(direction);
@@ -96,10 +99,10 @@ public class WeightMap {
 				continue;
 			}
 
-			if (get(relative) == Integer.MAX_VALUE) {
-				count++;
-				continue;
-			}
+			//if (get(relative) == Integer.MAX_VALUE) {
+			//	count++;
+			//	continue;
+			//}
 
 			if (mouse.knowsEdge(vertex, relative)) {
 				count++;
