@@ -8,8 +8,8 @@ import java.awt.Graphics2D;
 import java.util.Stack;
 
 import robot.Mouse;
-import smartmouse.Direction;
-import smartmouse.Vertex;
+import robot.graph.Direction;
+import robot.graph.Vertex;
 
 /**
  * An UI element representing a given vertex

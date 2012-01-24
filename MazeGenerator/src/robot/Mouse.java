@@ -6,9 +6,9 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import smartmouse.Direction;
-import smartmouse.Graph;
-import smartmouse.Vertex;
+import robot.graph.Direction;
+import robot.graph.Graph;
+import robot.graph.Vertex;
 
 /**
  * The logical representation of the robot
@@ -116,7 +116,7 @@ public class Mouse {
 			return !v1.hasNeighbor(v2);
 
 		if (visitedCenter && (graph.isCenter(v1) || graph.isCenter(v2)))
-			return true;
+			return v1.hasNeighbor(v2);
 
 		if (isDiscovered(v1) && isDiscovered(v2)) {
 

@@ -4,8 +4,8 @@ import java.util.List;
 
 import robot.BasicMouseAI;
 import robot.WeightMap;
-import smartmouse.Direction;
-import smartmouse.Vertex;
+import robot.graph.Direction;
+import robot.graph.Vertex;
 
 public class Roam extends BaseState {
 

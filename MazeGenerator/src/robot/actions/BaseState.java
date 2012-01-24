@@ -1,7 +1,7 @@
 package robot.actions;
 
 import robot.BasicMouseAI;
-import smartmouse.Direction;
+import robot.graph.Direction;
 
 public abstract class BaseState {
 	

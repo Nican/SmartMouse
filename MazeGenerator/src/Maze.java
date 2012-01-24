@@ -3,7 +3,7 @@ import java.awt.GridLayout;
 
 import robot.Mouse;
 import robot.WeightMap;
-import smartmouse.Graph;
+import robot.graph.Graph;
 
 /**
  * Container that will have all the drawing blocks

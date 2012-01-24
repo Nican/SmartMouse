@@ -2,9 +2,9 @@ package robot;
 
 import java.util.Stack;
 
-import smartmouse.Direction;
-import smartmouse.Graph;
-import smartmouse.Vertex;
+import robot.graph.Direction;
+import robot.graph.Graph;
+import robot.graph.Vertex;
 
 public class MinPath {
 

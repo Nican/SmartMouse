@@ -2,8 +2,8 @@ package robot;
 
 import java.util.Stack;
 
-import smartmouse.Direction;
-import smartmouse.Vertex;
+import robot.graph.Direction;
+import robot.graph.Vertex;
 
 /**
  * Simplests of implementation of the mouse
@@ -49,27 +49,6 @@ public class BasicMouseAI extends MouseBaseAI {
 		}
 		
 		return path.get(0).getDirection(path.get(1));
-		
-		/*
-		Stack<Vertex> minPath = getMinPath();
-		
-		
-		List<Direction> directions = possibleMoves();
-		
-		//Look for all possible movements we can do (N,S,W,E)
-		for( Direction direction : directions ){
-			
-			Vertex relative = getRelative(direction);
-			
-			//If we already have not gone there
-			if( !mouse.inHistory(relative)){
-				return direction;
-			}
-			
-		}
-		
-		return null;
-		*/
 	}
 	
 	public Stack<Vertex> getMinPath(){
@@ -79,7 +58,10 @@ public class BasicMouseAI extends MouseBaseAI {
 	public Stack<Vertex> pathToMinpath(){
 		
 		Stack<Vertex> path = new Stack<>();
-		double depth = 1;
+		
+		//If we are in a dead end, just get out there, do Not do iterative!
+		double delta = mouse.getWeightMap().get(mouse.current) == Integer.MAX_VALUE ? 10.0 : 1.0;
+		double depth = delta;
 		
 		path.push(mouse.current);
 		
@@ -88,8 +70,10 @@ public class BasicMouseAI extends MouseBaseAI {
 		//It is inefficient, but it will have to do for now
 		
 		while( !depthSearch( path, depth ) ){
-			depth += 1.0;
+			depth += delta;
 		}
+		
+		System.out.println("Path to min: " + path );
 		
 		return path;
 		
@@ -104,11 +88,14 @@ public class BasicMouseAI extends MouseBaseAI {
 		
 		Vertex current = path.peek();
 		
-		for( Direction direction : Direction.values() ){
+		for( Direction direction : Direction.vals ){
 			
 			Vertex relative = current.getRelative(direction);
 			
 			if( relative == null )
+				continue;
+			
+			if( path.contains(relative))
 				continue;
 			
 			if( mouse.knowsEdge(current, relative) )
@@ -121,7 +108,7 @@ public class BasicMouseAI extends MouseBaseAI {
 			}
 			
 			//Magical variable of 3/4 of a weight not to travel in the same path
-			double weight = mouse.isDiscovered(relative) ? 1.25 : 1.0;
+			double weight = mouse.isDiscovered(relative) ? 1.0 : 0.5;
 			
 			if( depthSearch(path, depth - weight) == true )
 				return true;

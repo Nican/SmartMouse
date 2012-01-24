@@ -6,8 +6,8 @@ import javax.swing.JFrame;
 import robot.BasicMouseAI;
 import robot.Mouse;
 import robot.MouseBaseAI;
-import smartmouse.Graph;
-import smartmouse.MazeGenerator;
+import robot.graph.Graph;
+import robot.graph.MazeGenerator;
 
 public class Main {
 

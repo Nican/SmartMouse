@@ -1,4 +1,4 @@
-package smartmouse;
+package robot.graph;
 
 
 public enum Direction {
@@ -25,15 +25,21 @@ public enum Direction {
 		throw new IllegalStateException("What direction are you going?");
 	}
 	
+
+	public static Direction[] latPerpendiular = new Direction[]{NORTH,SOUTH};
+	public static Direction[] horPerpendiular = new Direction[]{EAST,WEST};
+	
 	public static Direction[] getPerpendicular( Direction direction ){
 		switch( direction ){
 		case EAST:
 		case WEST:
-			return new Direction[]{NORTH,SOUTH};
+			return latPerpendiular;
 		case NORTH:
 		case SOUTH:
-			return new Direction[]{EAST,WEST};
+			return horPerpendiular;
 		}
 		throw new IllegalStateException("What direction are you going?");
 	}
+	
+	public static final Direction[] vals = Direction.values();
 }

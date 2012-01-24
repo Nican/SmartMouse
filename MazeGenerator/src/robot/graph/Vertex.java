@@ -1,4 +1,4 @@
-package smartmouse;
+package robot.graph;
 
 import java.util.ArrayList;
 import java.util.List;
