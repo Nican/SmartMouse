@@ -45,8 +45,53 @@ module hub(holes){
 	}
 
 }
+module maple(holes){
+boardThick=3;
+	difference(){
+		union(){
+			cube([50,53.3,boardThick]);
+			translate([50,5,0])cube([2.5,33,boardThick]);
+			translate([52.5,5,0])rotate([0,0,135])cube([5,5,boardThick]);
+			translate([52.5,38,0])rotate([0,0,135])cube([5,5,boardThick]);
+			if(holes==1){
+			translate([4,4,-1])cylinder(r=1.5, h=boardThick*10,center=true);
+			translate([4,53.3-4,-1])cylinder(r=1.5, h=boardThick*10,center=true);
+			translate([50,7.6,-1])cylinder(r=1.5, h=boardThick*10,center=true);
+			translate([50,7.6+27.9,-1])cylinder(r=1.5, h=boardThick*10,center=true);
+			}
 
+		}
+		if(holes==0){
+		translate([4,4,-1])cylinder(r=1.5, h=boardThick+2);
+		translate([4,53.3-4,-1])cylinder(r=1.5, h=boardThick+2);
+		translate([50,7.6,-1])cylinder(r=1.5, h=boardThick+2);
+		translate([50,7.6+27.9,-1])cylinder(r=1.5, h=boardThick+2);
+		}
+	}
+
+}
+
+module ultrasonic(holes){
+	difference(){
+		union(){
+			cube([22.5,20,3.5]);
+			translate([10.5,8.5,3.5])cylinder(r=8, h=12.5);
+			translate([4,17.5,-10])cube([18.5,2.5,10]);
+			translate([12.5,9,-10])cube([7.75,7.75,10]);
+			if(holes==1){
+			translate([3.25/2+1,20-3-3.25/2,-15])cylinder(r=3.25/2, h=30);
+		translate([22.5-3.25/2-1,3.25/2+1,-15])cylinder(r=3.25/2, h=30);
+			}
+		}
+		if(holes==0){
+		translate([3.25/2+1,20-3-3.25/2,-1])cylinder(r=3.25/2, h=5.5);
+		translate([22.5-3.25/2-1,3.25/2+1,-1])cylinder(r=3.25/2, h=5.5);
+		}
+	}
+}
+ultrasonic(1);
+//maple(0);
 //Parts layout
-translate([60,0,0])color("grey",1.0)motor(1);
-color("black", 1.0)wheel();
-translate([42,25,0])color("grey",1.0)hub(0);
+//translate([60,0,0])color("grey",1.0)motor(1);
+//color("black", 1.0)wheel();
+//translate([42,25,0])color("grey",1.0)hub(0);
