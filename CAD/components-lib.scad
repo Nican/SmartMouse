@@ -1,6 +1,6 @@
 $fn =61;
 
-module motor(holes){
+module paulo_motor(holes){
 	difference(){
 		union(){	
 			cylinder(r=16/2, h=2);//bump
@@ -18,14 +18,14 @@ module motor(holes){
 	translate([2.5,-3,94])cube([0.5,6,12.5]);//flat
 	}
 }
-module wheel(){
+module paulo_wheel(){
 	difference(){
 		cylinder(r=72/2, h = 18.5);
 		translate([0,0,-1])cylinder(r=4/2, h= 18.5+2);
 	}
 
 }
-module hub(holes){
+module paulo_hub(holes){
 	difference(){
 		union(){	
 				cylinder(r=22/2, h=1.6);
@@ -70,14 +70,42 @@ boardThick=3;
 	}
 
 }
+module pololu_wheel(dia, width, holes){
+	treadThick = 3;
+	spokes = 5;
+	spokesThick = 4;
+	spokesWidth = 8;
+	difference(){
+		union(){
+			color("black")difference(){	//Tread
+				cylinder(r=dia/2, h=width);
+				translate([0,0,-1])cylinder(r=dia/2-treadThick, h=width+2);
+			}
+			color("blue")difference(){	//Rim
+				cylinder(r=dia/2-treadThick, h=width);
+				translate([0,0,-1])cylinder(r=dia/2-treadThick-3, h=width+2);
+			}
+			color("blue")for( i = [0: 360/spokes :360]){	//Spokes
+				rotate([0,0,i])translate([0,(dia/2-treadThick-3)/2,width/2])cube([spokesWidth,dia/2-treadThick-3,spokesThick],center=true);
+			}
+			color("blue")translate([0,0,width/2])cylinder(r=10, h=spokesThick, center = true);	//Center
+		}
+		color("blue"){
+			translate([1/4*25.4,0,0])cylinder(r=1.5, h=width);
+			translate([-1/4*25.4,0,0])cylinder(r=1.5, h=width);
+			cylinder(r=1.5, h=width);
+			translate([-0.5,-11,0])cube([1,11,width]);
+		}
+	}
+}
 
 module ultrasonic(holes){
 	difference(){
 		union(){
-			cube([22.5,20,3.5]);
-			translate([10.5,8.5,3.5])cylinder(r=8, h=12.5);
-			translate([4,17.5,-10])cube([18.5,2.5,10]);
-			translate([12.5,9,-10])cube([7.75,7.75,10]);
+			color("green")cube([22.5,20,3.5]);
+			color("black")translate([10.5,8.5,3.5])cylinder(r=8, h=12.5);
+			color("black")translate([4,17.5,-10])cube([18.5,2.5,10]);
+			color("grey")translate([12.5,9,-10])cube([7.75,7.75,10]);
 			if(holes==1){
 			translate([3.25/2+1,20-3-3.25/2,-15])cylinder(r=3.25/2, h=30);
 		translate([22.5-3.25/2-1,3.25/2+1,-15])cylinder(r=3.25/2, h=30);
@@ -89,9 +117,7 @@ module ultrasonic(holes){
 		}
 	}
 }
-ultrasonic(1);
+
+pololu_wheel(70, 8, 1);
+//ultrasonic(0);
 //maple(0);
-//Parts layout
-//translate([60,0,0])color("grey",1.0)motor(1);
-//color("black", 1.0)wheel();
-//translate([42,25,0])color("grey",1.0)hub(0);
