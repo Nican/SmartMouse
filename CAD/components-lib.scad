@@ -2,7 +2,6 @@
 /*
 TODO:
 -Finish Maple
--Add 
 
 
 */
@@ -157,25 +156,40 @@ module 2slipo(){
 }
 
 module pololu_hub(holes){
-
+	difference(){
+		union(){
+			color("silver")cylinder(r=17.5/2, h=5.1);
+			if(holes==1){
+				for(i = [0:90:360])
+				rotate([0,0,i])translate([6.4,0,0])cylinder(r=1.25, h=20,center=true);
+			}
+		}
+		translate([0,0,-1])cylinder(r=1.5, h=7.1);
+		if(holes==0){
+			for(i = [0:90:360]){
+				rotate([0,0,i])translate([6.4,0,0])cylinder(r=1.25, h=20,center=true);
+				
+			}
+		}
+	}
 }
 
 module ball_caster(holes){
 	difference(){
 		union(){
-			color("silver")translate([0,0,-3/8*25.4/2+0.4*25.4])sphere(r=3/8*25.4/2);
-			color("black")hull(){
-				translate([0.53*25.4/2,0,0])cylinder(r=0.22*25.4/2, h=2);
-				translate([-0.53*25.4/2,0,0])cylinder(r=0.22*25.4/2, h=2);
+			color("silver")translate([0,0,1/2*25.4/2])sphere(r=1/2*25.4/2);
+			translate([0,0,0.5*25.4])rotate([0,180,0])color("black")hull(){
+				translate([0.58*25.4/2,0,0])cylinder(r=0.27*25.4/2, h=2);
+				translate([-0.58*25.4/2,0,0])cylinder(r=0.27*25.4/2, h=2);
 			}
-			if(holes==1){
-				translate([0.53*25.4/2,0,-10])cylinder(r=0.09*25.4/2, h=20);
-				translate([-0.53*25.4/2,0,-10])cylinder(r=0.09*25.4/2, h=20);
+				translate([0,0,0.5*25.4])rotate([0,180,0])if(holes==1){
+				translate([0.58*25.4/2,0,-10])cylinder(r=0.09*25.4/2, h=20);
+				translate([-0.58*25.4/2,0,-10])cylinder(r=0.09*25.4/2, h=20);
 			}
 		}
-		if(holes==0){
-			translate([0.53*25.4/2,0,-1])cylinder(r=0.09*25.4/2, h=4);
-			translate([-0.53*25.4/2,0,-1])cylinder(r=0.09*25.4/2, h=4);
+			translate([0,0,0.5*25.4])rotate([0,180,0])if(holes==0){
+			translate([0.58*25.4/2,0,-1])cylinder(r=0.09*25.4/2, h=4);
+			translate([-0.58*25.4/2,0,-1])cylinder(r=0.09*25.4/2, h=4);
 		}
 	}
 }
@@ -183,6 +197,10 @@ module ball_caster(holes){
 module encoder(){
 	difference(){
 		union(){
+			color("black")cube([14.75,14.25,10]);
+			color("silver")translate([6.75,14.25/2,0])cylinder(r=1/8*25.4, h=16.35);
+			color("silver")translate([6.75,14.25/2,0])cylinder(r=3.17/2, h=32.22);
+			color("silver")translate([14.75-1.75,0,-3.18])cube([0.457,14.25,3.18]);
 		}
 	}
 }
@@ -194,32 +212,26 @@ module small_tamiya_wheel(holes){
 		}
 	//}
 }
-module ir_sensor(holes){
-	color("grey"){
-		difference(){
-			union(){
-				translate([-9.65,3.75,0])cube([18.9,29.5,9.2]);
-				translate([-3.75,3.75,0])cube([8.4,29.5,9.2+4.3]);
-				translate([-3.75+0.6,3.75,0])cube([7.2,29.5,9.2+6.3]);
-				translate([-10-9.65,3.75+9.7,3.3])cube([10,10.1,6]);
-				hull(){
-					cylinder(r=3.75, h=2);
-					translate([0,37,0])cylinder(r=3.75, h=2);
-				}
-				if(holes==1){
-					cylinder(r=3.2/2, h=20, center=true);
-					translate([0,37,0])cylinder(r=3.2/2, h=20, center=true);
-				}
-			}
-			if(holes==0){
-				translate([0,0,-1])cylinder(r=3.2/2, h=2+2);
-				translate([0,37,-1])cylinder(r=3.2/2, h=2+2);
-			}
+module ir_sensor(transparency){
+	difference(){
+		union(){
+			color("grey")translate([-13.1/2,0,0])cube([13.1,29.5,7.2]);
+			color("grey")translate([-8.5/2,0,0])cube([8.5,29.5,11.6]);
+			color("grey")translate([-7.2/2,0,0])cube([7.2,29.5,13.6]);
+			if(transparency==1)%translate([-7.2/2,0,0])cube([7.2,29.5,13.6+40]);
+			color("white")translate([-13.1/2-6,9.7,3.3])cube([6,10.1,6.3]);
 		}
 	}
 }
 
-//ir_sensor(0);
+module optic_lens(){
+color("grey", 0.5)cube([16,30,5]);
+}
+
+//optic_lens();
+//pololu_hub(0);
+//encoder();
+//ir_sensor(1);
 //small_tamiya_wheel();
 //ball_caster(0);
 //micro_motor();
