@@ -1,16 +1,25 @@
 include <components-lib.scad>;
 
+//TODO
+//-Encoders
+
 //vars
+layerHeight = 0.28;
+
 //chassis
 chassisX = 100;
 chassisY = 100;
-chassisThick = 4;
+chassisThick = 3.5;
 chassisHeight = 2.4;
-opticSpacing = 30;
-chassisRadius = 2;
+opticSpacing = 32;
+chassisRadius = 5;
 
+topThick = 3.5;
+topHeight = 52;
+postWall = 2;//nut radius derived from apothem plus this
 //hardware
-nutApothem =5;
+nutApothem = 6.1;
+nutHeight = 4;
 
 //maze
 maze = 180;
@@ -19,7 +28,7 @@ mazeThick = 12;
 
 module layout(){
 	union(){
-		#cube([chassisX,chassisY,0.1]);
+		//#cube([chassisX,chassisY,0.1]);
 		//Static constructions
 		translate([chassisX/2-6,3.5+9.27,13])micro_motor();
 		translate([chassisX/2+6,chassisY-3.5-9.27,13])rotate([0,0,180])micro_motor();
@@ -27,15 +36,15 @@ module layout(){
 		translate([chassisX/2,chassisY-3.5,18])rotate([90,0,0])pololu_hub(0);
 		translate([chassisX/2,0,18])rotate([-90,0,0])small_tamiya_wheel();
 		translate([chassisX/2,chassisY-3.5,18])rotate([-90,0,0])small_tamiya_wheel();
-		translate([0,chassisY/2,0])rotate([0,0,90])ball_caster(0);
+		translate([-8,chassisY/2,0])rotate([0,0,90])ball_caster(0);
 		
 		translate([0,0,chassisThick+chassisHeight]){
-			translate([30,chassisY/2-35,0])rotate([0,-15,0])2slipo();
+			translate([30,chassisY/2-35,-chassisThick/2])rotate([0,-15,0])2slipo();
 			//translate([34,40,25])maple(0);
 			translate([chassisX-16-2,chassisY-2,0])rotate([0,-90,180])ultrasonic(0);
 			translate([chassisX-16-2,2,22.5])rotate([0,90,0])ultrasonic(0);
 			translate([chassisX-13.6,chassisY/2-29.5/2,13.1/2])rotate([0,90,0])ir_sensor();//front
-			translate([13.1/2+7,chassisY/2,15])rotate([90,0,0])ir_sensor(0);//back left
+			translate([13.1/2+7,chassisY/2,15])rotate([90,0,0])ir_sensor();//back left
 			translate([13.1/2+7,chassisY/2,29.5+15])rotate([-90,0,0])ir_sensor();//back right
 			translate([75,chassisY/2,29.5+23])rotate([-90,0,0])ir_sensor();//front right
 			translate([75,chassisY/2,23])rotate([90,0,0])ir_sensor();//front left
@@ -43,7 +52,6 @@ module layout(){
 			//rotate([0,-90,90])encoder();
 			translate([3,chassisY/2+opticSpacing/2,0])optic_lens();
 			translate([3,chassisY/2-30-opticSpacing/2,0])optic_lens();
-		
 		}
 	}
 }
@@ -52,21 +60,87 @@ module chassis(){
 	translate([0,0,chassisHeight]){
 		difference(){
 			union(){
-				translate([chassisX-17,chassisY/2-20,0])cube([17,40,10]);//front ultra mount
-				translate([0,chassisY/2-13.1,0])cube([25,26.1,10]); //back ultra mounts
-
 				hull(){
 					translate([chassisRadius,chassisRadius,0])cylinder(r=chassisRadius, h=chassisThick);
 					translate([chassisX-chassisRadius,chassisRadius,0])cylinder(r=chassisRadius, h=chassisThick);
 					translate([chassisRadius,chassisY-chassisRadius,0])cylinder(r=chassisRadius, h=chassisThick);
 					translate([chassisX-chassisRadius,chassisY-chassisRadius,0])cylinder(r=chassisRadius, h=chassisThick);
 				}
+				//battery supports
+				translate([21,chassisY/2-10,0])cube([15,20,27]); 
+				translate([25,10,0])cube([15,80,10]);
 				
+				//motor mounts
+				translate([40,9.27+3.5,0])cube([20,23,17.5]); 
+				translate([40,chassisY-9.27-3.5-23,0])cube([20,23,17.5]); 
 			}
-			translate([0,0,-chassisHeight])layout();	
+			//top piece mounts
+			translate([chassisX/2,chassisY/2,-1])cylinder(r=1.75, h=chassisThick+2);
+			translate([chassisX-nutApothem/cos(30)/2-postWall,chassisY/2+25,-1])cylinder(r=1.75, h=chassisThick+2);
+			translate([chassisX-nutApothem/cos(30)/2-postWall,chassisY/2-25,-1])cylinder(r=1.75, h=chassisThick+2);
+
 			translate([chassisX/2-18,-1,-1])cube([36,5+1,chassisThick+2]); //right wheel slot
 			translate([chassisX/2-18,chassisY-5,-1])cube([36,5+1,chassisThick+2]); //left wheel slot
+			
+			//slices
+			for(i=[0.2:0.2:0.8])translate([-1,chassisY*i,-1])cube([chassisX/cos(8)+2,1,layerHeight*3+1]);
+			for(i=[0.2:0.2:0.8])translate([chassisX*i,-1,-1])cube([1,chassisY+2,layerHeight*3+1]);
+			//layout
+			//translate([0,0,-chassisHeight])layout();	
+
 		}
+	}
+}
+
+module top_plate(){
+	/*todo
+		-1 hole by battery leads
+		-2 holes in front and back
+	*/
+	difference(){
+		union(){
+			translate([0,0,topHeight])rotate([0,-8,0])hull(){
+					translate([chassisRadius,chassisRadius,0])cylinder(r=chassisRadius, h=topThick);
+					translate([chassisX/cos(8)-chassisRadius,chassisRadius,0])cylinder(r=chassisRadius, h=topThick);
+					translate([chassisRadius,chassisY-chassisRadius,0])cylinder(r=chassisRadius, h=topThick);
+					translate([chassisX/cos(8)-chassisRadius,chassisY-chassisRadius,0])cylinder(r=chassisRadius, h=topThick);
+				}
+			translate([0,0,topHeight])hull(){
+				rotate([0,-8,0])translate([chassisX/2,chassisY/2,0])cylinder(r=10);
+				translate([chassisX/2,chassisY/2,-topHeight/4])cylinder(r=nutApothem/cos(30)/2+postWall);
+			}
+			translate([0,0,topHeight])hull(){
+				rotate([0,-8,0])translate([chassisX/cos(8)-10,chassisY/2-25,0])cylinder(r=10);
+				translate([chassisX-nutApothem/cos(30)/2-postWall,chassisY/2-25,-topHeight/4])cylinder(r=nutApothem/cos(30)/2+postWall);
+			}
+			translate([0,0,topHeight])hull(){
+				rotate([0,-8,0])translate([chassisX/cos(8)-10,chassisY/2+25,0])cylinder(r=10);
+				translate([chassisX-nutApothem/cos(30)/2-postWall,chassisY/2+25,-topHeight/4])cylinder(r=nutApothem/cos(30)/2+postWall);
+			}
+
+			translate([chassisX/2,chassisY/2,0])cylinder(r=nutApothem/cos(30)/2+postWall, h=topHeight+chassisX/2*sin(8)+postWall);
+			translate([chassisX-nutApothem/cos(30)/2-postWall,chassisY/2+25,0])cylinder(r=nutApothem/cos(30)/2+postWall, h=topHeight+chassisX/cos(8)*sin(8));
+			translate([chassisX-nutApothem/cos(30)/2-postWall,chassisY/2-25,0])cylinder(r=nutApothem/cos(30)/2+postWall, h=topHeight+chassisX/cos(8)*sin(8));
+
+		}
+		//wire pass through holes
+		rotate([0,-8,0])translate([chassisX-10,chassisY/2,topHeight-1])cylinder(r=7, h=topThick+2);
+		rotate([0,-8,0])translate([40,chassisY/2,topHeight-1])cylinder(r=7, h=topThick+2);
+		rotate([0,-8,0])translate([40,chassisY/2+30,topHeight-1])cylinder(r=7, h=topThick+2);
+		
+		//nut cavities
+		translate([chassisX/2,chassisY/2,-1])cylinder(r=nutApothem/cos(30)/2, h=nutHeight+1,$fn=6);
+		translate([chassisX-nutApothem/cos(30)/2-postWall,chassisY/2+25,-1])cylinder(r=nutApothem/cos(30)/2, h=nutHeight+1,$fn=6);
+		translate([chassisX-nutApothem/cos(30)/2-postWall,chassisY/2-25,-1])cylinder(r=nutApothem/cos(30)/2, h=nutHeight+1,$fn=6);
+		//screw holes
+		translate([chassisX/2,chassisY/2,-1])cylinder(r=1.75, h=15);
+		translate([chassisX-nutApothem/cos(30)/2-postWall,chassisY/2+25,-1])cylinder(r=1.75, h=15);
+		translate([chassisX-nutApothem/cos(30)/2-postWall,chassisY/2-25,-1])cylinder(r=1.75, h=15);
+		
+		//slices
+		for(i=[0.2:0.2:0.8])translate([-1,chassisY*i,topHeight+topThick-layerHeight*3])rotate([0,-8,0])cube([chassisX/cos(8)+2,1,layerHeight*3+1]);
+		for(i=[0.2:0.2:0.8])translate([0,0,topHeight])rotate([0,-8,0])translate([chassisX*i,-1,topThick-layerHeight*3])cube([1,chassisY+2,layerHeight*3+1]);
+
 	}
 }
 
@@ -80,6 +154,10 @@ module maze(transparency){
 translate([(maze-chassisX)/2,(maze-chassisY)/2,0]){
 	layout();
 	chassis();
-	}
-maze(0.75);
+	translate([0,0,chassisHeight+chassisThick])top_plate();
+	} 
+//maze(0.75);
+
+//printing
+//rotate([180,-8,0])top_plate();
 
