@@ -96,10 +96,11 @@ module ball_caster(holes){
 				translate([0.58*25.4/2,0,0])cylinder(r=0.27*25.4/2, h=2);
 				translate([-0.58*25.4/2,0,0])cylinder(r=0.27*25.4/2, h=2);
 			}
-				translate([0,0,0.5*25.4])rotate([0,180,0])if(holes==1){
+			translate([0,0,0.5*25.4])rotate([0,180,0])if(holes==1){
 				translate([0.58*25.4/2,0,-10])cylinder(r=0.09*25.4/2, h=20);
 				translate([-0.58*25.4/2,0,-10])cylinder(r=0.09*25.4/2, h=20);
 			}
+			color("black")translate([0,0,0.5*25.4])rotate([0,180,0])cylinder(r=8, h=10);
 		}
 			translate([0,0,0.5*25.4])rotate([0,180,0])if(holes==0){
 			translate([0.58*25.4/2,0,-1])cylinder(r=0.09*25.4/2, h=4);
@@ -126,7 +127,7 @@ module small_tamiya_wheel(holes){
 		}
 	//}
 }
-module ir_sensor(transparency){
+module ir_sensor(transparency, holes){
 	difference(){
 		union(){
 			color("grey")translate([-13.1/2,0,0])cube([13.1,29.5,7.2]);
@@ -134,6 +135,19 @@ module ir_sensor(transparency){
 			color("grey")translate([-7.2/2,0,0])cube([7.2,29.5,13.6]);
 			if(transparency==1)%translate([-7.2/2,0,0])cube([7.2,29.5,13.6+40]);
 			color("white")translate([-13.1/2-6,9.7,3.3])cube([6,10.1,6.3]);
+			color("grey")hull(){
+         		translate([0,-3.75,0])cylinder(r=3.75, h=2);
+        			translate([0,37-3.75,0])cylinder(r=3.75, h=2);
+       		}
+        		if(holes==1){
+       			translate([0,-3.75,0])cylinder(r=3.2/2, h=20, center=true);
+         		translate([0,37-3.75,0])cylinder(r=3.2/2, h=20, center=true);
+       		}
+		}
+		
+     	if(holes==0){
+       		translate([0,-3.75,-1])cylinder(r=3.2/2, h=2+2);
+      		translate([0,37-3.75,-1])cylinder(r=3.2/2, h=2+2);
 		}
 	}
 }
@@ -145,7 +159,7 @@ color("grey", 0.5)cube([16,30,5]);
 //optic_lens();
 //pololu_hub(0);
 //encoder();
-//ir_sensor(1);
+//ir_sensor(1,0);
 //small_tamiya_wheel();
 //ball_caster(0);
 //micro_motor();
