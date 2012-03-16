@@ -29,7 +29,7 @@ public class Mouse {
 
 		try {
 			process = runtime
-					.exec("/home/nican/workspace/SmartMouse/Debug/SmartMouse");
+					.exec("../SmartMouse/Debug/SmartMouse");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
