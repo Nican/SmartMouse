@@ -1,0 +1,33 @@
+pinout of all pins on the maple to their functions
+
+Maple Pin        To                  Function
+D06         L298 6 Enable A     Left PWM Speed
+D07         L298 11 Enable A	Right PWM Speed
+D23         L298 5              Right FW
+D24         L298 7              Right RV
+D25         L298 10             Left FW
+D26         L298 12             Left RV
+D00         IR 1 3              IR 1 Output V
+D01         IR 2 3              IR 2 Output V
+D02         IR 3 3              IR 3 Output V
+D03         IR 4 3              IR 4 Output V
+D15         IR 5 3              IR 5 Output V
+D16         IR 6 3              IR 6 Output V
+D29         UL 00 (pin 4)       ULTRA ENABLE 1
+D30         UL 03 (pin 4)       ULTRA ENABLE 2
+D20         UL 01 (pin 3)       ULTRA ANALOG V 1
+D27         UL 04 (pin 3)       ULTRA ANALOG V 2
+D17         UL 02 (pin 2)       ULTRA ENV 1
+D18         UL 05 (pin 2)       ULTRA ENV 2
+D35 - 5v	ENCODER 00          Encoder 1 Ch A
+D36 - 5v	ENCODER 01          Encoder 1 Ch B
+D37 - 5v	ENCODER 02          Encoder 2 Ch A
+D14 - 5v	ENCODER 03          Encoder 2 Ch B
+D12         MOUSE 00 (pin 1)	Mouse A SPIO
+D13         MOUSE 01 (pin 5)	Mouse A SCK
+D33         MOUSE 02 (pin 1)	Mouse B SPIO
+D32         MOUSE 03 (pin 5)	Mouse B SCK
+D11         G1                  CRL1
+D12         G2                  CRL2
+D04         LED1                LED 1
+D05         LED2                LED 2
