@@ -38,6 +38,9 @@
 #define ULTRASONIC_ONE_ENVELOPE_PIN 17
 #define ULTRASONIC_TWO_ENVELOPE_PIN 18
 
+
+#include "adc.h"
+
 //Todo- Fill in what this struct is. Represents return from envelope sampling code
 struct DETECTEDOBJECTS {
     int num_objects_detected;
@@ -76,40 +79,63 @@ void enableChainPulsingUltrasonicsFreq(int delay);
 void disableChainPulsingUltrasonics();
 
 /**
- Returns the most recent value sampled on the analog voltage
+ Returns the most recent value sampled on the analog voltage. 
+ @return the sampled voltage in the 12-bit range, 0-4095
  */
 int inline readVoltageUltrasonicOne();
 
 /**
- 
+ Returns the most recent value sampled on the analog voltage. 
+ @return the sampled voltage in the 12-bit range, 0-4095
  */
 int inline readVoltageUltrasonicTwo();
 
 /**
- 
+ returns range, in mm, for the most recently detected object with the ultrasonic sensor. Each ultrasonic reads at most once every 99 ms
+ @return the range, in mm, of the detected object
  */
 int inline getRangeUltrasonicOne();
 
 /**
+ returns range, in mm, for the most recently detected object with the ultrasonic sensor. Each ultrasonic reads at most once every 99 ms
+ 
+ @return the range, in mm, of the detected object
+ 
  */
 int inline getRangeUltrasonicTwo();
 
 /**
- 
+ Returns the time since the last reading of the ultrasonic sensor was performed, and thus how old the reading is.
+ @return the time, in us, since the last ultrasonic voltage reading
  */
-int readEnvelopeUltrasonicOne();
+int inline microsTimeSinceLastADCReadUltrasonicOne();
 
 /**
- 
+ Returns the time since the last reading of the ultrasonic sensor was performed, and thus how old the reading is.
+ @return the time, in us, since the last ultrasonic voltage reading
  */
-int readEnvelopeUltrasonicTwo();
+int inline microsTimeSinceLastADCReadUltrasonicTwo();
+
+
+
+/**
+ returns the analog voltage on the envelope line at any time. directly calls adc_read
+ @return the value returned by the adc (12-bit, 0-4095)
+ */
+int inline readEnvelopeUltrasonicOne();
+
+/**
+ returns the analog voltage on the envelope line at any time. directly calls adc_read
+ @return the value returned by the adc (12-bit, 0-4095)
+ */
+int inline readEnvelopeUltrasonicTwo();
 
 /**
  Returns a pointer to a struct containing info to returns from the most recent envelope analysis
  */
-#ifdef USE_ANALOG_ENVELOPE
-EnvelopeObjects* getEnvelopeRange();
-#endif
+
+EnvelopeObjects* getEnvelopeAnalysis();
+
 
 /**
  Sets the number of bits to oversample with the ultrasonics. Only oversamples on the voltage output, not the envelope (might be possible with envelope if sample rate is increased???).
@@ -117,7 +143,12 @@ EnvelopeObjects* getEnvelopeRange();
  @param bitsOverSample the number of extra bits of information to obtain
  */
 void setUltrasonicOversampleRate(int bitsOverSample);
+//I recommend two bits or three bits oversampling, depending on the noise to the power supplies. -Alex
 
+/**
+ Modifies the sampling time 
+ */
+void setUltrasonicSampleRate(adc_smp_rate smp_rate);
 
 
 #endif

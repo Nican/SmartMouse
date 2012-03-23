@@ -20,6 +20,9 @@
 //Maximum IR distance in cm
 #define INFRARED_HIGH_RANGE 30
 
+#define POWER_CONSUMPTION_MA 33
+#define RESPONSE_TIME_MS 39
+
 #else
 #error "No model IR sensor is properly defined"
 #endif
@@ -37,6 +40,9 @@
 #define FRONTRIGHTPIR INFRARED_FOUR_PIN
 #define RIGHTFRONTPIR INFRARED_FIVE_PIN
 #define RIGHTREARPIR INFRARED_SIX_PIN
+
+//Data sheet rated constants
+
 
 
 /**
