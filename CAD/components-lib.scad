@@ -66,7 +66,7 @@ module micro_motor(){
 }
 
 module 2slipo(){
-	color("blue")cube([13,70,35]);
+	color("blue")cube([12.5,73,35]);
 }
 
 module pololu_hub(holes){
@@ -93,18 +93,19 @@ module ball_caster(holes){
 		union(){
 			color("silver")translate([0,0,1/2*25.4/2])sphere(r=1/2*25.4/2);
 			translate([0,0,0.5*25.4])rotate([0,180,0])color("black")hull(){
-				translate([0.58*25.4/2,0,0])cylinder(r=0.27*25.4/2, h=2);
-				translate([-0.58*25.4/2,0,0])cylinder(r=0.27*25.4/2, h=2);
+				translate([0.58*25.4/2,0,0])cylinder(r=0.29*25.4/2, h=10);
+				translate([-0.58*25.4/2,0,0])cylinder(r=0.29*25.4/2, h=10);
+				translate([0,0,0])cylinder(r=8.3, h=10);
 			}
 			translate([0,0,0.5*25.4])rotate([0,180,0])if(holes==1){
 				translate([0.58*25.4/2,0,-10])cylinder(r=0.09*25.4/2, h=20);
 				translate([-0.58*25.4/2,0,-10])cylinder(r=0.09*25.4/2, h=20);
 			}
-			color("black")translate([0,0,0.5*25.4])rotate([0,180,0])cylinder(r=8, h=10);
+			
 		}
 			translate([0,0,0.5*25.4])rotate([0,180,0])if(holes==0){
-			translate([0.58*25.4/2,0,-1])cylinder(r=0.09*25.4/2, h=4);
-			translate([-0.58*25.4/2,0,-1])cylinder(r=0.09*25.4/2, h=4);
+			translate([0.58*25.4/2,0,-1])cylinder(r=0.09*25.4/2, h=40);
+			translate([-0.58*25.4/2,0,-1])cylinder(r=0.09*25.4/2, h=40);
 		}
 	}
 }
