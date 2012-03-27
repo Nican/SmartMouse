@@ -51,6 +51,12 @@
 void setupIRPins();
 
 /**
+ 
+ */
+
+void setIRReadingMode(IR_Reading_Mode readMode);
+
+/**
  Returns the voltage based on an analog read from a given IR sensor
  @param IRNum the pin of the IR sensor being used . Use the #defines for reference
  @return the 12-bit voltage returned by an analog read (0-4095)
@@ -65,29 +71,30 @@ int readIRVoltage(int IRNum);
 
 int readIRDistance(int IRNum);
 
-int inline readLeftFrontIRVoltage();
+int readLeftFrontIRVoltage();
 
-int inline readLeftRearIRVoltage();
+int readLeftRearIRVoltage();
 
-int inline readFrontLeftIRVoltage();
+int readFrontLeftIRVoltage();
 
-int inline readFrontRightIRVoltage();
+int readFrontRightIRVoltage();
 
-int inline readRightFrontIRVoltage();
+int readRightFrontIRVoltage();
 
-int inline readRightRearIRVoltage();
+int readRightRearIRVoltage();
 
-int inline readLeftFrontIRRange();
+int getLeftFrontIRRange();
 
-int inline readLeftRearIRRange();
+int getLeftRearIRRange();
 
-int inline readFrontLeftIRRange();
+int getFrontLeftIRRange();
 
-int inline readFrontRightIRRange();
+int getFrontRightIRRange();
 
-int inline readRightFrontIRRange();
+int getRightFrontIRRange();
 
-int inline readRightRearIRRange();
+int getRightRearIRRange();
+
 
 /**
  Sets the oversample rate for IR reads.
