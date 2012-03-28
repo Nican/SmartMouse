@@ -44,12 +44,19 @@
 //Data sheet rated constants
 
 
-
+/**
+ To be called outside to setup sensors
+ */
+void setupIRSensors();
 /**
  Sets all IR pins to the proper type (analog input) and enables them to be used
  */
 void setupIRPins();
 
+/**
+ Set the IR timer to be used to sample every millisecond
+ */
+void setupIRTimer();
 /**
  
  */
@@ -69,19 +76,8 @@ int readIRVoltage(int IRNum);
  @return the distance, in mm
  */
 
-int readIRDistance(int IRNum);
+int readIRVoltage(int IRNum);
 
-int readLeftFrontIRVoltage();
-
-int readLeftRearIRVoltage();
-
-int readFrontLeftIRVoltage();
-
-int readFrontRightIRVoltage();
-
-int readRightFrontIRVoltage();
-
-int readRightRearIRVoltage();
 
 int getLeftFrontIRRange();
 

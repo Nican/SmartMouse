@@ -13,5 +13,10 @@
 #include "Ultrasonics.h"
 #include "MiceSensors.h"
 
+/**
+ Calls all corresponding functions with setting up the pins and timers to start running for gathering input
+ */
+void setupSensors();
+
 
 #endif
