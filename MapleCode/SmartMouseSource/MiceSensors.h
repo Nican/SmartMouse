@@ -13,26 +13,26 @@
 #define _MiceSensors_h
 
 /**
- Returns total distance traveled in the X direction, in mm, for the optical sensor #1
+ Returns distance traveled in the X direction, in mm, for the optical sensor #1 since last reading
  */
-int getCurrentXPositionOne();
+int getXOneDistanceChangeSinceLastRead();
 /**
  Returns total distance traveled in the Y direction, in mm, for the optical sensor #1
 
  */
 
-int getCurrentYPositionOne();
+int getYOneDistanceChangeSinceLastRead();
 
 /**
  Returns total distance traveled in the X direction, in mm, for the optical sensor #2
  */
-int getCurrentXPositionTwo();
+int getXTwoDistanceChangeSinceLastRead();
 /**
  Returns total distance traveled in the Y direction, in mm, for the optical sensor #2
  
  */
 
-int getCurrentYPositionTwo();
+int getYTwoDistanceChangeSinceLastRead();
 
 
 
