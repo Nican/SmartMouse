@@ -11,18 +11,26 @@
 #include "adc.h"
 #include "wirish.h"
 
-#define INFRARED_BUFFER_SIZE 50
+//maintain a buffer of 100 values sampled at 1 KHz, or 100 ms of data
+#define INFRARED_BUFFER_SIZE 100
 #define INFRARED_TIMER 3
 #define INFRARED_TIMER_PRESCALER 72
 #define INFRARED_TIMER_OVERFLOW 1000
+#define INFRARED_TIMER_FREQUENCY 1000
 
 //Holds the most recent readings of the IR sensors
 short infraredOneBuffer[INFRARED_BUFFER_SIZE];
+short* IROneBufferFront = &infraredOneBuffer[0];
 short infraredTwoBuffer[INFRARED_BUFFER_SIZE];
+short* IROneBufferFront = &infraredOneBuffer[0];
 short infraredThreeBuffer[INFRARED_BUFFER_SIZE];
+short* IROneBufferFront = &infraredOneBuffer[0];
 short infraredFourBuffer[INFRARED_BUFFER_SIZE];
+short* IROneBufferFront = &infraredOneBuffer[0];
 short infraredFiveBuffer[INFRARED_BUFFER_SIZE];
+short* IRFiveBufferFront = &infraredFiveBuffer[0];
 short infraredSixBuffer[INFRARED_BUFFER_SIZE];
+short* IRSixBufferFront = &infraredSixBuffer[0];
 
 
 
@@ -54,7 +62,7 @@ void setupIRTimer(){
     IRTimer.setChannel1Mode(TIMER_OUTPUT_COMPARE);
     IRTimer.setPrescaleFactor(INFRARED_TIMER_PRESCALER);
     IRTimer.setOverflow(INFRARED_TIMER_OVERFLOW);
-   
+   //Setups up IR timer to go off at 1 ms intervals to sample all ADC's
     IRTimer.setCompare(TIMER_CH1, 1);
     timer.attachCompare1Interrupt(sampleIR());
 }
@@ -67,5 +75,13 @@ void setupIRSensors(){
  To be used to sample all
  */
 void sampleIR(){
-    
+    //Low level call to adc_read
+    short IROne = adc_read(ADC1, IRONE_ADC_CHANNEL);
+    short IRTwo = adc_read(ADC1, IRTWO_ADC_CHANNEL);
+    short IRThree = adc_read(ADC1, IRTHREE_ADC_CHANNEL);
+    short IRFour = adc_read(ADC1, IRFOUR_ADC_CHANNEL);
+    short IRFive = adc_read(ADC1, IRFIVE_ADC_CHANNEL);
+    short IRSix = adc_read(ADC1, IRSIX_ADC_CHANNEL);
+    *IROneBufferFront = IROne;
+    IROneBufferFront++;
 }
