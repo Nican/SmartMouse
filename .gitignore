@@ -1,0 +1,4 @@
+mouse/build/*
+mouse/libmaple
+*.o
+*.d

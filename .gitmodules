@@ -1,0 +1,3 @@
+[submodule "libmaple"]
+	path = libmaple
+	url = git://github.com/leaflabs/libmaple.git
