@@ -1,43 +1,26 @@
-// Sample main.cpp file. Blinks the built-in LED, sends a message out
-// USART2, and turns on PWM on pin 2.
+//
+//  main.cpp
+//  
+//
+//  Created by Alexander Ryan on 3/21/12.
+//  SmartMouse Project
+//
 
-#include "wirish.h"
+void init();
 
-#define PWM_PIN  2
+void mapMaze();
 
-void setup() {
-    /* Set up the LED to blink  */
-    pinMode(BOARD_LED_PIN, OUTPUT);
+bool solveMaze();
 
-    /* Turn on PWM on pin PWM_PIN */
-    pinMode(PWM_PIN, PWM);
-    pwmWrite(PWM_PIN, 0x8000);
 
-    /* Send a message out USART2  */
-    Serial2.begin(9600);
-    Serial2.println("Hello world!");
-
-    /* Send a message out the usb virtual serial port  */
-    SerialUSB.println("Hello!");
+int main(){
+    init(); //setups up robot variables and peripherals
+    
+    mapMaze(); //Commences mapping process
+    
+    while(solveMaze()) ; //Solves maze over and over again until an error occurs
+    
+    return 1;
 }
 
-void loop() {
-    toggleLED();
-    delay(100);
-}
-
-// Force init to be called *first*, i.e. before static object allocation.
-// Otherwise, statically allocated objects that need libmaple may fail.
-__attribute__((constructor)) void premain() {
-    init();
-}
-
-int main(void) {
-    setup();
-
-    while (true) {
-        loop();
-    }
-
-    return 0;
-}
+#include <iostream>
