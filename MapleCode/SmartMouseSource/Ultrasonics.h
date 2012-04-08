@@ -14,7 +14,7 @@
 #define NUM_OF_ULTRASONICS 2
 
 //Use this define if you want to make use of the analog envelope readings. Will reserve space in memory for the readings
-#define USE_ANALOG_ENVELOPE
+//#define USE_ANALOG_ENVELOPE
 
 #ifdef XL_1340AE
 #define HARDWARE_GAIN 250
@@ -41,12 +41,12 @@
 
 #include "adc.h"
 
-//Todo- Fill in what this struct is. Represents return from envelope sampling code
-struct DETECTEDOBJECTS {
-    int num_objects_detected;
+enum adc_smp_rate {
+    low,
+    medium
+    high,
+    ultra-high
 };
-
-typedef struct DETECTEDOBJECTS  EnvelopeObjects;
 
 
 
@@ -121,21 +121,22 @@ int inline microsTimeSinceLastADCReadUltrasonicTwo();
 /**
  returns the analog voltage on the envelope line at any time. directly calls adc_read
  @return the value returned by the adc (12-bit, 0-4095)
- */
+ 
 int inline readEnvelopeUltrasonicOne();
 
 /**
  returns the analog voltage on the envelope line at any time. directly calls adc_read
  @return the value returned by the adc (12-bit, 0-4095)
- */
+ 
 int inline readEnvelopeUltrasonicTwo();
 
 /**
  Returns a pointer to a struct containing info to returns from the most recent envelope analysis
- */
+ 
 
 EnvelopeObjects* getEnvelopeAnalysis();
 
+*/ //Dont use envelope
 
 /**
  Sets the number of bits to oversample with the ultrasonics. Only oversamples on the voltage output, not the envelope (might be possible with envelope if sample rate is increased???).
@@ -146,7 +147,7 @@ void setUltrasonicOversampleRate(int bitsOverSample);
 //I recommend two bits or three bits oversampling, depending on the noise to the power supplies. -Alex
 
 /**
- Modifies the sampling time 
+ Modifies the sampling time for sampling the Ultrasonic voltage. Output is buffered by op-amp so high sample rate is possible
  */
 void setUltrasonicSampleRate(adc_smp_rate smp_rate);
 

@@ -9,6 +9,8 @@
 #ifndef _IO_h
 #define _IO_h
 
+#include "Sensors.h"
+#include "DriveControl.h"
 /**
  Call this function to set up all input/output from the Maple to sensors and actuators
  */

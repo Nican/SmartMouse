@@ -61,6 +61,9 @@ void setupIRTimer();
  
  */
 
+/**
+ I forgot why I added this function. Don't call it.
+*/
 void setIRReadingMode(IR_Reading_Mode readMode);
 
 /**
@@ -90,6 +93,20 @@ int getFrontRightIRRange();
 int getRightFrontIRRange();
 
 int getRightRearIRRange();
+
+
+//Runs an analysis on each of the buffers holding the IR data to determine if the readings are stable. Returns 1 if they are, 0 if not
+int isValidIROne();
+
+int isValidIRTwo();
+
+int isValidIRThree();
+
+int isValidIRFour();
+
+int isValidIRFive();
+
+int isValidIRSix();
 
 
 /**
