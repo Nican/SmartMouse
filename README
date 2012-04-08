@@ -1,2 +1,24 @@
 The source for the WPI SmartMouse robot, which will be entered into the Brown IEEE Challenge. 
-HI HENRIQUE
+
+
+Folder structure:
+ * CAD: Contain 3d model of the robot for reprap printing
+ * MapleCode: Alex's code for interfacing with the robot
+ * MazeGenerator: Trial Java code for analyzing the best way to find the fittest path
+ * MouseSimulator: Java code that goes with SmartMouse directory for reading standard i/o input, and making diagrams
+ * SmartMouse: Fake robot running on the local machine for trying out the algorithms
+ * mouse: Final code for the robot, needs to merge SmartMouse, MapleCode
+
+
+
+For setting to setup the repository:
+```
+echo "Cloning into github: "
+git clone git@github.com:Nican/SmartMouse.git smartmouse
+echo "Moving into new cloned git repo:"
+cd smartmouse
+echo "Initializing submodules (clones https://github.com/leaflabs/libmaple into the libmaple folder)"
+git submodule init
+echo "Downloads/updaing the submodules"
+git submodule update
+```

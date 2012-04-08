@@ -19,6 +19,7 @@ public class MazeDraw extends Component {
 		this.mouse = mouse;
 
 		this.setMaximumSize(new Dimension(35 * 16, 35 * 16));
+		this.setMinimumSize(this.getMaximumSize());
 	}
 
 	@Override
