@@ -64,7 +64,15 @@ int getEndoderTicks(struct timeval* time, char power) {
 	struct timeval diff;
 	gettimeofday(&now, NULL);
 
-	timersub(&now, time, &diff);
+	//timersub(&now, time, &diff);
+	//Make a comparison of the two times
+	diff.tv_sec = now.tv_sec - time->tv_sec;
+	diff.tv_usec = now.tv_usec - time->tv_usec;
+
+	if( diff.tv_usec < 0 ){
+		diff.tv_sec--;
+		diff.tv_usec += 1000000;
+	}
 
 	int usecs = diff.tv_sec * 1000000 + diff.tv_usec;
 	int ticks = ENCODER_PULSES_PER_REVOLUTION * power * usecs / (1000000 * 100);
