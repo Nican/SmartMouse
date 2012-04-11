@@ -1,10 +1,11 @@
 import java.awt.Point;
 import java.awt.geom.Point2D;
+import java.io.Closeable;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class Mouse {
+public class Mouse implements Closeable{
 
 	public static Runtime runtime = Runtime.getRuntime();
 	public Process process;
@@ -109,6 +110,11 @@ public class Mouse {
 		position.x = Integer.parseInt(values[0]);
 		position.y = Integer.parseInt(values[1]);
 		rotation = Double.parseDouble(values[2]);
+	}
+
+	@Override
+	public void close() throws IOException {
+		process.destroy();
 	}
 
 }
