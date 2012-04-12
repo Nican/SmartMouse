@@ -22,20 +22,25 @@ public class Mouse implements Closeable{
 	public MouseSensor backRightIR;
 	public MouseSensor backLeftIR;
 	private Simulator simulator;
-	
+
 	PrintStream outStream;
 
 	public Mouse(Simulator simulator) {
 		this.simulator = simulator;
 
+		String programPath = "../SmartMouse/Debug/SmartMouse";
+
+		if (System.getProperty("os.name").contains("Windows")) {
+			programPath += ".exe";
+		}
+
 		try {
-			process = runtime
-					.exec("../SmartMouse/Debug/SmartMouse");
+			process = runtime.exec(programPath);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		outStream = new PrintStream(process.getOutputStream());
 
 		frontIR = getNewSensor(1.0, 0.0, 0.0);
@@ -85,11 +90,9 @@ public class Mouse implements Closeable{
 			} else {
 				System.out.println(line);
 			}
-			
+
 			simulator.mazeDraw.repaint();
 		}
-		
-		
 
 	}
 
@@ -99,8 +102,9 @@ public class Mouse implements Closeable{
 		outStream.print(frontLeftIR.getTracedLineLength(simulator.maze) + ",");
 		outStream.print(backLeftIR.getTracedLineLength(simulator.maze) + ",");
 		outStream.print(backRightIR.getTracedLineLength(simulator.maze) + ",");
-		outStream.print(frontRightIR.getTracedLineLength(simulator.maze) + "\n");
-		
+		outStream
+				.print(frontRightIR.getTracedLineLength(simulator.maze) + "\n");
+
 		outStream.flush();
 	}
 

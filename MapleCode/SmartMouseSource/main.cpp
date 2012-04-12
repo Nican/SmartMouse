@@ -6,21 +6,11 @@
 //  SmartMouse Project
 //
 
-void init();
-
-void mapMaze();
-
-void solveMaze();
-
-
+#include "IO.h"
 int main(){
-    init(); //setups up robot variables and peripherals
-    
-    mapMaze(); //Commences mapping process
-    
+    setupIOPins();
     while(solveMaze()) ; //Solves maze over and over again until an error occurs
     
     return 1;
 }
 
-#include <iostream>

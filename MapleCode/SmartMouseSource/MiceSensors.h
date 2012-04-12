@@ -12,6 +12,8 @@
 #ifndef _MiceSensors_h
 #define _MiceSensors_h
 
+
+void setupMiceSensors();
 /**
  Returns distance traveled in the X direction, in mm, for the optical sensor #1 since last reading
  */
@@ -22,6 +24,8 @@ int getXOneDistanceChangeSinceLastRead();
  */
 
 int getYOneDistanceChangeSinceLastRead();
+
+int microsSinceLastReadOne();
 
 /**
  Returns total distance traveled in the X direction, in mm, for the optical sensor #2
@@ -34,7 +38,8 @@ int getXTwoDistanceChangeSinceLastRead();
 
 int getYTwoDistanceChangeSinceLastRead();
 
-
+//Time in microseconds since last read from mouse sensors
+int microsSinceLastReadTwo();
 
 
 
