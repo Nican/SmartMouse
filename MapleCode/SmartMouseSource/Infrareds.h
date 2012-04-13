@@ -43,6 +43,12 @@
 
 //Data sheet rated constants
 
+enum Ir_Reading_Mode {
+    low,
+    medium,
+    high,
+    super_high
+} IR_Reading_Mode;
 
 /**
  To be called outside to setup sensors
@@ -62,7 +68,7 @@ void setupIRTimer();
  */
 
 /**
- I forgot why I added this function. Don't call it.
+ I forgot why I added this function. Don't call it until I figure out why I called it.
 */
 void setIRReadingMode(IR_Reading_Mode readMode);
 
@@ -79,7 +85,7 @@ int readIRVoltage(int IRNum);
  @return the distance, in mm
  */
 
-int readIRVoltage(int IRNum);
+int readIRRange(int IRNum);
 
 
 int getLeftFrontIRRange();
@@ -96,17 +102,17 @@ int getRightRearIRRange();
 
 
 //Runs an analysis on each of the buffers holding the IR data to determine if the readings are stable. Returns 1 if they are, 0 if not
-int isValidIROne();
+int isValidLeftFront();
 
-int isValidIRTwo();
+int isValidLeftRear();
 
-int isValidIRThree();
+int isValidFrontLeft();
 
-int isValidIRFour();
+int isValidFrontRight();
 
-int isValidIRFive();
+int isValidRightFront();
 
-int isValidIRSix();
+int isValidRightRear();
 
 
 /**
