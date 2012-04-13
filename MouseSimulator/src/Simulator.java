@@ -1,9 +1,12 @@
-import java.awt.Dimension;
-
-import javax.swing.JFrame;
-
 import graph.Graph;
 import graph.MazeGenerator;
+
+import java.awt.Dimension;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.IOException;
+
+import javax.swing.JFrame;
 
 public class Simulator {
 
@@ -27,7 +30,20 @@ public class Simulator {
 
 		frame.setSize(new Dimension(512, 512));
 
-		while (true) {
+		frame.addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				try {
+					System.out.println("Closing mouse, since window closed");
+					mouse.close();
+					System.exit(0);
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+
+		while (frame.isShowing()) {
 			mouse.readFromProcess();
 		}
 

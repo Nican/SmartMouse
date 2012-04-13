@@ -1,10 +1,11 @@
 import java.awt.Point;
 import java.awt.geom.Point2D;
+import java.io.Closeable;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class Mouse {
+public class Mouse implements Closeable{
 
 	public static Runtime runtime = Runtime.getRuntime();
 	public Process process;
@@ -21,20 +22,25 @@ public class Mouse {
 	public MouseSensor backRightIR;
 	public MouseSensor backLeftIR;
 	private Simulator simulator;
-	
+
 	PrintStream outStream;
 
 	public Mouse(Simulator simulator) {
 		this.simulator = simulator;
 
+		String programPath = "../SmartMouse/Debug/SmartMouse";
+
+		if (System.getProperty("os.name").contains("Windows")) {
+			programPath += ".exe";
+		}
+
 		try {
-			process = runtime
-					.exec("../SmartMouse/Debug/SmartMouse");
+			process = runtime.exec(programPath);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		outStream = new PrintStream(process.getOutputStream());
 
 		frontIR = getNewSensor(1.0, 0.0, 0.0);
@@ -84,11 +90,9 @@ public class Mouse {
 			} else {
 				System.out.println(line);
 			}
-			
+
 			simulator.mazeDraw.repaint();
 		}
-		
-		
 
 	}
 
@@ -98,8 +102,9 @@ public class Mouse {
 		outStream.print(frontLeftIR.getTracedLineLength(simulator.maze) + ",");
 		outStream.print(backLeftIR.getTracedLineLength(simulator.maze) + ",");
 		outStream.print(backRightIR.getTracedLineLength(simulator.maze) + ",");
-		outStream.print(frontRightIR.getTracedLineLength(simulator.maze) + "\n");
-		
+		outStream
+				.print(frontRightIR.getTracedLineLength(simulator.maze) + "\n");
+
 		outStream.flush();
 	}
 
@@ -109,6 +114,11 @@ public class Mouse {
 		position.x = Integer.parseInt(values[0]);
 		position.y = Integer.parseInt(values[1]);
 		rotation = Double.parseDouble(values[2]);
+	}
+
+	@Override
+	public void close() throws IOException {
+		process.destroy();
 	}
 
 }
