@@ -1,6 +1,6 @@
 
 LIB_MAPLE_HOME = ../../libmaple
-export PATH=$PATH:../arm/bin
+# 	PATH=$PATH:../arm/bin
 
 include ../../libmaple/Makefile
 
@@ -17,6 +17,24 @@ $(BUILD_PATH)/Sensors.o: Sensors.cpp
 $(BUILD_PATH)/Ultrasonics.o: Ultrasonics.cpp
 	$(CXX) $(CFLAGS) $(CXXFLAGS) $(LIBMAPLE_INCLUDES) $(WIRISH_INCLUDES) -o $@ -c $<
 
-
-$(BUILD_PATH)/main.o: main.cpp $(BUILD_PATH)/IO.o $(BUILD_PATH)/Infrareds.o $(BUILD_PATH)/Sensors.o $(BUILD_PATH)/Ultrasonics.o
+$(BUILD_PATH)/DriveControl.o: DriveControl.cpp
 	$(CXX) $(CFLAGS) $(CXXFLAGS) $(LIBMAPLE_INCLUDES) $(WIRISH_INCLUDES) -o $@ -c $<
+
+$(BUILD_PATH)/newmain.o: main.cpp
+	$(CXX) $(CFLAGS) $(CXXFLAGS) $(LIBMAPLE_INCLUDES) $(WIRISH_INCLUDES) -o $@ -c $<
+
+#$(BUILD_PATH)/main.o: $(BUILD_PATH)/IO.o $(BUILD_PATH)/Infrareds.o $(BUILD_PATH)/Sensors.o $(BUILD_PATH)/Ultrasonics.o $(BUILD_PATH)/newmain.o $(BUILD_PATH)/DriveControl.o
+#	arm-none-eabi-ld -r $(BUILD_PATH)/IO.o \
+#		$(BUILD_PATH)/Infrareds.o $(BUILD_PATH)/Sensors.o \
+#		$(BUILD_PATH)/Ultrasonics.o $(BUILD_PATH)/newmain.o \
+#		$(BUILD_PATH)/DriveControl.o \
+#		-o $(BUILD_PATH)/main.o 
+
+$(BUILD_PATH)/$(BOARD).elf: $(BUILDDIRS) $(TGT_BIN)  $(BUILD_PATH)/IO.o $(BUILD_PATH)/Infrareds.o $(BUILD_PATH)/Sensors.o $(BUILD_PATH)/Ultrasonics.o $(BUILD_PATH)/newmain.o $(BUILD_PATH)/DriveControl.o
+	$(CXX) $(LDFLAGS) -o $@ $(TGT_BIN) \
+	$(BUILD_PATH)/IO.o \
+		$(BUILD_PATH)/Infrareds.o $(BUILD_PATH)/Sensors.o \
+		$(BUILD_PATH)/Ultrasonics.o $(BUILD_PATH)/newmain.o \
+		$(BUILD_PATH)/DriveControl.o \
+		-o $(BUILD_PATH)/main.o 
+		-Wl,-Map,$(BUILD_PATH)/$(BOARD).map
