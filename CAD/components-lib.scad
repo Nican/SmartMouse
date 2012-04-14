@@ -137,6 +137,7 @@ module ir_sensor(transparency, holes){
 			if(transparency==1)%translate([-7.2/2,0,0])cube([7.2,29.5,13.6+40]);
 			color("white")translate([-13.1/2-6,9.7,3.3])cube([6,10.1,6.3]);
 			color("grey")hull(){
+				translate([-8.5/2,0,0])cube([8.5,29.5,5.5]);
          		translate([0,-3.75,0])cylinder(r=3.75, h=2);
         			translate([0,37-3.75,0])cylinder(r=3.75, h=2);
        		}
@@ -147,14 +148,14 @@ module ir_sensor(transparency, holes){
 		}
 		
      	if(holes==0){
-       		translate([0,-3.75,-1])cylinder(r=3.2/2, h=2+2);
-      		translate([0,37-3.75,-1])cylinder(r=3.2/2, h=2+2);
+       		translate([0,-3.75,-1])cylinder(r=3.2/2, h=5.5+2);
+      		translate([0,37-3.75,-1])cylinder(r=3.2/2, h=5.5+2);
 		}
 	}
 }
 
 module optic_lens(){
-color("grey", 0.5)cube([16,30,5]);
+color("grey", 0.5)cube([17,31,5]);
 }
 
 //optic_lens();
