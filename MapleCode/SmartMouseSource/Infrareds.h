@@ -43,12 +43,7 @@
 
 //Data sheet rated constants
 
-enum Ir_Reading_Mode {
-    low,
-    medium,
-    high,
-    super_high
-} IR_Reading_Mode;
+
 
 /**
  To be called outside to setup sensors
@@ -70,7 +65,7 @@ void setupIRTimer();
 /**
  I forgot why I added this function. Don't call it until I figure out why I called it.
 */
-void setIRReadingMode(IR_Reading_Mode readMode);
+
 
 /**
  Returns the voltage based on an analog read from a given IR sensor

@@ -41,12 +41,7 @@
 
 #include "adc.h"
 
-enum adc_smp_rate {
-    low,
-    medium
-    high,
-    ultra-high
-};
+
 
 
 
@@ -127,13 +122,13 @@ int inline microsTimeSinceLastADCReadUltrasonicTwo();
  
 int inline readEnvelopeUltrasonicOne();
 
-/**
+
  returns the analog voltage on the envelope line at any time. directly calls adc_read
  @return the value returned by the adc (12-bit, 0-4095)
  
 int inline readEnvelopeUltrasonicTwo();
 
-/**
+
  Returns a pointer to a struct containing info to returns from the most recent envelope analysis
  
 
