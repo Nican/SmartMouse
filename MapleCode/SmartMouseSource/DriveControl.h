@@ -36,6 +36,25 @@ void setRightMotor(short value, short forward);
 
 void setLeftRight(short left, short leftForward, short right, short rightForward);
 
+void turn_90_degrees_right(){
+    
+}
+
+void turn_180_degrees(){
+    
+}
+
+void turn_90_degrees_left(){
+    
+}
+
+void turn_straight(){
+    
+}
+
+int isFinishedWithLastCommand(){
+    
+}
 
 
 #endif
