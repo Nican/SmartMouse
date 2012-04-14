@@ -14,24 +14,34 @@
 //maintain a buffer of 100 values sampled at 1 KHz, or 100 ms of data
 #define INFRARED_BUFFER_SIZE 100
 #define INFRARED_TIMER 3
+#define TIMER_OUTPUT_COMPARE 777
 #define INFRARED_TIMER_PRESCALER 72
 #define INFRARED_TIMER_OVERFLOW 1000
 #define INFRARED_TIMER_FREQUENCY 1000
+
+//ADC Channels for analog reading
+#define IRONE_ADC_CHANNEL 3
+#define IRTWO_ADC_CHANNEL 2
+#define IRTHREE_ADC_CHANNEL 0
+#define IRFOUR_ADC_CHANNEL 1
+#define IRFIVE_ADC_CHANNEL 10
+#define IRSIX_ADC_CHANNEL 11
 
 //Holds the most recent readings of the IR sensors
 short infraredOneBuffer[INFRARED_BUFFER_SIZE];
 short* IROneBufferFront = &infraredOneBuffer[0];
 short infraredTwoBuffer[INFRARED_BUFFER_SIZE];
-short* IROneBufferFront = &infraredOneBuffer[0];
+short* IRTwoBufferFront = &infraredOneBuffer[0];
 short infraredThreeBuffer[INFRARED_BUFFER_SIZE];
-short* IROneBufferFront = &infraredOneBuffer[0];
+short* IRThreeBufferFront = &infraredOneBuffer[0];
 short infraredFourBuffer[INFRARED_BUFFER_SIZE];
-short* IROneBufferFront = &infraredOneBuffer[0];
+short* IRFourBufferFront = &infraredOneBuffer[0];
 short infraredFiveBuffer[INFRARED_BUFFER_SIZE];
 short* IRFiveBufferFront = &infraredFiveBuffer[0];
 short infraredSixBuffer[INFRARED_BUFFER_SIZE];
 short* IRSixBufferFront = &infraredSixBuffer[0];
 
+/// NOTE TO SELF::: CREATE A METHOD TO INIT THE BUFFERS TO ZERO FOR THE START
 
 
 char OverSampleBits = 0;
@@ -64,7 +74,9 @@ void setupIRTimer(){
     IRTimer.setOverflow(INFRARED_TIMER_OVERFLOW);
    //Setups up IR timer to go off at 1 ms intervals to sample all ADC's
     IRTimer.setCompare(TIMER_CH1, 1);
-    timer.attachCompare1Interrupt(sampleIR());
+    IRTimer.attachCompare1Interrupt(sampleIR());
+    IRTimer.refresh();
+    IRTimer.resume();
 }
 
 void setupIRSensors(){
@@ -76,12 +88,100 @@ void setupIRSensors(){
  */
 void sampleIR(){
     //Low level call to adc_read
-    short IROne = adc_read(ADC1, IRONE_ADC_CHANNEL);
-    short IRTwo = adc_read(ADC1, IRTWO_ADC_CHANNEL);
-    short IRThree = adc_read(ADC1, IRTHREE_ADC_CHANNEL);
-    short IRFour = adc_read(ADC1, IRFOUR_ADC_CHANNEL);
-    short IRFive = adc_read(ADC1, IRFIVE_ADC_CHANNEL);
-    short IRSix = adc_read(ADC1, IRSIX_ADC_CHANNEL);
+    int count;
+    short IROne, IRTwo, IRThree, IRFour, IRFive, IRSix = 0;
+    
+    for(count = 0; count < (1 << OverSampleBits); count++){
+    IROne += adc_read(ADC1, IRONE_ADC_CHANNEL);
+    IRTwo += adc_read(ADC1, IRTWO_ADC_CHANNEL);
+    IRThree += adc_read(ADC1, IRTHREE_ADC_CHANNEL);
+    IRFour += adc_read(ADC1, IRFOUR_ADC_CHANNEL);
+    IRFive += adc_read(ADC1, IRFIVE_ADC_CHANNEL);
+    IRSix += adc_read(ADC1, IRSIX_ADC_CHANNEL);
+    }
+    
+    if(!OverSampleBits){
+        IROne >>= OverSampleBits;
+        IRTwo >>= OverSampleBits;
+        IRThree >>= OverSampleBits;
+        IRFour >>= OverSampleBits;
+        IRFive >>= OverSampleBits;
+        IRSix >>= OverSampleBits;
+    }
+    
     *IROneBufferFront = IROne;
+    *IRTwoBufferFront = IRTwo;
+    *IRThreeBufferFront = IRThree;
+    *IRFourBufferFront = IRFour;
+    *IRFiveBufferFront = IRFive;
+    *IRSixBufferFront = IRSix;
+    
     IROneBufferFront++;
+    IRTwoBufferFront++;
+    IRThreeBufferFront++;
+    IRFourBufferFront++;
+    IRFiveBufferFront++;
+    IRSixBufferFront++;
+    
+    if(IROneBufferFront == &infraredOneBuffer[INFRARED_BUFFER_SIZE]) IROneBufferFront = &infraredOneBuffer[0];
+    if(IRTwoBufferFront == &infraredTwoBuffer[INFRARED_BUFFER_SIZE]) IRTwoBufferFront = &infraredTwoBuffer[0];
+    if(IRThreeBufferFront == &infraredThreeBuffer[INFRARED_BUFFER_SIZE]) IRThreeBufferFront = &infraredThreeBuffer[0];
+    if(IRFourBufferFront == &infraredFourBuffer[INFRARED_BUFFER_SIZE]) IRFourBufferFront = &infraredFourBuffer[0];
+    if(IRFiveBufferFront == &infraredFiveBuffer[INFRARED_BUFFER_SIZE]) IRFiveBufferFront = &infraredFiveBuffer[0];
+    if(IRSixBufferFront == &infraredSixBuffer[INFRARED_BUFFER_SIZE]) IRSixBufferFront = &infraredSixBuffer[0];
+       
 }
+
+int getLeftFrontIRRange(){
+    int sum;
+    if(I);
+}
+
+int getLeftRearIRRange(){
+    
+}
+
+int getFrontLeftIRRange(){
+    
+}
+
+int getFrontRightIRRange(){
+    
+}
+
+int getRightFrontIRRange(){
+    
+}
+
+int getRightRearIRRange(){
+    
+}
+       
+
+
+int isValidLeftFront(){
+    
+}
+
+int isValidLeftRear(){
+    
+}
+
+int isValidFrontLeft(){
+    
+}
+
+int isValidFrontRight(){
+    
+}
+
+int isValidRightFront(){
+    
+}
+
+int isValidRightRear(){
+    
+}
+
+
+
