@@ -46,12 +46,12 @@ void ReadSensors(void) {
 }
 
 void SetRightWheel(char power) {
-	assert( power >= 0 && power <= 100);
+	assert( power >= -100 && power <= 100);
 	rightWheelPower = power;
 }
 
 void SetLeftWheel(char power) {
-	assert( power >= 0 && power <= 100);
+	assert( power >= -100 && power <= 100);
 	leftWheelPower = power;
 }
 
