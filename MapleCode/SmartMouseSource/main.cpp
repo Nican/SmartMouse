@@ -8,6 +8,7 @@
 
 #include "IO.h"
 #include "wirish.h"
+#define tile_size 180
 void setupIOPins();
 int solveMaze();
 int doshit = 1;

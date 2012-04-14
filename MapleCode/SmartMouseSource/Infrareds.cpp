@@ -164,27 +164,33 @@ int getRightRearIRRange(){
        
 
 int isValidLeftFront(){
-    return true;
+    if(*IROneBufferFront > MAXIMUM_ADC_LINEAR_READ || *IROneBufferFront < MINIMUM_ADC_LINEAR_READ) return false;
+    else return true;
 }
 
 int isValidLeftRear(){
-    return true;
+    if(*IRTwoBufferFront > MAXIMUM_ADC_LINEAR_READ || *IRTwoBufferFront < MINIMUM_ADC_LINEAR_READ) return false;
+    else return true;
 }
 
 int isValidFrontLeft(){
-    return true;
+    if(*IRThreeBufferFront > MAXIMUM_ADC_LINEAR_READ || *IRThreeBufferFront < MINIMUM_ADC_LINEAR_READ) return false;
+    else return true;
 }
 
 int isValidFrontRight(){
-    return true;
+    if(*IRFourBufferFront > MAXIMUM_ADC_LINEAR_READ || *IRFourBufferFront < MINIMUM_ADC_LINEAR_READ) return false;
+    else return true;
 }
 
 int isValidRightFront(){
-    return true;
+    if(*IRFiveBufferFront > MAXIMUM_ADC_LINEAR_READ || *IRFiveBufferFront < MINIMUM_ADC_LINEAR_READ) return false;
+    else return true;
 }
 
 int isValidRightRear(){
-    return true;
+    if(*IRSixBufferFront > MAXIMUM_ADC_LINEAR_READ || *IRSixBufferFront < MINIMUM_ADC_LINEAR_READ) return false;
+    else return true;
 }
 //Value in mm of the range for the sharp IR
 int inline Linearize(short adc_value){
