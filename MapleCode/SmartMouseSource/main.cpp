@@ -32,6 +32,7 @@ int main(){
         SerialUSB.println(getLeftFrontIRRange());
         SerialUSB.print("Right Front IR Range: ");
         SerialUSB.println(getRightFrontIRRange());
+        
         SerialUSB.print("Left Sonar");
         SerialUSB.println(getRangeUltrasonicOne());
         SerialUSB.print("Right Sonar");

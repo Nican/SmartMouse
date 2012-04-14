@@ -109,7 +109,7 @@ void sampleUltrasonics(void){
         }
         mostRecentUltrasonicVoltageOne = mostRecentOversampleReadingOne >> overSampleBits;
     
-        mostRecentUltrasonicRangeOne = mostRecentUltrasonicVoltageOne >> 2; //div 4
+        mostRecentUltrasonicRangeOne = (mostRecentUltrasonicVoltageOne * 10) >> 2; //div 4
         
     }
     else{
@@ -121,7 +121,7 @@ void sampleUltrasonics(void){
         
         mostRecentUltrasonicVoltageTwo = mostRecentUltrasonicVoltageTwo >> overSampleBits;
         
-        mostRecentUltrasonicRangeTwo = mostRecentUltrasonicVoltageTwo >> 2; //div 4
+        mostRecentUltrasonicRangeTwo = (mostRecentUltrasonicVoltageTwo * 10) >> 2; //div 4
     }
 }
 
