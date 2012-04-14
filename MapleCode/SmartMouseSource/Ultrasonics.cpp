@@ -102,28 +102,26 @@ void setupUltrasonics(){
 void sampleUltrasonics(void){
     int a;
     if(sampleUltraOneHuh){
-        mostRecentOversampleReadingOne = 0;
         lastADCOneReadMicros = micros();
         sampleUltraOneHuh = 0;
         for(a = 0; a < (1 << overSampleBits); a++){
-            mostRecentOversampleReadingOne += analogRead(20);
+            mostRecentOversampleReadingOne += analogRead(ULTRASONIC_ONE_VOLTAGE_PIN);
         }
         mostRecentUltrasonicVoltageOne = mostRecentOversampleReadingOne >> overSampleBits;
     
-        mostRecentUltrasonicRangeOne = (mostRecentUltrasonicVoltageOne * 10) >> 2; //div 4
+        mostRecentUltrasonicRangeOne = mostRecentUltrasonicVoltageOne >> 2; //div 4
         
     }
     else{
-        mostRecentOversampleReadingTwo = 0;
         lastADCTwoReadMicros = micros();
         sampleUltraOneHuh = 1;
         for(a = 0; a < (1 << overSampleBits); a++){
-            mostRecentOversampleReadingTwo += analogRead(28);
+            mostRecentOversampleReadingTwo += analogRead(ULTRASONIC_TWO_VOLTAGE_PIN);
         }
         
         mostRecentUltrasonicVoltageTwo = mostRecentUltrasonicVoltageTwo >> overSampleBits;
         
-        mostRecentUltrasonicRangeTwo = (mostRecentUltrasonicVoltageTwo * 120) >> 2; //div 4
+        mostRecentUltrasonicRangeTwo = mostRecentUltrasonicVoltageTwo >> 2; //div 4
     }
 }
 

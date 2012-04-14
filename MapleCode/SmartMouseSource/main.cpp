@@ -25,18 +25,17 @@ int main(){
     while(doshit){
         SerialUSB.println("RUNNING!!!!!");
         SerialUSB.print("Front left IR Range: ");
-        SerialUSB.println(getFrontLeftIRRange());
+        SerialUSB.println(analogRead(0));
         SerialUSB.print("Front right IR Range: ");
-        SerialUSB.println(getFrontRightIRRange());
+        SerialUSB.println(analogRead(1));
         SerialUSB.print("LeftFront IR Range: ");
         SerialUSB.println(getLeftFrontIRRange());
         SerialUSB.print("Right Front IR Range: ");
         SerialUSB.println(getRightFrontIRRange());
-        
         SerialUSB.print("Left Sonar");
-        SerialUSB.println(getRangeUltrasonicOne());
+        SerialUSB.println(analogRead(20));
         SerialUSB.print("Right Sonar");
-        SerialUSB.println(getRangeUltrasonicTwo());
+        SerialUSB.println(analogRead(28));
 
         delay(500);
         

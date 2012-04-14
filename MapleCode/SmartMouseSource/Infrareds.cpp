@@ -19,7 +19,6 @@
 #define INFRARED_TIMER_OVERFLOW 2000
 #define INFRARED_TIMER_FREQUENCY 1000
 #define VARIATION_THRESHOLD 20
-
 #define MINIMUM_ADC_LINEAR_READ 150
 #define MAXIMUM_ADC_LINEAR_READ 853
 
@@ -97,12 +96,12 @@ void sampleIR(void){
     short IROne = 0, IRTwo = 0, IRThree = 0, IRFour = 0, IRFive = 0, IRSix = 0;
     
     for(count = 0; count < (1 << OverSampleBits); count++){
-    IROne += adc_read(ADC1, IRONE_ADC_CHANNEL);
-    IRTwo += adc_read(ADC1, IRTWO_ADC_CHANNEL);
-    IRThree += adc_read(ADC1, IRTHREE_ADC_CHANNEL);
-    IRFour += adc_read(ADC1, IRFOUR_ADC_CHANNEL);
-    IRFive += adc_read(ADC1, IRFIVE_ADC_CHANNEL);
-    IRSix += adc_read(ADC1, IRSIX_ADC_CHANNEL);
+        IROne += analogRead(INFRARED_ONE_PIN);
+        IRTwo += analogRead(INFRARED_TWO_PIN);
+        IRThree += analogRead(INFRARED_THREE_PIN);
+        IRFour += adc_read(ADC1, IRFOUR_ADC_CHANNEL);
+        IRFive += adc_read(ADC1, IRFIVE_ADC_CHANNEL);
+        IRSix += adc_read(ADC1, IRSIX_ADC_CHANNEL);
     }
     
     if(!OverSampleBits){
