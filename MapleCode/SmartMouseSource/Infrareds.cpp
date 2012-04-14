@@ -74,7 +74,7 @@ void setupIRTimer(){
     IRTimer.pause();
     //Use channel 1 because I can >:D
     IRTimer.setCount(0);
-    IRTimer.setChannel1Mode(TIMER_OUTPUT_COMPARE);
+    IRTimer.setMode(TIMER_CH1, (timer_mode)TIMER_OUTPUT_COMPARE);
     IRTimer.setPrescaleFactor(INFRARED_TIMER_PRESCALER);
     IRTimer.setOverflow(INFRARED_TIMER_OVERFLOW);
    //Setups up IR timer to go off at 1 ms intervals to sample all ADC's
@@ -94,7 +94,7 @@ void setupIRSensors(){
 void sampleIR(void){
     //Low level call to adc_read
     int count;
-    short IROne, IRTwo, IRThree, IRFour, IRFive, IRSix = 0;
+    short IROne = 0, IRTwo = 0, IRThree = 0, IRFour = 0, IRFive = 0, IRSix = 0;
     
     for(count = 0; count < (1 << OverSampleBits); count++){
     IROne += adc_read(ADC1, IRONE_ADC_CHANNEL);
@@ -138,32 +138,31 @@ void sampleIR(void){
 }
 
 //IR One
-short getLeftFrontIRRange(){
+int getLeftFrontIRRange(){
     return Linearize(*IROneBufferFront);
 }
 //IR Two
-short getLeftRearIRRange(){
+int getLeftRearIRRange(){
     return Linearize(*IRTwoBufferFront);
 }
 //IR Three
-short getFrontLeftIRRange(){
+int getFrontLeftIRRange(){
     return Linearize(*IRThreeBufferFront);
 }
 // IR Four
-short getFrontRightIRRange(){
+int getFrontRightIRRange(){
     return Linearize(*IRFourBufferFront);
 }
 // IRFive
-short getRightFrontIRRange(){
+int getRightFrontIRRange(){
     return Linearize(*IRFiveBufferFront);
 }
 //IR Six
-short getRightRearIRRange(){
+int getRightRearIRRange(){
     return Linearize(*IRSixBufferFront);
 }
        
 
-#define true 1
 int isValidLeftFront(){
     return true;
 }
@@ -196,7 +195,7 @@ int inline Linearize(short adc_value){
         return 40; //more than linear, no equation
     }
     else{
-        return 5000 / ((adc_value * 25) / 606 - 21)
+        return 5000 / (((int)adc_value * 25) / 606 - 21);
     }
 }
 

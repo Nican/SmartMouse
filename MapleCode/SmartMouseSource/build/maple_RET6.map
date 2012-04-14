@@ -3299,7 +3299,7 @@ END GROUP
  .debug_loc     0x00008daf      0x7bb /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
  .debug_loc     0x0000956a      0x812 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
 
-.debug_macinfo  0x00000000   0x159177
+.debug_macinfo  0x00000000   0x159173
  *(.debug_macinfo)
  .debug_macinfo
                 0x00000000     0x47d7 build/../../libmaple/libmaple/adc.o
@@ -3414,7 +3414,7 @@ END GROUP
  .debug_macinfo
                 0x00142217    0x12287 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
  .debug_macinfo
-                0x0015449e     0x4cd9 build/main.o
+                0x0015449e     0x4cd5 build/main.o
 
 .debug_weaknames
  *(.debug_weaknames)

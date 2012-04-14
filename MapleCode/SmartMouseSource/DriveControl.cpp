@@ -20,16 +20,41 @@ void setupDriveControlPins(){
     pinMode(RIGHT_FORWARD_PIN, OUTPUT);
     pinMode(RIGHT_REVERSE_PIN, OUTPUT);
     
+    pwmWrite(LEFT_ENABLE_PIN, 0);
+    pwmWrite(RIGHT_ENABLE_PIN, 0);
+    digitalWrite(LEFT_FORWARD_PIN, HIGH);
+    digitalWrite(LEFT_REVERSE_PIN, LOW);
+    digitalWrite(RIGHT_FORWARD_PIN, HIGH);
+    digitalWrite(RIGHT_REVERSE_PIN, LOW);
 }
 
 void setLeftMotor(short value, short forwards){
     leftPWMOut = value;
     leftForward = forwards;
+    
+    //Update direction
+    if(leftForward){
+        digitalWrite(LEFT_FORWARD_PIN, HIGH);
+        digitalWrite(LEFT_REVERSE_PIN, LOW);
+    }
+    else{
+        digitalWrite(LEFT_REVERSE_PIN, HIGH);
+        digitalWrite(LEFT_FORWARD_PIN, LOW);
+    }
+    pwmWrite(LEFT_ENABLE_PIN, value);
 }
 
 void setRightMotor(short value, short forwards){
     rightPWMOut = value;
     rightForward = forwards;
+    
+    if(rightForward){
+        digitalWrite(RIGHT_FORWARD_PIN, HIGH);
+        digitalWrite(RIGHT_REVERSE_PIN, LOW);
+    }
+    else{
+        
+    }
 }
 
 void setLeftRight(short left, short right){

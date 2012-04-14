@@ -51,14 +51,13 @@ unsigned int lastADCOneReadMicros = 0;
 
 char overSampleBits = 2; //Holds the number of bits to oversample
 
-char sampleUltraOneHuh 1; //
+char sampleUltraOneHuh = 1; //
 
 HardwareTimer ultrasonicTimer(PULSING_TIMER_NUM);
 
 
 #ifdef USE_ANALOG_ENVELOPE
 
-void sampleUltrasonics(void);
 
 short[ULTRASONIC_ENVELOPE_BUFFER_SIZE] ultrasonicOneBuffer;
 
@@ -66,14 +65,16 @@ short[ULTRASONIC_ENVELOPE_BUFFER_SIZE] ultrasonicOneBuffer;
 
 #endif
 
+void sampleUltrasonics(void);
+
 void setUltrasonicOversampleRate(int bitsOverSample){
     overSampleBits = bitsOverSample;
 }
 
 void setupUltrasonicPins(){
-    pinMode(ULTRASONIC_ONE_VOLTAGE_PIN, ANALOG_INPUT);
-    pinMode(ULTRASONIC_TWO_VOLTAGE_PIN, ANALOG_INPUT);
-    pinmode(ULTRASONIC_ONE_ENABLE_PIN, OUTPUT);
+    pinMode(ULTRASONIC_ONE_VOLTAGE_PIN, INPUT_ANALOG);
+    pinMode(ULTRASONIC_TWO_VOLTAGE_PIN, INPUT_ANALOG);
+    pinMode(ULTRASONIC_ONE_ENABLE_PIN, OUTPUT);
     pinMode(ULTRASONIC_TWO_ENABLE_PIN, OUTPUT);
     adc_set_sample_rate(ADC2, ADC_SMPR_13_5); //sets ultrasonic ADC to sample much faster
     digitalWrite(ULTRASONIC_ONE_VOLTAGE_PIN, LOW);
@@ -82,11 +83,11 @@ void setupUltrasonicPins(){
 
 
 void setupUltrasonicTimer(){
-    ultrasonicTimer.setMode(PULSING_TIMER_CHAN);
     ultrasonicTimer.pause();
     ultrasonicTimer.setCount(0);
     ultrasonicTimer.setPrescaleFactor(ma_prescaler);
     ultrasonicTimer.setOverflow(ma_overflow);
+    ultrasonicTimer.setMode(PULSING_TIMER_CHAN, (timer_mode)TIMER_OUTPUT_COMPARE);
     ultrasonicTimer.setCompare(PULSING_TIMER_CHAN, 1);
     ultrasonicTimer.attachInterrupt(PULSING_TIMER_CHAN, sampleUltrasonics);
     ultrasonicTimer.refresh();
@@ -120,7 +121,7 @@ void sampleUltrasonics(void){
         
         mostRecentUltrasonicVoltageTwo = mostRecentUltrasonicVoltageTwo >> overSampleBits;
         
-        mostRecentUltrasonicRangeTWO = mostRecentUltrasonicVoltageTwo >> 2; //div 4
+        mostRecentUltrasonicRangeTwo = mostRecentUltrasonicVoltageTwo >> 2; //div 4
     }
 }
 

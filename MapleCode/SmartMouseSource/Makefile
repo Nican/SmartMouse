@@ -1,6 +1,6 @@
 
 LIB_MAPLE_HOME = ../../libmaple
-PATH=$PATH:../arm/bin
+export PATH=$PATH:../arm/bin
 
 include ../../libmaple/Makefile
 
