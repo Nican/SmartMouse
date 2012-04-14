@@ -10,6 +10,7 @@
 
 #include "robotlogic.h"
 #include "robot.h"
+#include "mazelogic.h"
 #include "maze.h"
 
 #include <math.h>
@@ -17,6 +18,53 @@
 
 Point position = { .x = ROBOT_START_X, .y = ROBOT_START_Y };
 double rotation = M_PI;
+
+int isRotating = 0;
+double rotateTo = 0;
+
+void CalculateRotation(Point robotPosition, MazePoint delta) {
+
+	MazePoint mazePosition = GetBlock(robotPosition);
+
+	if (delta.x < 0)
+		mazePosition.x -= 1;
+	if (delta.y < 0)
+		mazePosition.y -= 1;
+
+	int direction = delta.x != 0 ? EASTWALL : SOUTHWALL;
+	unsigned int maxDistance = (MAZE_BLOCK - ROBOT_SIZE) / 2;
+
+	if (wallInfo[mazePosition.x][mazePosition.y][direction] > 50
+			&& GetFrontIR() < maxDistance) {
+
+		isRotating = 1;
+		rotateTo = fmod(rotateTo - M_PI_2, 2.0 * M_PI);
+		//rotateTo %= 2.0 * M_PI;
+		SetRightWheel(-10);
+		SetLeftWheel(10);
+	}
+
+}
+
+void UpdateAI(void){
+
+	if (isRotating == 1) {
+
+		if (fabs(rotation - rotateTo) < 0.05) {
+			isRotating = 0;
+			SetRightWheel(50);
+			SetLeftWheel(50);
+		}
+
+		return;
+	}
+
+}
+
+
+int CanReadSensors(void){
+	return isRotating == 0;
+}
 
 /**
  * Integrating the encoder counts to find the new robot position
