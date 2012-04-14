@@ -105,7 +105,7 @@ void sampleUltrasonics(void){
         lastADCOneReadMicros = micros();
         sampleUltraOneHuh = 0;
         for(a = 0; a < (1 << overSampleBits); a++){
-            mostRecentOversampleReadingOne += adc_read(ADC2, ULTRASONIC_ONE_CHANNEL);
+            mostRecentOversampleReadingOne += analogRead(20);
         }
         mostRecentUltrasonicVoltageOne = mostRecentOversampleReadingOne >> overSampleBits;
     
@@ -116,7 +116,7 @@ void sampleUltrasonics(void){
         lastADCTwoReadMicros = micros();
         sampleUltraOneHuh = 1;
         for(a = 0; a < (1 << overSampleBits); a++){
-            mostRecentOversampleReadingTwo += adc_read(ADC2, ULTRASONIC_TWO_CHANNEL);
+            mostRecentOversampleReadingTwo += analogRead(28);
         }
         
         mostRecentUltrasonicVoltageTwo = mostRecentUltrasonicVoltageTwo >> overSampleBits;
