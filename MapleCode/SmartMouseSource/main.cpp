@@ -9,8 +9,14 @@
 #include "IO.h"
 #include "wirish.h"
 #define tile_size 180
-void setupIOPins();
-int solveMaze();
+
+// Force init to be called *first*, i.e. before static object allocation.
+// Otherwise, statically allocated objects that need libmaple may fail.
+__attribute__((constructor)) void premain() {
+    init();
+}
+
+
 int doshit = 1; //lol
 int main(){
     
@@ -30,6 +36,8 @@ int main(){
         SerialUSB.println(getRangeUltrasonicOne());
         SerialUSB.print("Right Sonar");
         SerialUSB.println(getRangeUltrasonicTwo());
+
+        delay(500);
         
     } //Solves maze over and over again until an error occurs
     
