@@ -134,11 +134,11 @@ int inline readVoltageUltrasonicTwo(){
     return mostRecentUltrasonicVoltageTwo;
 }
 
-int inline getRangeUltrasonicOne(){
+int getRangeUltrasonicOne(){
     return mostRecentUltrasonicRangeOne;
 }
 
-int inline getRangeUltrasonicTwo(){
+int getRangeUltrasonicTwo(){
     return mostRecentUltrasonicRangeTwo;
 }
 

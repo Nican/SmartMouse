@@ -92,7 +92,7 @@ int inline readVoltageUltrasonicTwo();
  returns range, in mm, for the most recently detected object with the ultrasonic sensor. Each ultrasonic reads at most once every 99 ms
  @return the range, in mm, of the detected object
  */
-int inline getRangeUltrasonicOne();
+int getRangeUltrasonicOne();
 
 /**
  returns range, in mm, for the most recently detected object with the ultrasonic sensor. Each ultrasonic reads at most once every 99 ms
@@ -100,7 +100,7 @@ int inline getRangeUltrasonicOne();
  @return the range, in mm, of the detected object
  
  */
-int inline getRangeUltrasonicTwo();
+int getRangeUltrasonicTwo();
 
 /**
  Returns the time since the last reading of the ultrasonic sensor was performed, and thus how old the reading is.
