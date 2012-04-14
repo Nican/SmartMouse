@@ -8,3 +8,7 @@
 
 #include "wirish.h"
 #include "MiceSensors.h"
+
+void setupMiceSensors(){
+    return;
+}
