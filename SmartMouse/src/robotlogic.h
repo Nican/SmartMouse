@@ -8,7 +8,12 @@
 #ifndef ROBOTLOGIC_H_
 #define ROBOTLOGIC_H_
 
+#include "maze.h"
+
 void ThinkEncoders(void);
 void PrintPosition(void);
+
+Point getPosition(void);
+double getRotation(void);
 
 #endif /* ROBOTLOGIC_H_ */

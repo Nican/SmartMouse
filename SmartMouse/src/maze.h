@@ -30,17 +30,18 @@
 #define MAZE_H_
 
 typedef struct  {
-	int x;
+	int x; //Absolute position of the robot, between [0, 1<<24]
 	int y;
 } Point;
 
 typedef struct {
-	char x;
-	char y;
+	int x; //Between [0,16]
+	int y; //Between [0,15]
 } MazePoint;
 
+#define MAZE_SIZE 16
 #define MAZE_TOTAL_SIZE (1<<24)
-#define MAZE_BLOCK (MAZE_TOTAL_SIZE / 16)
+#define MAZE_BLOCK (MAZE_TOTAL_SIZE / MAZE_SIZE)
 
 #define MAZE_BLOCK_MM 180 //Size of a maze block, in millimeters
 

@@ -82,6 +82,14 @@ void ThinkEncoders(void) {
 
 }
 
+Point getPosition(void){
+	return position;
+}
+
+double getRotation(void){
+	return rotation;
+}
+
 void PrintPosition(void) {
 	printf("po:%d,%d,%f\n", position.x, position.y, rotation);
 }
