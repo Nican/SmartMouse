@@ -6,7 +6,7 @@
 //  Copyright 2012 Worcester Polytechnic Institute. All rights reserved.
 //
 
-#include "DriveControl.cpp"
+#include "DriveControl.h"
 #include "wirish.h"
 
 short leftPWMOut, rightPWMOut;
