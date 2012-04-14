@@ -16,8 +16,12 @@
 #define INFRARED_TIMER 3
 #define TIMER_OUTPUT_COMPARE 777
 #define INFRARED_TIMER_PRESCALER 72
-#define INFRARED_TIMER_OVERFLOW 1000
+#define INFRARED_TIMER_OVERFLOW 2000
 #define INFRARED_TIMER_FREQUENCY 1000
+#define VARIATION_THRESHOLD 20
+
+#define MINIMUM_ADC_LINEAR_READ 150
+#define MAXIMUM_ADC_LINEAR_READ 853
 
 //ADC Channels for analog reading
 #define IRONE_ADC_CHANNEL 3
@@ -43,6 +47,7 @@ short* IRSixBufferFront = &infraredSixBuffer[0];
 
 /// NOTE TO SELF::: CREATE A METHOD TO INIT THE BUFFERS TO ZERO FOR THE START
 
+int inline Linearize(short adc_value);
 
 char OverSampleBits = 0;
 
@@ -74,7 +79,7 @@ void setupIRTimer(){
     IRTimer.setOverflow(INFRARED_TIMER_OVERFLOW);
    //Setups up IR timer to go off at 1 ms intervals to sample all ADC's
     IRTimer.setCompare(TIMER_CH1, 1);
-    IRTimer.attachCompare1Interrupt(sampleIR());
+    IRTimer.attachCompare1Interrupt(sampleIR);
     IRTimer.refresh();
     IRTimer.resume();
 }
@@ -86,7 +91,7 @@ void setupIRSensors(){
 /**
  To be used to sample all
  */
-void sampleIR(){
+void sampleIR(void){
     //Low level call to adc_read
     int count;
     short IROne, IRTwo, IRThree, IRFour, IRFive, IRSix = 0;
@@ -132,56 +137,67 @@ void sampleIR(){
        
 }
 
-int getLeftFrontIRRange(){
-    int sum;
-    if(I);
+//IR One
+short getLeftFrontIRRange(){
+    return Linearize(*IROneBufferFront);
 }
-
-int getLeftRearIRRange(){
-    
+//IR Two
+short getLeftRearIRRange(){
+    return Linearize(*IRTwoBufferFront);
 }
-
-int getFrontLeftIRRange(){
-    
+//IR Three
+short getFrontLeftIRRange(){
+    return Linearize(*IRThreeBufferFront);
 }
-
-int getFrontRightIRRange(){
-    
+// IR Four
+short getFrontRightIRRange(){
+    return Linearize(*IRFourBufferFront);
 }
-
-int getRightFrontIRRange(){
-    
+// IRFive
+short getRightFrontIRRange(){
+    return Linearize(*IRFiveBufferFront);
 }
-
-int getRightRearIRRange(){
-    
+//IR Six
+short getRightRearIRRange(){
+    return Linearize(*IRSixBufferFront);
 }
        
 
-
+#define true 1
 int isValidLeftFront(){
-    
+    return true;
 }
 
 int isValidLeftRear(){
-    
+    return true;
 }
 
 int isValidFrontLeft(){
-    
+    return true;
 }
 
 int isValidFrontRight(){
-    
+    return true;
 }
 
 int isValidRightFront(){
-    
+    return true;
 }
 
 int isValidRightRear(){
-    
+    return true;
 }
-
+//Value in mm of the range for the sharp IR
+int inline Linearize(short adc_value){
+    if(adc_value < MINIMUM_ADC_LINEAR_READ){
+        return 400; //Less than linear, no equation or guarantees
+    }
+    if(adc_value > MAXIMUM_ADC_LINEAR_READ){
+        return 40; //more than linear, no equation
+    }
+    else{
+        return 5000 / ((adc_value * 25) / 606 - 21)
+    }
+}
 
 

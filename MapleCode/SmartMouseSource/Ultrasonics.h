@@ -55,6 +55,9 @@ enum adc_smp_rate {
  */
 void setupUltrasonicPins();
 
+void setupUltrasonicTimer();
+
+void setupUltrasonics();
 
 /**
  Sets up a timer to automatically turn each ultrasonic on and off with a standard delay between each alternate reading of 100 ms
