@@ -14,7 +14,7 @@
 /**
  Call this function to set up all input/output from the Maple to sensors and actuators
  */
-void setupIOPins();
+void setupIOPins(void);
 
 
 #endif

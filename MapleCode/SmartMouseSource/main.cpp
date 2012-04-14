@@ -5,13 +5,16 @@
 //  Created by Alexander Ryan on 3/21/12.
 //  SmartMouse Project
 //
-int solveMaze();
 
 #include "IO.h"
-
+#include "wirish.h"
+void setupIOPins();
+int solveMaze();
 int main(){
+    
     setupIOPins();
-    while(solveMaze()) ; //Solves maze over and over again until an error occurs
+    
+    while(solveMaze()){ ; } //Solves maze over and over again until an error occurs
     
     return 1;
 }
