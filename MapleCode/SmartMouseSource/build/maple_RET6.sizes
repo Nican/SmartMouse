@@ -1,9 +1,0 @@
-   text	   data	    bss	    dec	    hex	filename
-    260	      0	      8	    268	    10c	build/DriveControl.o
-    878	     28	   1205	   2111	    83f	build/Infrareds.o
-     30	      0	      0	     30	     1e	build/IO.o
-    335	      4	      0	    339	    153	build/main.o
-      2	      0	      0	      2	      2	build/MiceSensors.o
-     18	      0	      0	     18	     12	build/Sensors.o
-    450	      6	     36	    492	    1ec	build/Ultrasonics.o
-   1973	     38	   1249	   3260	    cbc	(TOTALS)
