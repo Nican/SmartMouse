@@ -35,7 +35,10 @@ void loop(void){
 	ThinkEncoders();
 
 	//From the sensor readings, find out where the walls are
-	UpdateMaze();
+	if( CanReadSensors() )
+		UpdateMaze();
+
+	UpdateAI();
 
 	usleep(10000); //10000 = 0.01 seconds
 

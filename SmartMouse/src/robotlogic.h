@@ -10,6 +10,10 @@
 
 #include "maze.h"
 
+void UpdateAI(void);
+
+int CanReadSensors(void);
+
 void ThinkEncoders(void);
 void PrintPosition(void);
 

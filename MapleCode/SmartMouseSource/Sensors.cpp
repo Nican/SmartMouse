@@ -9,7 +9,7 @@
 #include "Sensors.h"
 
 void setupSensors(){
-    setupUltrasonicPins();
+    setupUltrasonics();
     setupIRSensors();
     setupMiceSensors();
     return;

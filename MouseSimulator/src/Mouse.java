@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-public class Mouse implements Closeable{
+public class Mouse implements Closeable {
 
 	public static Runtime runtime = Runtime.getRuntime();
 	public Process process;
@@ -87,12 +87,28 @@ public class Mouse implements Closeable{
 			if (key.equals("po:")) {
 				readPosition(value);
 				writeSensors();
+
+			} else if (key.equals("wv:")) {
+				readWall(value);
+
 			} else {
 				System.out.println(line);
 			}
 
 			simulator.mazeDraw.repaint();
 		}
+
+	}
+
+	private void readWall(String value) {
+		String values[] = value.split(",");
+
+		int x = Integer.parseInt(values[0]);
+		int y = Integer.parseInt(values[1]);
+		int dir = Integer.parseInt(values[2]);
+		int val = Integer.parseInt(values[3]);
+
+		simulator.mazeDraw.wallValues[x][y][dir] = val;
 
 	}
 

@@ -112,9 +112,9 @@ unsigned int GetRightBackIR() {
 }
 
 unsigned int GetLeftFrontIR() {
-	return backLeftIR;
+	return frontLeftIR;
 }
 
 unsigned int GetLeftBackIR() {
-	return backRightIR;
+	return backLeftIR;
 }
