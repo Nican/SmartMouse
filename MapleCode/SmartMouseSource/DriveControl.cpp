@@ -53,12 +53,15 @@ void setRightMotor(short value, short forwards){
         digitalWrite(RIGHT_REVERSE_PIN, LOW);
     }
     else{
-        
+        digitalWrite(RIGHT_REVERSE_PIN, HIGH);
+        digitalWrite(RIGHT_FORWARD_PIN, LOW);
     }
+    pwmWrite(RIGHT_ENABLE_PIN, value);
 }
 
-void setLeftRight(short left, short right){
-    
+void setLeftRight(short left, short leftForward, short right, short rightForward){
+    setLeftMotor(left, leftForward);
+    setRightMotor(right, rightForward);
 }
 
 void turn_90_degrees_right();

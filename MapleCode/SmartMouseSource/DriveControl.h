@@ -30,11 +30,11 @@
  */
 void setupDriveControlPins();
 
-void setLeftMotor(short value);
+void setLeftMotor(short value, short forward);
 
-void setRightMotor(short value);
+void setRightMotor(short value, short forward);
 
-void setLeftRight(short left, short right);
+void setLeftRight(short left, short leftForward, short right, short rightForward);
 
 
 

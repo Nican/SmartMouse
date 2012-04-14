@@ -10,11 +10,14 @@
 #include "wirish.h"
 void setupIOPins();
 int solveMaze();
+int doshit = 1;
 int main(){
     
     setupIOPins();
     
-    while(solveMaze()){ ; } //Solves maze over and over again until an error occurs
+    while(doshit){
+        SerialUSB.println("RUNNING!!!!!");   
+    } //Solves maze over and over again until an error occurs
     
     return 1;
 }

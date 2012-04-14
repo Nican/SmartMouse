@@ -124,12 +124,8 @@ Discarded input sections
  .bss           0x00000000        0x0 build/../../libmaple/libmaple/adc.o
  .text.adc_set_extsel
                 0x00000000       0x10 build/../../libmaple/libmaple/adc.o
- .text.adc_set_sample_rate
-                0x00000000       0x2e build/../../libmaple/libmaple/adc.o
  .text.adc_init
                 0x00000000       0x14 build/../../libmaple/libmaple/adc.o
- .text.adc_read
-                0x00000000       0x22 build/../../libmaple/libmaple/adc.o
  .text.bb_perip
                 0x00000000        0xc build/../../libmaple/libmaple/adc.o
  .text.adc_calibrate
@@ -371,26 +367,8 @@ Discarded input sections
  .text          0x00000000        0x0 build/../../libmaple/libmaple/timer.o
  .data          0x00000000        0x0 build/../../libmaple/libmaple/timer.o
  .bss           0x00000000        0x0 build/../../libmaple/libmaple/timer.o
- .text.nvic_irq_enable
-                0x00000000       0x1c build/../../libmaple/libmaple/timer.o
- .text.timer_oc_set_mode
-                0x00000000       0x38 build/../../libmaple/libmaple/timer.o
  .text.timer_init
                 0x00000000       0x14 build/../../libmaple/libmaple/timer.o
- .text.bb_perip
-                0x00000000        0xc build/../../libmaple/libmaple/timer.o
- .text.timer_attach_interrupt
-                0x00000000       0xb8 build/../../libmaple/libmaple/timer.o
- .text.timer_disable_irq
-                0x00000000       0x10 build/../../libmaple/libmaple/timer.o
- .text.timer_detach_interrupt
-                0x00000000       0x14 build/../../libmaple/libmaple/timer.o
- .text.timer_cc_enable
-                0x00000000       0x14 build/../../libmaple/libmaple/timer.o
- .text.timer_set_mode
-                0x00000000       0x90 build/../../libmaple/libmaple/timer.o
- .rodata.str1.1
-                0x00000000       0x57 build/../../libmaple/libmaple/timer.o
  .text          0x00000000        0x0 build/../../libmaple/libmaple/usart.o
  .data          0x00000000        0x0 build/../../libmaple/libmaple/usart.o
  .bss           0x00000000        0x0 build/../../libmaple/libmaple/usart.o
@@ -579,15 +557,7 @@ Discarded input sections
  .text          0x00000000        0x0 build/../../libmaple/wirish/Print.o
  .data          0x00000000        0x0 build/../../libmaple/wirish/Print.o
  .bss           0x00000000        0x0 build/../../libmaple/wirish/Print.o
- .text._ZN5Print5printEc
-                0x00000000        0xa build/../../libmaple/wirish/Print.o
- .text._ZN5Print5printEPKc
-                0x00000000        0xa build/../../libmaple/wirish/Print.o
- .text._ZN5Print7printlnEv
-                0x00000000       0x16 build/../../libmaple/wirish/Print.o
  .text._ZN5Print7printlnEc
-                0x00000000       0x12 build/../../libmaple/wirish/Print.o
- .text._ZN5Print7printlnEPKc
                 0x00000000       0x12 build/../../libmaple/wirish/Print.o
  .text._ZN5Print11printNumberEyh
                 0x00000000       0x7c build/../../libmaple/wirish/Print.o
@@ -735,37 +705,18 @@ Discarded input sections
  .bss           0x00000000        0x0 build/../../libmaple/wirish/HardwareTimer.o
  .text._ZN13HardwareTimer17getPrescaleFactorEv
                 0x00000000        0xc build/../../libmaple/wirish/HardwareTimer.o
- .text._ZN13HardwareTimer17setPrescaleFactorEj
-                0x00000000        0xc build/../../libmaple/wirish/HardwareTimer.o
  .text._ZN13HardwareTimer11getOverflowEv
                 0x00000000        0xa build/../../libmaple/wirish/HardwareTimer.o
- .text._ZN13HardwareTimer11setOverflowEt
-                0x00000000        0x8 build/../../libmaple/wirish/HardwareTimer.o
  .text._ZN13HardwareTimer8getCountEv
                 0x00000000        0xa build/../../libmaple/wirish/HardwareTimer.o
- .text._ZN13HardwareTimer8setCountEt
-                0x00000000       0x12 build/../../libmaple/wirish/HardwareTimer.o
  .text._ZN13HardwareTimer9setPeriodEj
                 0x00000000       0x60 build/../../libmaple/wirish/HardwareTimer.o
  .text._ZN13HardwareTimer10getCompareEi
                 0x00000000       0x12 build/../../libmaple/wirish/HardwareTimer.o
- .text._ZN13HardwareTimer10setCompareEit
-                0x00000000       0x1a build/../../libmaple/wirish/HardwareTimer.o
  .text._ZN13HardwareTimer15detachInterruptEi
-                0x00000000        0x8 build/../../libmaple/wirish/HardwareTimer.o
- .text._ZN13HardwareTimer15attachInterruptEiPFvvE
-                0x00000000        0x8 build/../../libmaple/wirish/HardwareTimer.o
- .text._ZN13HardwareTimer7setModeEi10timer_mode
                 0x00000000        0x8 build/../../libmaple/wirish/HardwareTimer.o
  .text._ZN13HardwareTimerC2Eh
                 0x00000000       0x80 build/../../libmaple/wirish/HardwareTimer.o
- .text.T.16     0x00000000        0x8 build/../../libmaple/wirish/HardwareTimer.o
- .text._ZN13HardwareTimer7refreshEv
-                0x00000000       0x12 build/../../libmaple/wirish/HardwareTimer.o
- .text._ZN13HardwareTimer6resumeEv
-                0x00000000       0x10 build/../../libmaple/wirish/HardwareTimer.o
- .text._ZN13HardwareTimer5pauseEv
-                0x00000000       0x10 build/../../libmaple/wirish/HardwareTimer.o
  .group         0x00000000        0x8 build/../../libmaple/wirish/usb_serial.o
  .text          0x00000000        0x0 build/../../libmaple/wirish/usb_serial.o
  .data          0x00000000        0x0 build/../../libmaple/wirish/usb_serial.o
@@ -815,8 +766,6 @@ Discarded input sections
  .text          0x00000000        0x0 build/../../libmaple/wirish/pwm.o
  .data          0x00000000        0x0 build/../../libmaple/wirish/pwm.o
  .bss           0x00000000        0x0 build/../../libmaple/wirish/pwm.o
- .text._Z8pwmWriteht
-                0x00000000       0x30 build/../../libmaple/wirish/pwm.o
  .text          0x00000000        0x0 build/../../libmaple/wirish/ext_interrupts.o
  .data          0x00000000        0x0 build/../../libmaple/wirish/ext_interrupts.o
  .bss           0x00000000        0x0 build/../../libmaple/wirish/ext_interrupts.o
@@ -831,18 +780,12 @@ Discarded input sections
  .bss           0x00000000        0x0 build/../../libmaple/wirish/wirish_digital.o
  .text._Z11digitalReadh
                 0x00000000       0x2c build/../../libmaple/wirish/wirish_digital.o
- .text._Z12digitalWritehh
-                0x00000000       0x30 build/../../libmaple/wirish/wirish_digital.o
  .text._Z9togglePinh
                 0x00000000       0x24 build/../../libmaple/wirish/wirish_digital.o
  .text._Z15isButtonPressedv
                 0x00000000       0x20 build/../../libmaple/wirish/wirish_digital.o
  .text._Z18waitForButtonPressj
                 0x00000000       0x40 build/../../libmaple/wirish/wirish_digital.o
- .text._Z7pinModeh13WiringPinMode
-                0x00000000       0x88 build/../../libmaple/wirish/wirish_digital.o
- .rodata.str1.1
-                0x00000000       0x2b build/../../libmaple/wirish/wirish_digital.o
  .group         0x00000000        0x8 build/../../libmaple/libraries/Servo/Servo.o
  .text          0x00000000        0x0 build/../../libmaple/libraries/Servo/Servo.o
  .data          0x00000000        0x0 build/../../libmaple/libraries/Servo/Servo.o
@@ -1233,11 +1176,74 @@ Discarded input sections
  .text          0x00000000        0x0 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
  .data          0x00000000        0x0 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
  .bss           0x00000000        0x0 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
+ .text          0x00000000        0x0 build/IO.o
+ .data          0x00000000        0x0 build/IO.o
+ .bss           0x00000000        0x0 build/IO.o
+ .group         0x00000000        0x8 build/Infrareds.o
+ .text          0x00000000        0x0 build/Infrareds.o
+ .data          0x00000000        0x0 build/Infrareds.o
+ .bss           0x00000000        0x0 build/Infrareds.o
+ .text._Z19setIROverSampleRatei
+                0x00000000        0xc build/Infrareds.o
+ .text._Z16isValidLeftFrontv
+                0x00000000        0x4 build/Infrareds.o
+ .text._Z15isValidLeftRearv
+                0x00000000        0x4 build/Infrareds.o
+ .text._Z16isValidFrontLeftv
+                0x00000000        0x4 build/Infrareds.o
+ .text._Z17isValidFrontRightv
+                0x00000000        0x4 build/Infrareds.o
+ .text._Z17isValidRightFrontv
+                0x00000000        0x4 build/Infrareds.o
+ .text._Z16isValidRightRearv
+                0x00000000        0x4 build/Infrareds.o
+ .text._Z9Linearizes
+                0x00000000       0x2e build/Infrareds.o
+ .text._Z19getRightRearIRRangev
+                0x00000000       0x10 build/Infrareds.o
+ .text._Z20getRightFrontIRRangev
+                0x00000000       0x10 build/Infrareds.o
+ .text._Z20getFrontRightIRRangev
+                0x00000000       0x10 build/Infrareds.o
+ .text._Z19getFrontLeftIRRangev
+                0x00000000       0x10 build/Infrareds.o
+ .text._Z18getLeftRearIRRangev
+                0x00000000       0x10 build/Infrareds.o
+ .text._Z19getLeftFrontIRRangev
+                0x00000000       0x10 build/Infrareds.o
+ .text          0x00000000        0x0 build/Sensors.o
+ .data          0x00000000        0x0 build/Sensors.o
+ .bss           0x00000000        0x0 build/Sensors.o
+ .text          0x00000000        0x0 build/Ultrasonics.o
+ .data          0x00000000        0x0 build/Ultrasonics.o
+ .bss           0x00000000        0x0 build/Ultrasonics.o
+ .text._Z27setUltrasonicOversampleRatei
+                0x00000000        0xc build/Ultrasonics.o
  .text          0x00000000        0x0 build/main.o
  .data          0x00000000        0x0 build/main.o
  .bss           0x00000000        0x0 build/main.o
  .text._Z9solveMazev
                 0x00000000        0x4 build/main.o
+ .text          0x00000000        0x0 build/DriveControl.o
+ .data          0x00000000        0x0 build/DriveControl.o
+ .bss           0x00000000        0x0 build/DriveControl.o
+ .text._Z13setRightMotorss
+                0x00000000       0x44 build/DriveControl.o
+ .text._Z12setLeftMotorss
+                0x00000000       0x44 build/DriveControl.o
+ .text._Z12setLeftRightssss
+                0x00000000       0x16 build/DriveControl.o
+ .bss.rightPWMOut
+                0x00000000        0x2 build/DriveControl.o
+ .bss.rightForward
+                0x00000000        0x2 build/DriveControl.o
+ .bss.leftPWMOut
+                0x00000000        0x2 build/DriveControl.o
+ .bss.leftForward
+                0x00000000        0x2 build/DriveControl.o
+ .text          0x00000000        0x0 build/MiceSensors.o
+ .data          0x00000000        0x0 build/MiceSensors.o
+ .bss           0x00000000        0x0 build/MiceSensors.o
  .text          0x00000000      0x370 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
  .data          0x00000000        0x0 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
  .bss           0x00000000        0x0 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
@@ -1591,7 +1597,13 @@ LOAD build/../../libmaple/libraries/FreeRTOS/utility/queue.o
 LOAD build/../../libmaple/libraries/FreeRTOS/utility/timers.o
 LOAD build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
 LOAD build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
+LOAD build/IO.o
+LOAD build/Infrareds.o
+LOAD build/Sensors.o
+LOAD build/Ultrasonics.o
 LOAD build/main.o
+LOAD build/DriveControl.o
+LOAD build/MiceSensors.o
 LOAD /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libstdc++.a
 LOAD /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libm.a
 START GROUP
@@ -1610,9 +1622,9 @@ LOAD /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/ar
 LOAD /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libm.a
 END GROUP
                 0x20010000                PROVIDE (__cs3_stack, (__cs3_region_start_ram + 0xf400))
-                0x080071e4                PROVIDE (__cs3_reset, _start)
+                0x08007a48                PROVIDE (__cs3_reset, _start)
 
-.text           0x08005000     0x237c
+.text           0x08005000     0x2be8
                 0x08005000                __text_start = .
  *(.stm32.interrupt_vector)
  .stm32.interrupt_vector
@@ -1623,486 +1635,604 @@ END GROUP
  .text.adc_foreach
                 0x0800511c       0x24 build/../../libmaple/libmaple/adc.o
                 0x0800511c                adc_foreach
+ .text.adc_set_sample_rate
+                0x08005140       0x2e build/../../libmaple/libmaple/adc.o
+                0x08005140                adc_set_sample_rate
+ .text.adc_read
+                0x0800516e       0x22 build/../../libmaple/libmaple/adc.o
+                0x0800516e                adc_read
  .text.dma_clear_isr_bits
-                0x08005140       0x10 build/../../libmaple/libmaple/dma.o
+                0x08005190       0x10 build/../../libmaple/libmaple/dma.o
  .text.dispatch_handler
-                0x08005150       0x1c build/../../libmaple/libmaple/dma.o
+                0x080051a0       0x1c build/../../libmaple/libmaple/dma.o
  .text.__irq_dma1_channel1
-                0x0800516c       0x10 build/../../libmaple/libmaple/dma.o
-                0x0800516c                __irq_dma1_channel1
- .text.__irq_dma1_channel2
-                0x0800517c       0x10 build/../../libmaple/libmaple/dma.o
-                0x0800517c                __irq_dma1_channel2
- .text.__irq_dma1_channel3
-                0x0800518c       0x10 build/../../libmaple/libmaple/dma.o
-                0x0800518c                __irq_dma1_channel3
- .text.__irq_dma1_channel4
-                0x0800519c       0x10 build/../../libmaple/libmaple/dma.o
-                0x0800519c                __irq_dma1_channel4
- .text.__irq_dma1_channel5
-                0x080051ac       0x10 build/../../libmaple/libmaple/dma.o
-                0x080051ac                __irq_dma1_channel5
- .text.__irq_dma1_channel6
                 0x080051bc       0x10 build/../../libmaple/libmaple/dma.o
-                0x080051bc                __irq_dma1_channel6
- .text.__irq_dma1_channel7
+                0x080051bc                __irq_dma1_channel1
+ .text.__irq_dma1_channel2
                 0x080051cc       0x10 build/../../libmaple/libmaple/dma.o
-                0x080051cc                __irq_dma1_channel7
- .text.__irq_dma2_channel1
+                0x080051cc                __irq_dma1_channel2
+ .text.__irq_dma1_channel3
                 0x080051dc       0x10 build/../../libmaple/libmaple/dma.o
-                0x080051dc                __irq_dma2_channel1
- .text.__irq_dma2_channel2
+                0x080051dc                __irq_dma1_channel3
+ .text.__irq_dma1_channel4
                 0x080051ec       0x10 build/../../libmaple/libmaple/dma.o
-                0x080051ec                __irq_dma2_channel2
- .text.__irq_dma2_channel3
+                0x080051ec                __irq_dma1_channel4
+ .text.__irq_dma1_channel5
                 0x080051fc       0x10 build/../../libmaple/libmaple/dma.o
-                0x080051fc                __irq_dma2_channel3
+                0x080051fc                __irq_dma1_channel5
+ .text.__irq_dma1_channel6
+                0x0800520c       0x10 build/../../libmaple/libmaple/dma.o
+                0x0800520c                __irq_dma1_channel6
+ .text.__irq_dma1_channel7
+                0x0800521c       0x10 build/../../libmaple/libmaple/dma.o
+                0x0800521c                __irq_dma1_channel7
+ .text.__irq_dma2_channel1
+                0x0800522c       0x10 build/../../libmaple/libmaple/dma.o
+                0x0800522c                __irq_dma2_channel1
+ .text.__irq_dma2_channel2
+                0x0800523c       0x10 build/../../libmaple/libmaple/dma.o
+                0x0800523c                __irq_dma2_channel2
+ .text.__irq_dma2_channel3
+                0x0800524c       0x10 build/../../libmaple/libmaple/dma.o
+                0x0800524c                __irq_dma2_channel3
  .text.__irq_dma2_channel4_5
-                0x0800520c       0x1c build/../../libmaple/libmaple/dma.o
-                0x0800520c                __irq_dma2_channel4_5
+                0x0800525c       0x1c build/../../libmaple/libmaple/dma.o
+                0x0800525c                __irq_dma2_channel4_5
  .text.clear_pending_msk
-                0x08005228       0x10 build/../../libmaple/libmaple/exti.o
+                0x08005278       0x10 build/../../libmaple/libmaple/exti.o
  .text.dispatch_single_exti
-                0x08005238       0x20 build/../../libmaple/libmaple/exti.o
+                0x08005288       0x20 build/../../libmaple/libmaple/exti.o
  .text.__irq_exti4
-                0x08005258        0x6 build/../../libmaple/libmaple/exti.o
-                0x08005258                __irq_exti4
+                0x080052a8        0x6 build/../../libmaple/libmaple/exti.o
+                0x080052a8                __irq_exti4
  .text.__irq_exti3
-                0x0800525e        0x6 build/../../libmaple/libmaple/exti.o
-                0x0800525e                __irq_exti3
+                0x080052ae        0x6 build/../../libmaple/libmaple/exti.o
+                0x080052ae                __irq_exti3
  .text.__irq_exti2
-                0x08005264        0x6 build/../../libmaple/libmaple/exti.o
-                0x08005264                __irq_exti2
+                0x080052b4        0x6 build/../../libmaple/libmaple/exti.o
+                0x080052b4                __irq_exti2
  .text.__irq_exti1
-                0x0800526a        0x6 build/../../libmaple/libmaple/exti.o
-                0x0800526a                __irq_exti1
+                0x080052ba        0x6 build/../../libmaple/libmaple/exti.o
+                0x080052ba                __irq_exti1
  .text.__irq_exti0
-                0x08005270        0x6 build/../../libmaple/libmaple/exti.o
-                0x08005270                __irq_exti0
- *fill*         0x08005276        0x2 00
+                0x080052c0        0x6 build/../../libmaple/libmaple/exti.o
+                0x080052c0                __irq_exti0
+ *fill*         0x080052c6        0x2 00
  .text.dispatch_extis
-                0x08005278       0x44 build/../../libmaple/libmaple/exti.o
+                0x080052c8       0x44 build/../../libmaple/libmaple/exti.o
  .text.__irq_exti15_10
-                0x080052bc        0x8 build/../../libmaple/libmaple/exti.o
-                0x080052bc                __irq_exti15_10
+                0x0800530c        0x8 build/../../libmaple/libmaple/exti.o
+                0x0800530c                __irq_exti15_10
  .text.__irq_exti9_5
-                0x080052c4        0x8 build/../../libmaple/libmaple/exti.o
-                0x080052c4                __irq_exti9_5
+                0x08005314        0x8 build/../../libmaple/libmaple/exti.o
+                0x08005314                __irq_exti9_5
  .text.gpio_set_mode
-                0x080052cc       0x56 build/../../libmaple/libmaple/gpio.o
-                0x080052cc                gpio_set_mode
+                0x0800531c       0x56 build/../../libmaple/libmaple/gpio.o
+                0x0800531c                gpio_set_mode
  .text.i2c_write
-                0x08005322        0x6 build/../../libmaple/libmaple/i2c.o
+                0x08005372        0x6 build/../../libmaple/libmaple/i2c.o
  .text.i2c_start_condition
-                0x08005328       0x14 build/../../libmaple/libmaple/i2c.o
+                0x08005378       0x14 build/../../libmaple/libmaple/i2c.o
  .text.i2c_stop_condition
-                0x0800533c       0x1c build/../../libmaple/libmaple/i2c.o
+                0x0800538c       0x1c build/../../libmaple/libmaple/i2c.o
  .text.i2c_enable_irq
-                0x08005358        0xc build/../../libmaple/libmaple/i2c.o
- .text.i2c_disable_irq
-                0x08005364        0xc build/../../libmaple/libmaple/i2c.o
- .text.i2c_disable_ack
-                0x08005370        0xc build/../../libmaple/libmaple/i2c.o
- .text.i2c_irq_error_handler
-                0x0800537c       0x2a build/../../libmaple/libmaple/i2c.o
- *fill*         0x080053a6        0x2 00
- .text.__irq_i2c1_er
                 0x080053a8        0xc build/../../libmaple/libmaple/i2c.o
-                0x080053a8                __irq_i2c1_er
- .text.__irq_i2c2_er
+ .text.i2c_disable_irq
                 0x080053b4        0xc build/../../libmaple/libmaple/i2c.o
-                0x080053b4                __irq_i2c2_er
+ .text.i2c_disable_ack
+                0x080053c0        0xc build/../../libmaple/libmaple/i2c.o
+ .text.i2c_irq_error_handler
+                0x080053cc       0x2a build/../../libmaple/libmaple/i2c.o
+ *fill*         0x080053f6        0x2 00
+ .text.__irq_i2c1_er
+                0x080053f8        0xc build/../../libmaple/libmaple/i2c.o
+                0x080053f8                __irq_i2c1_er
+ .text.__irq_i2c2_er
+                0x08005404        0xc build/../../libmaple/libmaple/i2c.o
+                0x08005404                __irq_i2c2_er
  .text.i2c_irq_handler
-                0x080053c0      0x158 build/../../libmaple/libmaple/i2c.o
+                0x08005410      0x158 build/../../libmaple/libmaple/i2c.o
  .text.__irq_i2c2_ev
-                0x08005518        0xc build/../../libmaple/libmaple/i2c.o
-                0x08005518                __irq_i2c2_ev
+                0x08005568        0xc build/../../libmaple/libmaple/i2c.o
+                0x08005568                __irq_i2c2_ev
  .text.__irq_i2c1_ev
-                0x08005524        0xc build/../../libmaple/libmaple/i2c.o
-                0x08005524                __irq_i2c1_ev
+                0x08005574        0xc build/../../libmaple/libmaple/i2c.o
+                0x08005574                __irq_i2c1_ev
  .text.bb_peri_set_bit
-                0x08005530        0xe build/../../libmaple/libmaple/rcc.o
- *fill*         0x0800553e        0x2 00
- .text.rcc_clk_enable
-                0x08005540       0x20 build/../../libmaple/libmaple/rcc.o
-                0x08005540                rcc_clk_enable
- .text.__exc_systick
-                0x08005560       0x1c build/../../libmaple/libmaple/systick.o
-                0x08005560                __exc_systick
- .text.timer_disable
-                0x0800557c       0x12 build/../../libmaple/libmaple/timer.o
-                0x0800557c                timer_disable
+                0x08005580        0xe build/../../libmaple/libmaple/rcc.o
  *fill*         0x0800558e        0x2 00
- .text.timer_foreach
-                0x08005590       0x58 build/../../libmaple/libmaple/timer.o
-                0x08005590                timer_foreach
- .text.dispatch_single_irq
-                0x080055e8       0x1a build/../../libmaple/libmaple/timer.o
- .text.dispatch_adv_brk
-                0x08005602        0x8 build/../../libmaple/libmaple/timer.o
- *fill*         0x0800560a        0x2 00
- .text.__irq_tim8_brk
-                0x0800560c        0xc build/../../libmaple/libmaple/timer.o
-                0x0800560c                __irq_tim8_brk
- .text.__irq_tim1_brk
-                0x08005618        0xc build/../../libmaple/libmaple/timer.o
-                0x08005618                __irq_tim1_brk
- .text.dispatch_adv_up
-                0x08005624        0x8 build/../../libmaple/libmaple/timer.o
- .text.__irq_tim8_up
-                0x0800562c        0xc build/../../libmaple/libmaple/timer.o
-                0x0800562c                __irq_tim8_up
- .text.__irq_tim1_up
-                0x08005638        0xc build/../../libmaple/libmaple/timer.o
-                0x08005638                __irq_tim1_up
- .text.dispatch_adv_trg_com
-                0x08005644       0x3a build/../../libmaple/libmaple/timer.o
- *fill*         0x0800567e        0x2 00
- .text.__irq_tim8_trg_com
-                0x08005680        0xc build/../../libmaple/libmaple/timer.o
-                0x08005680                __irq_tim8_trg_com
- .text.__irq_tim1_trg_com
-                0x0800568c        0xc build/../../libmaple/libmaple/timer.o
-                0x0800568c                __irq_tim1_trg_com
- .text.dispatch_adv_cc
-                0x08005698       0x5a build/../../libmaple/libmaple/timer.o
- *fill*         0x080056f2        0x2 00
- .text.__irq_tim8_cc
-                0x080056f4        0xc build/../../libmaple/libmaple/timer.o
-                0x080056f4                __irq_tim8_cc
- .text.__irq_tim1_cc
-                0x08005700        0xc build/../../libmaple/libmaple/timer.o
-                0x08005700                __irq_tim1_cc
- .text.dispatch_general
-                0x0800570c       0x82 build/../../libmaple/libmaple/timer.o
- *fill*         0x0800578e        0x2 00
- .text.__irq_tim5
-                0x08005790        0xc build/../../libmaple/libmaple/timer.o
-                0x08005790                __irq_tim5
- .text.__irq_tim4
-                0x0800579c        0xc build/../../libmaple/libmaple/timer.o
-                0x0800579c                __irq_tim4
- .text.__irq_tim3
-                0x080057a8        0xc build/../../libmaple/libmaple/timer.o
-                0x080057a8                __irq_tim3
- .text.__irq_tim2
-                0x080057b4        0xc build/../../libmaple/libmaple/timer.o
-                0x080057b4                __irq_tim2
- .text.dispatch_basic
-                0x080057c0        0x8 build/../../libmaple/libmaple/timer.o
- .text.__irq_tim7
-                0x080057c8        0xc build/../../libmaple/libmaple/timer.o
-                0x080057c8                __irq_tim7
- .text.__irq_tim6
-                0x080057d4        0xc build/../../libmaple/libmaple/timer.o
-                0x080057d4                __irq_tim6
- .text.rb_remove
-                0x080057e0       0x1a build/../../libmaple/libmaple/usart.o
- .text.usart_set_baud_rate
-                0x080057fa       0x34 build/../../libmaple/libmaple/usart.o
-                0x080057fa                usart_set_baud_rate
- .text.usart_disable
-                0x0800582e       0x22 build/../../libmaple/libmaple/usart.o
-                0x0800582e                usart_disable
- .text.usart_foreach
-                0x08005850       0x38 build/../../libmaple/libmaple/usart.o
-                0x08005850                usart_foreach
- .text.usart_tx
-                0x08005888       0x1c build/../../libmaple/libmaple/usart.o
-                0x08005888                usart_tx
- .text.usart_putudec
-                0x080058a4       0x44 build/../../libmaple/libmaple/usart.o
-                0x080058a4                usart_putudec
- .text.usart_irq
-                0x080058e8       0x3c build/../../libmaple/libmaple/usart.o
- .text.__irq_usart1
-                0x08005924        0xc build/../../libmaple/libmaple/usart.o
-                0x08005924                __irq_usart1
- .text.__irq_usart2
-                0x08005930        0xc build/../../libmaple/libmaple/usart.o
-                0x08005930                __irq_usart2
- .text.__irq_usart3
-                0x0800593c        0xc build/../../libmaple/libmaple/usart.o
-                0x0800593c                __irq_usart3
- .text.__irq_uart4
-                0x08005948        0xc build/../../libmaple/libmaple/usart.o
-                0x08005948                __irq_uart4
- .text.__irq_uart5
-                0x08005954        0xc build/../../libmaple/libmaple/usart.o
-                0x08005954                __irq_uart5
- .text.usart_init
-                0x08005960       0x44 build/../../libmaple/libmaple/usart.o
-                0x08005960                usart_init
+ .text.rcc_clk_enable
+                0x08005590       0x20 build/../../libmaple/libmaple/rcc.o
+                0x08005590                rcc_clk_enable
+ .text.__exc_systick
+                0x080055b0       0x1c build/../../libmaple/libmaple/systick.o
+                0x080055b0                __exc_systick
  .text.nvic_irq_enable
-                0x080059a4       0x1c build/../../libmaple/libmaple/util.o
+                0x080055cc       0x1c build/../../libmaple/libmaple/timer.o
+ .text.timer_oc_set_mode
+                0x080055e8       0x38 build/../../libmaple/libmaple/timer.o
+ .text.timer_disable
+                0x08005620       0x12 build/../../libmaple/libmaple/timer.o
+                0x08005620                timer_disable
+ *fill*         0x08005632        0x2 00
+ .text.timer_foreach
+                0x08005634       0x58 build/../../libmaple/libmaple/timer.o
+                0x08005634                timer_foreach
+ .text.dispatch_single_irq
+                0x0800568c       0x1a build/../../libmaple/libmaple/timer.o
+ .text.dispatch_adv_brk
+                0x080056a6        0x8 build/../../libmaple/libmaple/timer.o
+ *fill*         0x080056ae        0x2 00
+ .text.__irq_tim8_brk
+                0x080056b0        0xc build/../../libmaple/libmaple/timer.o
+                0x080056b0                __irq_tim8_brk
+ .text.__irq_tim1_brk
+                0x080056bc        0xc build/../../libmaple/libmaple/timer.o
+                0x080056bc                __irq_tim1_brk
+ .text.dispatch_adv_up
+                0x080056c8        0x8 build/../../libmaple/libmaple/timer.o
+ .text.__irq_tim8_up
+                0x080056d0        0xc build/../../libmaple/libmaple/timer.o
+                0x080056d0                __irq_tim8_up
+ .text.__irq_tim1_up
+                0x080056dc        0xc build/../../libmaple/libmaple/timer.o
+                0x080056dc                __irq_tim1_up
+ .text.dispatch_adv_trg_com
+                0x080056e8       0x3a build/../../libmaple/libmaple/timer.o
+ *fill*         0x08005722        0x2 00
+ .text.__irq_tim8_trg_com
+                0x08005724        0xc build/../../libmaple/libmaple/timer.o
+                0x08005724                __irq_tim8_trg_com
+ .text.__irq_tim1_trg_com
+                0x08005730        0xc build/../../libmaple/libmaple/timer.o
+                0x08005730                __irq_tim1_trg_com
+ .text.dispatch_adv_cc
+                0x0800573c       0x5a build/../../libmaple/libmaple/timer.o
+ *fill*         0x08005796        0x2 00
+ .text.__irq_tim8_cc
+                0x08005798        0xc build/../../libmaple/libmaple/timer.o
+                0x08005798                __irq_tim8_cc
+ .text.__irq_tim1_cc
+                0x080057a4        0xc build/../../libmaple/libmaple/timer.o
+                0x080057a4                __irq_tim1_cc
+ .text.dispatch_general
+                0x080057b0       0x82 build/../../libmaple/libmaple/timer.o
+ *fill*         0x08005832        0x2 00
+ .text.__irq_tim5
+                0x08005834        0xc build/../../libmaple/libmaple/timer.o
+                0x08005834                __irq_tim5
+ .text.__irq_tim4
+                0x08005840        0xc build/../../libmaple/libmaple/timer.o
+                0x08005840                __irq_tim4
+ .text.__irq_tim3
+                0x0800584c        0xc build/../../libmaple/libmaple/timer.o
+                0x0800584c                __irq_tim3
+ .text.__irq_tim2
+                0x08005858        0xc build/../../libmaple/libmaple/timer.o
+                0x08005858                __irq_tim2
+ .text.dispatch_basic
+                0x08005864        0x8 build/../../libmaple/libmaple/timer.o
+ .text.__irq_tim7
+                0x0800586c        0xc build/../../libmaple/libmaple/timer.o
+                0x0800586c                __irq_tim7
+ .text.__irq_tim6
+                0x08005878        0xc build/../../libmaple/libmaple/timer.o
+                0x08005878                __irq_tim6
+ .text.bb_perip
+                0x08005884        0xc build/../../libmaple/libmaple/timer.o
+ .text.timer_attach_interrupt
+                0x08005890       0xb8 build/../../libmaple/libmaple/timer.o
+                0x08005890                timer_attach_interrupt
+ .text.timer_disable_irq
+                0x08005948       0x10 build/../../libmaple/libmaple/timer.o
+ .text.timer_detach_interrupt
+                0x08005958       0x14 build/../../libmaple/libmaple/timer.o
+                0x08005958                timer_detach_interrupt
+ .text.timer_cc_enable
+                0x0800596c       0x14 build/../../libmaple/libmaple/timer.o
+ .text.timer_set_mode
+                0x08005980       0x90 build/../../libmaple/libmaple/timer.o
+                0x08005980                timer_set_mode
+ .text.rb_remove
+                0x08005a10       0x1a build/../../libmaple/libmaple/usart.o
+ .text.usart_set_baud_rate
+                0x08005a2a       0x34 build/../../libmaple/libmaple/usart.o
+                0x08005a2a                usart_set_baud_rate
+ .text.usart_disable
+                0x08005a5e       0x22 build/../../libmaple/libmaple/usart.o
+                0x08005a5e                usart_disable
+ .text.usart_foreach
+                0x08005a80       0x38 build/../../libmaple/libmaple/usart.o
+                0x08005a80                usart_foreach
+ .text.usart_tx
+                0x08005ab8       0x1c build/../../libmaple/libmaple/usart.o
+                0x08005ab8                usart_tx
+ .text.usart_putudec
+                0x08005ad4       0x44 build/../../libmaple/libmaple/usart.o
+                0x08005ad4                usart_putudec
+ .text.usart_irq
+                0x08005b18       0x3c build/../../libmaple/libmaple/usart.o
+ .text.__irq_usart1
+                0x08005b54        0xc build/../../libmaple/libmaple/usart.o
+                0x08005b54                __irq_usart1
+ .text.__irq_usart2
+                0x08005b60        0xc build/../../libmaple/libmaple/usart.o
+                0x08005b60                __irq_usart2
+ .text.__irq_usart3
+                0x08005b6c        0xc build/../../libmaple/libmaple/usart.o
+                0x08005b6c                __irq_usart3
+ .text.__irq_uart4
+                0x08005b78        0xc build/../../libmaple/libmaple/usart.o
+                0x08005b78                __irq_uart4
+ .text.__irq_uart5
+                0x08005b84        0xc build/../../libmaple/libmaple/usart.o
+                0x08005b84                __irq_uart5
+ .text.usart_init
+                0x08005b90       0x44 build/../../libmaple/libmaple/usart.o
+                0x08005b90                usart_init
+ .text.nvic_irq_enable
+                0x08005bd4       0x1c build/../../libmaple/libmaple/util.o
  .text.usart_putc
-                0x080059c0       0x1a build/../../libmaple/libmaple/util.o
+                0x08005bf0       0x1a build/../../libmaple/libmaple/util.o
  .text.usart_putstr
-                0x080059da       0x1a build/../../libmaple/libmaple/util.o
+                0x08005c0a       0x1a build/../../libmaple/libmaple/util.o
  .text._enable_error_usart
-                0x080059f4       0x34 build/../../libmaple/libmaple/util.o
-                0x080059f4                _enable_error_usart
- .text.T.15     0x08005a28       0x10 build/../../libmaple/libmaple/util.o
- .text.throb    0x08005a38       0x4c build/../../libmaple/libmaple/util.o
-                0x08005a38                throb
- .text.__error  0x08005a84       0x48 build/../../libmaple/libmaple/util.o
-                0x08005a84                __error
- .text._fail    0x08005acc       0x68 build/../../libmaple/libmaple/util.o
-                0x08005acc                _fail
+                0x08005c24       0x34 build/../../libmaple/libmaple/util.o
+                0x08005c24                _enable_error_usart
+ .text.T.15     0x08005c58       0x10 build/../../libmaple/libmaple/util.o
+ .text.throb    0x08005c68       0x4c build/../../libmaple/libmaple/util.o
+                0x08005c68                throb
+ .text.__error  0x08005cb4       0x48 build/../../libmaple/libmaple/util.o
+                0x08005cb4                __error
+ .text._fail    0x08005cfc       0x68 build/../../libmaple/libmaple/util.o
+                0x08005cfc                _fail
  .text.adc_disable
-                0x08005b34       0x12 build/../../libmaple/libmaple/util.o
- *fill*         0x08005b46        0x2 00
+                0x08005d64       0x12 build/../../libmaple/libmaple/util.o
+ *fill*         0x08005d76        0x2 00
  .text.usb_clear_ctr_rx
-                0x08005b48       0x18 build/../../libmaple/libmaple/usb/usb.o
+                0x08005d78       0x18 build/../../libmaple/libmaple/usb/usb.o
  .text.usb_clear_ctr_tx
-                0x08005b60       0x18 build/../../libmaple/libmaple/usb/usb.o
+                0x08005d90       0x18 build/../../libmaple/libmaple/usb/usb.o
  .text.usbSuspend
-                0x08005b78       0x24 build/../../libmaple/libmaple/usb/usb.o
-                0x08005b78                usbSuspend
+                0x08005da8       0x24 build/../../libmaple/libmaple/usb/usb.o
+                0x08005da8                usbSuspend
  .text.usbResumeInit
-                0x08005b9c       0x1c build/../../libmaple/libmaple/usb/usb.o
-                0x08005b9c                usbResumeInit
+                0x08005dcc       0x1c build/../../libmaple/libmaple/usb/usb.o
+                0x08005dcc                usbResumeInit
  .text.usbResume
-                0x08005bb8       0x90 build/../../libmaple/libmaple/usb/usb.o
-                0x08005bb8                usbResume
+                0x08005de8       0x90 build/../../libmaple/libmaple/usb/usb.o
+                0x08005de8                usbResume
  .text.usbIsConfigured
-                0x08005c48       0x14 build/../../libmaple/libmaple/usb/usb.o
-                0x08005c48                usbIsConfigured
+                0x08005e78       0x14 build/../../libmaple/libmaple/usb/usb.o
+                0x08005e78                usbIsConfigured
  .text.usbIsConnected
-                0x08005c5c       0x14 build/../../libmaple/libmaple/usb/usb.o
-                0x08005c5c                usbIsConnected
+                0x08005e8c       0x14 build/../../libmaple/libmaple/usb/usb.o
+                0x08005e8c                usbIsConnected
  .text.handle_in0
-                0x08005c70        0x4 build/../../libmaple/libmaple/usb/usb.o
+                0x08005ea0        0x4 build/../../libmaple/libmaple/usb/usb.o
  .text.set_rx_tx_status0
-                0x08005c74       0x38 build/../../libmaple/libmaple/usb/usb.o
+                0x08005ea4       0x38 build/../../libmaple/libmaple/usb/usb.o
  .text.__irq_usb_lp_can_rx0
-                0x08005cac      0x18c build/../../libmaple/libmaple/usb/usb.o
-                0x08005cac                __irq_usb_lp_can_rx0
+                0x08005edc      0x18c build/../../libmaple/libmaple/usb/usb.o
+                0x08005edc                __irq_usb_lp_can_rx0
  .text.usb_pma_ptr
-                0x08005e38        0xc build/../../libmaple/libmaple/usb/usb_reg_map.o
+                0x08006068        0xc build/../../libmaple/libmaple/usb/usb_reg_map.o
  .text.usb_copy_to_pma
-                0x08005e44       0x44 build/../../libmaple/libmaple/usb/usb_reg_map.o
-                0x08005e44                usb_copy_to_pma
+                0x08006074       0x44 build/../../libmaple/libmaple/usb/usb_reg_map.o
+                0x08006074                usb_copy_to_pma
  .text.usb_set_ep_rx_count
-                0x08005e88       0x40 build/../../libmaple/libmaple/usb/usb_reg_map.o
-                0x08005e88                usb_set_ep_rx_count
+                0x080060b8       0x40 build/../../libmaple/libmaple/usb/usb_reg_map.o
+                0x080060b8                usb_set_ep_rx_count
  .text.usb_set_ep_rx_stat
-                0x08005ec8       0x24 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x080060f8       0x24 build/../../libmaple/libmaple/usb/usb_cdcacm.o
  .text.usb_set_ep_tx_stat
-                0x08005eec       0x24 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x0800611c       0x24 build/../../libmaple/libmaple/usb/usb_cdcacm.o
  .text.usb_set_ep_type
-                0x08005f10       0x1c build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x08006140       0x1c build/../../libmaple/libmaple/usb/usb_cdcacm.o
  .text.usb_btable_ptr
-                0x08005f2c       0x18 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x0800615c       0x18 build/../../libmaple/libmaple/usb/usb_cdcacm.o
  .text.usb_set_ep_tx_addr
-                0x08005f44       0x12 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x08006174       0x12 build/../../libmaple/libmaple/usb/usb_cdcacm.o
  .text.usb_set_ep_rx_addr
-                0x08005f56       0x14 build/../../libmaple/libmaple/usb/usb_cdcacm.o
- *fill*         0x08005f6a        0x2 00
+                0x08006186       0x14 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+ *fill*         0x0800619a        0x2 00
  .text.vcomGetSetLineCoding
-                0x08005f6c       0x18 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x0800619c       0x18 build/../../libmaple/libmaple/usb/usb_cdcacm.o
  .text.usbDataSetup
-                0x08005f84       0x40 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x080061b4       0x40 build/../../libmaple/libmaple/usb/usb_cdcacm.o
  .text.usbNoDataSetup
-                0x08005fc4       0x64 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x080061f4       0x64 build/../../libmaple/libmaple/usb/usb_cdcacm.o
  .text.usbGetInterfaceSetting
-                0x08006028        0xe build/../../libmaple/libmaple/usb/usb_cdcacm.o
- *fill*         0x08006036        0x2 00
+                0x08006258        0xe build/../../libmaple/libmaple/usb/usb_cdcacm.o
+ *fill*         0x08006266        0x2 00
  .text.usbGetStringDescriptor
-                0x08006038       0x20 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x08006268       0x20 build/../../libmaple/libmaple/usb/usb_cdcacm.o
  .text.usbGetConfigDescriptor
-                0x08006058        0xc build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x08006288        0xc build/../../libmaple/libmaple/usb/usb_cdcacm.o
  .text.usbGetDeviceDescriptor
-                0x08006064        0xc build/../../libmaple/libmaple/usb/usb_cdcacm.o
- .text.usbInit  0x08006070       0x44 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x08006294        0xc build/../../libmaple/libmaple/usb/usb_cdcacm.o
+ .text.usbInit  0x080062a0       0x44 build/../../libmaple/libmaple/usb/usb_cdcacm.o
  .text.usbReset
-                0x080060b4      0x104 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x080062e4      0x104 build/../../libmaple/libmaple/usb/usb_cdcacm.o
  .text.usb_cdcacm_tx
-                0x080061b8       0x44 build/../../libmaple/libmaple/usb/usb_cdcacm.o
-                0x080061b8                usb_cdcacm_tx
+                0x080063e8       0x44 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x080063e8                usb_cdcacm_tx
  .text.Standard_GetConfiguration
-                0x080061fc       0x28 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x080061fc                Standard_GetConfiguration
+                0x0800642c       0x28 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x0800642c                Standard_GetConfiguration
  .text.Standard_SetConfiguration
-                0x08006224       0x38 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x08006224                Standard_SetConfiguration
+                0x08006454       0x38 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x08006454                Standard_SetConfiguration
  .text.Standard_GetInterface
-                0x0800625c       0x28 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x0800625c                Standard_GetInterface
+                0x0800648c       0x28 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x0800648c                Standard_GetInterface
  .text.Standard_SetInterface
-                0x08006284       0x48 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x08006284                Standard_SetInterface
+                0x080064b4       0x48 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x080064b4                Standard_SetInterface
  .text.Standard_GetStatus
-                0x080062cc       0xa4 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x080062cc                Standard_GetStatus
+                0x080064fc       0xa4 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x080064fc                Standard_GetStatus
  .text.Standard_SetEndPointFeature
-                0x08006370       0x84 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x08006370                Standard_SetEndPointFeature
+                0x080065a0       0x84 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x080065a0                Standard_SetEndPointFeature
  .text.Standard_SetDeviceFeature
-                0x080063f4       0x24 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x080063f4                Standard_SetDeviceFeature
+                0x08006624       0x24 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x08006624                Standard_SetDeviceFeature
  .text.Standard_GetDescriptorData
-                0x08006418       0x1c build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x08006418                Standard_GetDescriptorData
+                0x08006648       0x1c build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x08006648                Standard_GetDescriptorData
  .text.SetDeviceAddress
-                0x08006434       0x44 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x08006434                SetDeviceAddress
+                0x08006664       0x44 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x08006664                SetDeviceAddress
  .text.NOP_Process
-                0x08006478        0x2 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x08006478                NOP_Process
- *fill*         0x0800647a        0x2 00
+                0x080066a8        0x2 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x080066a8                NOP_Process
+ *fill*         0x080066aa        0x2 00
  .text.Post0_Process
-                0x0800647c       0x44 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x0800647c                Post0_Process
+                0x080066ac       0x44 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x080066ac                Post0_Process
  .text.Out0_Process
-                0x080064c0       0xd4 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x080064c0                Out0_Process
+                0x080066f0       0xd4 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x080066f0                Out0_Process
  .text.DataStageIn
-                0x08006594       0xac build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x080067c4       0xac build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
  .text.In0_Process
-                0x08006640       0x60 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x08006640                In0_Process
+                0x08006870       0x60 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x08006870                In0_Process
  .text.Standard_ClearFeature
-                0x080066a0       0xd4 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x080066a0                Standard_ClearFeature
+                0x080068d0       0xd4 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x080068d0                Standard_ClearFeature
  .text.Setup0_Process
-                0x08006774      0x304 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x08006774                Setup0_Process
+                0x080069a4      0x304 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x080069a4                Setup0_Process
  .text.UserToPMABufferCopy
-                0x08006a78       0x2e build/../../libmaple/libmaple/usb/usb_lib/usb_mem.o
-                0x08006a78                UserToPMABufferCopy
+                0x08006ca8       0x2e build/../../libmaple/libmaple/usb/usb_lib/usb_mem.o
+                0x08006ca8                UserToPMABufferCopy
  .text.PMAToUserBufferCopy
-                0x08006aa6       0x24 build/../../libmaple/libmaple/usb/usb_lib/usb_mem.o
-                0x08006aa6                PMAToUserBufferCopy
+                0x08006cd6       0x24 build/../../libmaple/libmaple/usb/usb_lib/usb_mem.o
+                0x08006cd6                PMAToUserBufferCopy
  .text.SetEPTxStatus
-                0x08006aca       0x2c build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
-                0x08006aca                SetEPTxStatus
+                0x08006cfa       0x2c build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
+                0x08006cfa                SetEPTxStatus
  .text.ClearDTOG_RX
-                0x08006af6       0x24 build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
-                0x08006af6                ClearDTOG_RX
+                0x08006d26       0x24 build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
+                0x08006d26                ClearDTOG_RX
  .text.ClearDTOG_TX
-                0x08006b1a       0x24 build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
-                0x08006b1a                ClearDTOG_TX
- *fill*         0x08006b3e        0x2 00
+                0x08006d4a       0x24 build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
+                0x08006d4a                ClearDTOG_TX
+ *fill*         0x08006d6e        0x2 00
  .text.GetEPTxAddr
-                0x08006b40       0x1c build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
-                0x08006b40                GetEPTxAddr
+                0x08006d70       0x1c build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
+                0x08006d70                GetEPTxAddr
  .text.GetEPRxAddr
-                0x08006b5c       0x1c build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
-                0x08006b5c                GetEPRxAddr
+                0x08006d8c       0x1c build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
+                0x08006d8c                GetEPRxAddr
  .text.SetEPTxCount
-                0x08006b78       0x1c build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
-                0x08006b78                SetEPTxCount
+                0x08006da8       0x1c build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
+                0x08006da8                SetEPTxCount
  .text.SetEPRxCount
-                0x08006b94       0x40 build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
-                0x08006b94                SetEPRxCount
+                0x08006dc4       0x40 build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
+                0x08006dc4                SetEPRxCount
  .text.ByteSwap
-                0x08006bd4        0xa build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
-                0x08006bd4                ByteSwap
- *fill*         0x08006bde        0x2 00
- .text          0x08006be0       0x60 build/../../libmaple/libmaple/exc.o
-                0x08006be0                __exc_nmi
-                0x08006be4                __exc_hardfault
-                0x08006be8                __exc_memmanage
-                0x08006bec                __exc_busfault
-                0x08006bf0                __exc_usagefault
+                0x08006e04        0xa build/../../libmaple/libmaple/usb/usb_lib/usb_regs.o
+                0x08006e04                ByteSwap
+ *fill*         0x08006e0e        0x2 00
+ .text          0x08006e10       0x60 build/../../libmaple/libmaple/exc.o
+                0x08006e10                __exc_nmi
+                0x08006e14                __exc_hardfault
+                0x08006e18                __exc_memmanage
+                0x08006e1c                __exc_busfault
+                0x08006e20                __exc_usagefault
  .text._ZN5Print5writeEPKc
-                0x08006c40       0x1c build/../../libmaple/wirish/Print.o
-                0x08006c40                _ZN5Print5writeEPKc
+                0x08006e70       0x1c build/../../libmaple/wirish/Print.o
+                0x08006e70                _ZN5Print5writeEPKc
  .text._ZN5Print5writeEPKvj
-                0x08006c5c       0x20 build/../../libmaple/wirish/Print.o
-                0x08006c5c                _ZN5Print5writeEPKvj
+                0x08006e8c       0x20 build/../../libmaple/wirish/Print.o
+                0x08006e8c                _ZN5Print5writeEPKvj
+ .text._ZN5Print5printEc
+                0x08006eac        0xa build/../../libmaple/wirish/Print.o
+                0x08006eac                _ZN5Print5printEc
+ .text._ZN5Print5printEPKc
+                0x08006eb6        0xa build/../../libmaple/wirish/Print.o
+                0x08006eb6                _ZN5Print5printEPKc
+ .text._ZN5Print7printlnEv
+                0x08006ec0       0x16 build/../../libmaple/wirish/Print.o
+                0x08006ec0                _ZN5Print7printlnEv
+ .text._ZN5Print7printlnEPKc
+                0x08006ed6       0x12 build/../../libmaple/wirish/Print.o
+                0x08006ed6                _ZN5Print7printlnEPKc
  .text._GLOBAL__I__Z9boardInitv
-                0x08006c7c      0x170 build/../../libmaple/wirish/boards/maple_RET6.o
+                0x08006ee8      0x170 build/../../libmaple/wirish/boards/maple_RET6.o
  .text._ZN5PrintC2Ev
-                0x08006dec        0xc build/../../libmaple/wirish/comm/HardwareSerial.o
-                0x08006dec                _ZN5PrintC2Ev
+                0x08007058        0xc build/../../libmaple/wirish/comm/HardwareSerial.o
+                0x08007058                _ZN5PrintC2Ev
  .text._ZN14HardwareSerialC1EP9usart_devhhj
-                0x08006df8       0x24 build/../../libmaple/wirish/comm/HardwareSerial.o
-                0x08006df8                _ZN14HardwareSerialC1EP9usart_devhhj
+                0x08007064       0x24 build/../../libmaple/wirish/comm/HardwareSerial.o
+                0x08007064                _ZN14HardwareSerialC1EP9usart_devhhj
  .text._ZN14HardwareSerial5writeEh
-                0x08006e1c       0x1a build/../../libmaple/wirish/comm/HardwareSerial.o
-                0x08006e1c                _ZN14HardwareSerial5writeEh
- *fill*         0x08006e36        0x2 00
+                0x08007088       0x1a build/../../libmaple/wirish/comm/HardwareSerial.o
+                0x08007088                _ZN14HardwareSerial5writeEh
+ *fill*         0x080070a2        0x2 00
  .text._GLOBAL__I_Serial1
-                0x08006e38       0x58 build/../../libmaple/wirish/comm/HardwareSerial.o
+                0x080070a4       0x58 build/../../libmaple/wirish/comm/HardwareSerial.o
+ .text._ZN13HardwareTimer17setPrescaleFactorEj
+                0x080070fc        0xc build/../../libmaple/wirish/HardwareTimer.o
+                0x080070fc                _ZN13HardwareTimer17setPrescaleFactorEj
+ .text._ZN13HardwareTimer11setOverflowEt
+                0x08007108        0x8 build/../../libmaple/wirish/HardwareTimer.o
+                0x08007108                _ZN13HardwareTimer11setOverflowEt
+ .text._ZN13HardwareTimer8setCountEt
+                0x08007110       0x12 build/../../libmaple/wirish/HardwareTimer.o
+                0x08007110                _ZN13HardwareTimer8setCountEt
+ .text._ZN13HardwareTimer10setCompareEit
+                0x08007122       0x1a build/../../libmaple/wirish/HardwareTimer.o
+                0x08007122                _ZN13HardwareTimer10setCompareEit
+ .text._ZN13HardwareTimer15attachInterruptEiPFvvE
+                0x0800713c        0x8 build/../../libmaple/wirish/HardwareTimer.o
+                0x0800713c                _ZN13HardwareTimer15attachInterruptEiPFvvE
+ .text._ZN13HardwareTimer7setModeEi10timer_mode
+                0x08007144        0x8 build/../../libmaple/wirish/HardwareTimer.o
+                0x08007144                _ZN13HardwareTimer7setModeEi10timer_mode
  .text._ZN13HardwareTimerC1Eh
-                0x08006e90       0x80 build/../../libmaple/wirish/HardwareTimer.o
-                0x08006e90                _ZN13HardwareTimerC1Eh
+                0x0800714c       0x80 build/../../libmaple/wirish/HardwareTimer.o
+                0x0800714c                _ZN13HardwareTimerC1Eh
  .text._GLOBAL__I__ZN13HardwareTimerC2Eh
-                0x08006f10       0x68 build/../../libmaple/wirish/HardwareTimer.o
+                0x080071cc       0x68 build/../../libmaple/wirish/HardwareTimer.o
+ .text.T.16     0x08007234        0x8 build/../../libmaple/wirish/HardwareTimer.o
+ .text._ZN13HardwareTimer7refreshEv
+                0x0800723c       0x12 build/../../libmaple/wirish/HardwareTimer.o
+                0x0800723c                _ZN13HardwareTimer7refreshEv
+ .text._ZN13HardwareTimer6resumeEv
+                0x0800724e       0x10 build/../../libmaple/wirish/HardwareTimer.o
+                0x0800724e                _ZN13HardwareTimer6resumeEv
+ .text._ZN13HardwareTimer5pauseEv
+                0x0800725e       0x10 build/../../libmaple/wirish/HardwareTimer.o
+                0x0800725e                _ZN13HardwareTimer5pauseEv
+ *fill*         0x0800726e        0x2 00
  .text._ZN9USBSerialC1Ev
-                0x08006f78       0x14 build/../../libmaple/wirish/usb_serial.o
-                0x08006f78                _ZN9USBSerialC1Ev
+                0x08007270       0x14 build/../../libmaple/wirish/usb_serial.o
+                0x08007270                _ZN9USBSerialC1Ev
  .text._ZN9USBSerial5writeEh
-                0x08006f8c       0x14 build/../../libmaple/wirish/usb_serial.o
-                0x08006f8c                _ZN9USBSerial5writeEh
+                0x08007284       0x14 build/../../libmaple/wirish/usb_serial.o
+                0x08007284                _ZN9USBSerial5writeEh
  .text._ZN9USBSerial5writeEPKvj
-                0x08006fa0       0x58 build/../../libmaple/wirish/usb_serial.o
-                0x08006fa0                _ZN9USBSerial5writeEPKvj
+                0x08007298       0x58 build/../../libmaple/wirish/usb_serial.o
+                0x08007298                _ZN9USBSerial5writeEPKvj
  .text._ZN9USBSerial5writeEPKc
-                0x08006ff8       0x1a build/../../libmaple/wirish/usb_serial.o
-                0x08006ff8                _ZN9USBSerial5writeEPKc
- *fill*         0x08007012        0x2 00
+                0x080072f0       0x1a build/../../libmaple/wirish/usb_serial.o
+                0x080072f0                _ZN9USBSerial5writeEPKc
+ *fill*         0x0800730a        0x2 00
  .text._GLOBAL__I__ZN9USBSerialC2Ev
-                0x08007014        0xc build/../../libmaple/wirish/usb_serial.o
+                0x0800730c        0xc build/../../libmaple/wirish/usb_serial.o
  .text.__cxa_pure_virtual
-                0x08007020        0x2 build/../../libmaple/wirish/cxxabi-compat.o
-                0x08007020                __cxa_pure_virtual
- *fill*         0x08007022        0x2 00
+                0x08007318        0x2 build/../../libmaple/wirish/cxxabi-compat.o
+                0x08007318                __cxa_pure_virtual
+ *fill*         0x0800731a        0x2 00
+ .text._Z8pwmWriteht
+                0x0800731c       0x30 build/../../libmaple/wirish/pwm.o
+                0x0800731c                _Z8pwmWriteht
+ .text._Z12digitalWritehh
+                0x0800734c       0x30 build/../../libmaple/wirish/wirish_digital.o
+                0x0800734c                _Z12digitalWritehh
+ .text._Z7pinModeh13WiringPinMode
+                0x0800737c       0x88 build/../../libmaple/wirish/wirish_digital.o
+                0x0800737c                _Z7pinModeh13WiringPinMode
  .text._ZN7TwoWireC1Ev
-                0x08007024       0x20 build/../../libmaple/libraries/Wire/Wire.o
-                0x08007024                _ZN7TwoWireC1Ev
+                0x08007404       0x20 build/../../libmaple/libraries/Wire/Wire.o
+                0x08007404                _ZN7TwoWireC1Ev
  .text._GLOBAL__I_i2c_delay
-                0x08007044        0xc build/../../libmaple/libraries/Wire/Wire.o
+                0x08007424        0xc build/../../libmaple/libraries/Wire/Wire.o
  .text.__exc_svc
-                0x08007050       0x24 build/../../libmaple/libraries/FreeRTOS/utility/port.o
-                0x08007050                __exc_svc
+                0x08007430       0x24 build/../../libmaple/libraries/FreeRTOS/utility/port.o
+                0x08007430                __exc_svc
  .text.__exc_pendsv
-                0x08007074       0x40 build/../../libmaple/libraries/FreeRTOS/utility/port.o
-                0x08007074                __exc_pendsv
+                0x08007454       0x40 build/../../libmaple/libraries/FreeRTOS/utility/port.o
+                0x08007454                __exc_pendsv
  .text.vTaskSwitchContext
-                0x080070b4       0xf0 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
-                0x080070b4                vTaskSwitchContext
+                0x08007494       0xf0 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
+                0x08007494                vTaskSwitchContext
  .text.vApplicationStackOverflowHook
-                0x080071a4        0x2 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
-                0x080071a4                vApplicationStackOverflowHook
- .text.main     0x080071a6        0x8 build/main.o
-                0x080071a6                main
- .text.memcmp   0x080071ae       0x22 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memcmp.o)
-                0x080071ae                memcmp
- .text.strlen   0x080071d0       0x10 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strlen.o)
-                0x080071d0                strlen
- .text          0x080071e0        0x2 ../../libmaple/support/ld/libcs3_stm32_high_density.a(stm32_isrs.o)
-                0x080071e0                __irq_rcc
-                0x080071e0                __exc_debug_monitor
-                0x080071e0                __irq_adc
-                0x080071e0                __irq_can_rx1
-                0x080071e0                __irq_spi2
-                0x080071e0                __irq_can_sce
-                0x080071e0                __irq_pvd
-                0x080071e0                __irq_tamper
-                0x080071e0                __default_handler
-                0x080071e0                __irq_wwdg
-                0x080071e0                __stm32reservedexception10
-                0x080071e0                __irq_flash
-                0x080071e0                __stm32reservedexception13
-                0x080071e0                __irq_rtc
-                0x080071e0                __irq_spi1
-                0x080071e0                __stm32reservedexception7
-                0x080071e0                __irq_usb_hp_can_tx
-                0x080071e0                __irq_rtcalarm
-                0x080071e0                __stm32reservedexception8
-                0x080071e0                __irq_usbwakeup
-                0x080071e0                __stm32reservedexception9
- *fill*         0x080071e2        0x2 00
- .text          0x080071e4       0x10 ../../libmaple/support/ld/libcs3_stm32_high_density.a(start.o)
-                0x080071e4                _start
- .text          0x080071f4       0xf4 ../../libmaple/support/ld/libcs3_stm32_high_density.a(start_c.o)
-                0x080071f4                __cs3_start_c
+                0x08007584        0x2 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
+                0x08007584                vApplicationStackOverflowHook
+ .text._Z11setupIOPinsv
+                0x08007586       0x1e build/IO.o
+                0x08007586                _Z11setupIOPinsv
+ .text._Z8sampleIRv
+                0x080075a4      0x180 build/Infrareds.o
+                0x080075a4                _Z8sampleIRv
+ .text._Z11setupIRPinsv
+                0x08007724       0x36 build/Infrareds.o
+                0x08007724                _Z11setupIRPinsv
+ *fill*         0x0800775a        0x2 00
+ .text._GLOBAL__I_infraredOneBuffer
+                0x0800775c        0xc build/Infrareds.o
+ .text._Z12setupIRTimerv
+                0x08007768       0x5c build/Infrareds.o
+                0x08007768                _Z12setupIRTimerv
+ .text._Z14setupIRSensorsv
+                0x080077c4        0xe build/Infrareds.o
+                0x080077c4                _Z14setupIRSensorsv
+ .text._Z12setupSensorsv
+                0x080077d2       0x12 build/Sensors.o
+                0x080077d2                _Z12setupSensorsv
+ .text._ZL6microsv
+                0x080077e4       0x30 build/Ultrasonics.o
+ .text._Z17sampleUltrasonicsv
+                0x08007814       0xb4 build/Ultrasonics.o
+                0x08007814                _Z17sampleUltrasonicsv
+ .text._Z20setupUltrasonicTimerv
+                0x080078c8       0x5c build/Ultrasonics.o
+                0x080078c8                _Z20setupUltrasonicTimerv
+ .text._Z19setupUltrasonicPinsv
+                0x08007924       0x44 build/Ultrasonics.o
+                0x08007924                _Z19setupUltrasonicPinsv
+ .text._Z16setupUltrasonicsv
+                0x08007968        0xe build/Ultrasonics.o
+                0x08007968                _Z16setupUltrasonicsv
+ *fill*         0x08007976        0x2 00
+ .text._GLOBAL__I_mostRecentUltrasonicVoltageOne
+                0x08007978        0xc build/Ultrasonics.o
+ .text.main     0x08007984       0x28 build/main.o
+                0x08007984                main
+ .text._Z21setupDriveControlPinsv
+                0x080079ac       0x66 build/DriveControl.o
+                0x080079ac                _Z21setupDriveControlPinsv
+ .text._Z16setupMiceSensorsv
+                0x08007a12        0x2 build/MiceSensors.o
+                0x08007a12                _Z16setupMiceSensorsv
+ .text.memcmp   0x08007a14       0x22 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memcmp.o)
+                0x08007a14                memcmp
+ .text.strlen   0x08007a36       0x10 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strlen.o)
+                0x08007a36                strlen
+ .text          0x08007a46        0x2 ../../libmaple/support/ld/libcs3_stm32_high_density.a(stm32_isrs.o)
+                0x08007a46                __irq_rcc
+                0x08007a46                __exc_debug_monitor
+                0x08007a46                __irq_adc
+                0x08007a46                __irq_can_rx1
+                0x08007a46                __irq_spi2
+                0x08007a46                __irq_can_sce
+                0x08007a46                __irq_pvd
+                0x08007a46                __irq_tamper
+                0x08007a46                __default_handler
+                0x08007a46                __irq_wwdg
+                0x08007a46                __stm32reservedexception10
+                0x08007a46                __irq_flash
+                0x08007a46                __stm32reservedexception13
+                0x08007a46                __irq_rtc
+                0x08007a46                __irq_spi1
+                0x08007a46                __stm32reservedexception7
+                0x08007a46                __irq_usb_hp_can_tx
+                0x08007a46                __irq_rtcalarm
+                0x08007a46                __stm32reservedexception8
+                0x08007a46                __irq_usbwakeup
+                0x08007a46                __stm32reservedexception9
+ .text          0x08007a48       0x10 ../../libmaple/support/ld/libcs3_stm32_high_density.a(start.o)
+                0x08007a48                _start
+ .text          0x08007a58       0xf4 ../../libmaple/support/ld/libcs3_stm32_high_density.a(start_c.o)
+                0x08007a58                __cs3_start_c
  .text.__libc_init_array
-                0x080072e8       0x4c /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-init.o)
-                0x080072e8                __libc_init_array
+                0x08007b4c       0x4c /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-init.o)
+                0x08007b4c                __libc_init_array
  *(.plt)
  *(.gnu.warning)
  *(.glue_7t)
@@ -2115,122 +2245,131 @@ END GROUP
  *(.gcc_except_table)
  *(.eh_frame_hdr)
  *(.eh_frame)
-                0x08007334                . = ALIGN (0x4)
+                0x08007b98                . = ALIGN (0x4)
  *(.init)
- .init          0x08007334        0x4 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
-                0x08007334                _init
- .init          0x08007338        0x8 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
-                0x08007340                . = ALIGN (0x4)
-                0x08007340                __preinit_array_start = .
+ .init          0x08007b98        0x4 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+                0x08007b98                _init
+ .init          0x08007b9c        0x8 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+                0x08007ba4                . = ALIGN (0x4)
+                0x08007ba4                __preinit_array_start = .
  *(.preinit_array)
-                0x08007340                __preinit_array_end = .
-                0x08007340                . = ALIGN (0x4)
-                0x08007340                __init_array_start = .
+                0x08007ba4                __preinit_array_end = .
+                0x08007ba4                . = ALIGN (0x4)
+                0x08007ba4                __init_array_start = .
  *(SORT(.init_array.*))
  *(.init_array)
- .init_array    0x08007340        0x4 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
- .init_array    0x08007344        0x4 build/../../libmaple/wirish/boards/maple_RET6.o
- .init_array    0x08007348        0x4 build/../../libmaple/wirish/comm/HardwareSerial.o
- .init_array    0x0800734c        0x4 build/../../libmaple/wirish/HardwareTimer.o
- .init_array    0x08007350        0x4 build/../../libmaple/wirish/usb_serial.o
- .init_array    0x08007354        0x4 build/../../libmaple/libraries/Wire/Wire.o
-                0x08007358                __init_array_end = .
-                0x08007358                . = ALIGN (0x4)
+ .init_array    0x08007ba4        0x4 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .init_array    0x08007ba8        0x4 build/../../libmaple/wirish/boards/maple_RET6.o
+ .init_array    0x08007bac        0x4 build/../../libmaple/wirish/comm/HardwareSerial.o
+ .init_array    0x08007bb0        0x4 build/../../libmaple/wirish/HardwareTimer.o
+ .init_array    0x08007bb4        0x4 build/../../libmaple/wirish/usb_serial.o
+ .init_array    0x08007bb8        0x4 build/../../libmaple/libraries/Wire/Wire.o
+ .init_array    0x08007bbc        0x4 build/Infrareds.o
+ .init_array    0x08007bc0        0x4 build/Ultrasonics.o
+                0x08007bc4                __init_array_end = .
+                0x08007bc4                . = ALIGN (0x4)
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT(.ctors.*))
  *crtend.o(.ctors)
-                0x08007358                . = ALIGN (0x4)
+                0x08007bc4                . = ALIGN (0x4)
  *(.fini)
- .fini          0x08007358        0x4 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
-                0x08007358                _fini
- .fini          0x0800735c        0x8 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
-                0x08007364                . = ALIGN (0x4)
-                0x08007364                __fini_array_start = .
+ .fini          0x08007bc4        0x4 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
+                0x08007bc4                _fini
+ .fini          0x08007bc8        0x8 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+                0x08007bd0                . = ALIGN (0x4)
+                0x08007bd0                __fini_array_start = .
  *(.fini_array)
- .fini_array    0x08007364        0x4 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ .fini_array    0x08007bd0        0x4 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
  *(SORT(.fini_array.*))
-                0x08007368                __fini_array_end = .
+                0x08007bd4                __fini_array_end = .
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT(.dtors.*))
  *crtend.o(.dtors)
-                0x08007368                . = ALIGN (0x4)
-                0x08007368                __cs3_regions = .
-                0x08007368        0x4 LONG 0x0
-                0x0800736c        0x4 LONG 0x8007580 __cs3_region_init_ram
-                0x08007370        0x4 LONG 0x20000c00 __cs3_region_start_ram
-                0x08007374        0x4 LONG 0x778 __cs3_region_init_size_ram
-                0x08007378        0x4 LONG 0x1c8 __cs3_region_zero_size_ram
+                0x08007bd4                . = ALIGN (0x4)
+                0x08007bd4                __cs3_regions = .
+                0x08007bd4        0x4 LONG 0x0
+                0x08007bd8        0x4 LONG 0x8007e70 __cs3_region_init_ram
+                0x08007bdc        0x4 LONG 0x20000c00 __cs3_region_start_ram
+                0x08007be0        0x4 LONG 0x798 __cs3_region_init_size_ram
+                0x08007be4        0x4 LONG 0x6a0 __cs3_region_zero_size_ram
 
-.v4_bx          0x0800737c        0x0
+.v4_bx          0x08007be8        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.rodata         0x08007380      0x1f4
+.rodata         0x08007be8      0x27d
  *(.rodata .rodata.* .gnu.linkonce.r.*)
- .rodata.GPIOA  0x08007380        0x4 build/../../libmaple/libmaple/gpio.o
-                0x08007380                GPIOA
- .rodata.GPIOB  0x08007384        0x4 build/../../libmaple/libmaple/gpio.o
-                0x08007384                GPIOB
- .rodata.GPIOC  0x08007388        0x4 build/../../libmaple/libmaple/gpio.o
-                0x08007388                GPIOC
- .rodata.GPIOD  0x0800738c        0x4 build/../../libmaple/libmaple/gpio.o
-                0x0800738c                GPIOD
+ .rodata.GPIOA  0x08007be8        0x4 build/../../libmaple/libmaple/gpio.o
+                0x08007be8                GPIOA
+ .rodata.GPIOB  0x08007bec        0x4 build/../../libmaple/libmaple/gpio.o
+                0x08007bec                GPIOB
+ .rodata.GPIOC  0x08007bf0        0x4 build/../../libmaple/libmaple/gpio.o
+                0x08007bf0                GPIOC
+ .rodata.GPIOD  0x08007bf4        0x4 build/../../libmaple/libmaple/gpio.o
+                0x08007bf4                GPIOD
  .rodata.enable_regs.1523
-                0x08007390        0xc build/../../libmaple/libmaple/rcc.o
+                0x08007bf8        0xc build/../../libmaple/libmaple/rcc.o
  .rodata.rcc_dev_table
-                0x0800739c       0x50 build/../../libmaple/libmaple/rcc.o
+                0x08007c04       0x50 build/../../libmaple/libmaple/rcc.o
  .rodata.str1.1
-                0x080073ec       0x3f build/../../libmaple/libmaple/util.o
+                0x08007c54       0x57 build/../../libmaple/libmaple/timer.o
+ .rodata.str1.1
+                0x08007cab       0x3f build/../../libmaple/libmaple/util.o
                                  0x42 (size before relaxing)
  .rodata.str1.1
-                0x0800742b       0x36 build/../../libmaple/libmaple/usb/usb.o
- *fill*         0x08007461        0x3 00
+                0x08007cea       0x36 build/../../libmaple/libmaple/usb/usb.o
  .rodata.usbVcomDescriptor_iProduct
-                0x08007464       0x14 build/../../libmaple/libmaple/usb/usb_cdcacm.o
-                0x08007464                usbVcomDescriptor_iProduct
+                0x08007d20       0x14 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x08007d20                usbVcomDescriptor_iProduct
  .rodata.usbVcomDescriptor_Device
-                0x08007478       0x14 build/../../libmaple/libmaple/usb/usb_cdcacm.o
-                0x08007478                usbVcomDescriptor_Device
+                0x08007d34       0x14 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x08007d34                usbVcomDescriptor_Device
  .rodata.usbVcomDescriptor_Config
-                0x0800748c       0x44 build/../../libmaple/libmaple/usb/usb_cdcacm.o
-                0x0800748c                usbVcomDescriptor_Config
+                0x08007d48       0x44 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x08007d48                usbVcomDescriptor_Config
  .rodata.usbVcomDescriptor_iManufacturer
-                0x080074d0       0x14 build/../../libmaple/libmaple/usb/usb_cdcacm.o
-                0x080074d0                usbVcomDescriptor_iManufacturer
+                0x08007d8c       0x14 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x08007d8c                usbVcomDescriptor_iManufacturer
  .rodata.usbVcomDescriptor_LangID
-                0x080074e4        0x4 build/../../libmaple/libmaple/usb/usb_cdcacm.o
-                0x080074e4                usbVcomDescriptor_LangID
+                0x08007da0        0x4 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x08007da0                usbVcomDescriptor_LangID
+ *fill*         0x08007da4        0x4 00
  .rodata._ZTV5Print
-                0x080074e8       0x18 build/../../libmaple/wirish/Print.o
-                0x080074e8                _ZTV5Print
+                0x08007da8       0x18 build/../../libmaple/wirish/Print.o
+                0x08007da8                _ZTV5Print
  .rodata._ZTV14HardwareSerial
-                0x08007500       0x18 build/../../libmaple/wirish/comm/HardwareSerial.o
-                0x08007500                _ZTV14HardwareSerial
+                0x08007dc0       0x18 build/../../libmaple/wirish/comm/HardwareSerial.o
+                0x08007dc0                _ZTV14HardwareSerial
  .rodata.str1.1
-                0x08007518       0x2a build/../../libmaple/wirish/HardwareTimer.o
- *fill*         0x08007542        0x6 00
+                0x08007dd8       0x28 build/../../libmaple/wirish/HardwareTimer.o
+                                 0x2a (size before relaxing)
  .rodata._ZTV9USBSerial
-                0x08007548       0x18 build/../../libmaple/wirish/usb_serial.o
-                0x08007548                _ZTV9USBSerial
+                0x08007e00       0x18 build/../../libmaple/wirish/usb_serial.o
+                0x08007e00                _ZTV9USBSerial
+ .rodata.str1.1
+                0x08007e18       0x29 build/../../libmaple/wirish/wirish_digital.o
+                                 0x2b (size before relaxing)
+ *fill*         0x08007e41        0x3 00
  .rodata.ucExpectedStackBytes.3388
-                0x08007560       0x14 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
-                0x08007574                __exidx_start = .
+                0x08007e44       0x14 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
+ .rodata.str1.1
+                0x08007e58        0xd build/main.o
+                0x08007e65                __exidx_start = .
 
-.ARM.exidx      0x08007574        0x8
+.ARM.exidx      0x08007e68        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x08007574        0x8 ../../libmaple/support/ld/libcs3_stm32_high_density.a(start.o)
-                0x0800757c                __exidx_end = .
+ .ARM.exidx     0x08007e68        0x8 ../../libmaple/support/ld/libcs3_stm32_high_density.a(start.o)
+                0x08007e70                __exidx_end = .
 
-.text.align     0x0800757c        0x4
-                0x08007580                . = ALIGN (0x8)
- *fill*         0x0800757c        0x4 00
-                0x08007580                _etext = .
+.text.align     0x08007e70        0x0
+                0x08007e70                . = ALIGN (0x8)
+                0x08007e70                _etext = .
 
 .USER_FLASH
  *(.USER_FLASH)
 
-.data           0x20000c00      0x778 load address 0x08007580
+.data           0x20000c00      0x798 load address 0x08007e70
                 0x08005000                __cs3_region_start_ram = DEFINED (_FLASH_BUILD)?.:__text_start
  *(.got.plt)
  *(.got)
@@ -2335,123 +2474,201 @@ END GROUP
                 0x2000136c                i2c_delay
  .data.uxPreviousTask
                 0x20001370        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
-                [0x20001540]                _lm_heap_start = DEFINED (_lm_heap_start)?_lm_heap_start:_end
+ .data.IROneBufferFront
+                0x20001374        0x4 build/Infrareds.o
+                0x20001374                IROneBufferFront
+ .data.IRSixBufferFront
+                0x20001378        0x4 build/Infrareds.o
+                0x20001378                IRSixBufferFront
+ .data.IRTwoBufferFront
+                0x2000137c        0x4 build/Infrareds.o
+                0x2000137c                IRTwoBufferFront
+ .data.IRFiveBufferFront
+                0x20001380        0x4 build/Infrareds.o
+                0x20001380                IRFiveBufferFront
+ .data.IRFourBufferFront
+                0x20001384        0x4 build/Infrareds.o
+                0x20001384                IRFourBufferFront
+ .data.IRThreeBufferFront
+                0x20001388        0x4 build/Infrareds.o
+                0x20001388                IRThreeBufferFront
+ .data.overSampleBits
+                0x2000138c        0x1 build/Ultrasonics.o
+                0x2000138c                overSampleBits
+ .data.sampleUltraOneHuh
+                0x2000138d        0x1 build/Ultrasonics.o
+                0x2000138d                sampleUltraOneHuh
+ *fill*         0x2000138e        0x2 00
+ .data.doshit   0x20001390        0x4 build/main.o
+                0x20001390                doshit
+                [0x20001a38]                _lm_heap_start = DEFINED (_lm_heap_start)?_lm_heap_start:_end
                 [0x20010000]                _lm_heap_end = DEFINED (_lm_heap_end)?_lm_heap_end:__cs3_stack
-                0x20001378                . = ALIGN (0x8)
- *fill*         0x20001374        0x4 00
-                0x20001378                _edata = .
+                0x20001398                . = ALIGN (0x8)
+ *fill*         0x20001394        0x4 00
+                0x20001398                _edata = .
 
-.jcr            0x20001378        0x0 load address 0x08007cf8
- .jcr           0x20001378        0x0 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+.jcr            0x20001398        0x0 load address 0x08008608
+ .jcr           0x20001398        0x0 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
 
-.bss            0x20001378      0x1c8 load address 0x08007cf8
+.bss            0x20001398      0x6a0 load address 0x08008608
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x20001378        0x1 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
- *fill*         0x20001379        0x3 00
+ .bss           0x20001398        0x1 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
+ *fill*         0x20001399        0x3 00
  .bss.systick_user_callback
-                0x2000137c        0x4 build/../../libmaple/libmaple/systick.o
+                0x2000139c        0x4 build/../../libmaple/libmaple/systick.o
  .bss.usart1_rb
-                0x20001380        0xc build/../../libmaple/libmaple/usart.o
+                0x200013a0        0xc build/../../libmaple/libmaple/usart.o
  .bss.usart2_rb
-                0x2000138c        0xc build/../../libmaple/libmaple/usart.o
+                0x200013ac        0xc build/../../libmaple/libmaple/usart.o
  .bss.usart3_rb
-                0x20001398        0xc build/../../libmaple/libmaple/usart.o
- .bss.uart4_rb  0x200013a4        0xc build/../../libmaple/libmaple/usart.o
- .bss.uart5_rb  0x200013b0        0xc build/../../libmaple/libmaple/usart.o
+                0x200013b8        0xc build/../../libmaple/libmaple/usart.o
+ .bss.uart4_rb  0x200013c4        0xc build/../../libmaple/libmaple/usart.o
+ .bss.uart5_rb  0x200013d0        0xc build/../../libmaple/libmaple/usart.o
  .bss.line_dtr_rts
-                0x200013bc        0x1 build/../../libmaple/libmaple/usb/usb_cdcacm.o
-                0x200013bc                line_dtr_rts
- *fill*         0x200013bd        0x3 00
+                0x200013dc        0x1 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x200013dc                line_dtr_rts
+ *fill*         0x200013dd        0x3 00
  .bss.recvBufOut
-                0x200013c0        0x4 build/../../libmaple/libmaple/usb/usb_cdcacm.o
-                0x200013c0                recvBufOut
+                0x200013e0        0x4 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x200013e0                recvBufOut
  .bss.reset_state
-                0x200013c4        0x1 build/../../libmaple/libmaple/usb/usb_cdcacm.o
-                0x200013c4                reset_state
- *fill*         0x200013c5        0x3 00
- .bss.countTx   0x200013c8        0x4 build/../../libmaple/libmaple/usb/usb_cdcacm.o
-                0x200013c8                countTx
+                0x200013e4        0x1 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x200013e4                reset_state
+ *fill*         0x200013e5        0x3 00
+ .bss.countTx   0x200013e8        0x4 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x200013e8                countTx
  .bss.last_request
-                0x200013cc        0x1 build/../../libmaple/libmaple/usb/usb_cdcacm.o
-                0x200013cc                last_request
- *fill*         0x200013cd        0x3 00
+                0x200013ec        0x1 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x200013ec                last_request
+ *fill*         0x200013ed        0x3 00
  .bss.recvBufIn
-                0x200013d0        0x4 build/../../libmaple/libmaple/usb/usb_cdcacm.o
-                0x200013d0                recvBufIn
+                0x200013f0        0x4 build/../../libmaple/libmaple/usb/usb_cdcacm.o
+                0x200013f0                recvBufIn
  .bss.Data_Mul_MaxPacketSize
-                0x200013d4        0x1 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x200013d4                Data_Mul_MaxPacketSize
- *fill*         0x200013d5        0x3 00
- .bss.Serial1   0x200013d8       0x10 build/../../libmaple/wirish/comm/HardwareSerial.o
-                0x200013d8                Serial1
- .bss.Serial2   0x200013e8       0x10 build/../../libmaple/wirish/comm/HardwareSerial.o
-                0x200013e8                Serial2
- .bss.Serial3   0x200013f8       0x10 build/../../libmaple/wirish/comm/HardwareSerial.o
-                0x200013f8                Serial3
- .bss.Timer1    0x20001408        0x4 build/../../libmaple/wirish/HardwareTimer.o
-                0x20001408                Timer1
- .bss.Timer2    0x2000140c        0x4 build/../../libmaple/wirish/HardwareTimer.o
-                0x2000140c                Timer2
- .bss.Timer3    0x20001410        0x4 build/../../libmaple/wirish/HardwareTimer.o
-                0x20001410                Timer3
- .bss.Timer4    0x20001414        0x4 build/../../libmaple/wirish/HardwareTimer.o
-                0x20001414                Timer4
- .bss.Timer5    0x20001418        0x4 build/../../libmaple/wirish/HardwareTimer.o
-                0x20001418                Timer5
- .bss.Timer6    0x2000141c        0x4 build/../../libmaple/wirish/HardwareTimer.o
-                0x2000141c                Timer6
- .bss.Timer7    0x20001420        0x4 build/../../libmaple/wirish/HardwareTimer.o
-                0x20001420                Timer7
- .bss.Timer8    0x20001424        0x4 build/../../libmaple/wirish/HardwareTimer.o
-                0x20001424                Timer8
+                0x200013f4        0x1 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x200013f4                Data_Mul_MaxPacketSize
+ *fill*         0x200013f5        0x3 00
+ .bss.Serial1   0x200013f8       0x10 build/../../libmaple/wirish/comm/HardwareSerial.o
+                0x200013f8                Serial1
+ .bss.Serial2   0x20001408       0x10 build/../../libmaple/wirish/comm/HardwareSerial.o
+                0x20001408                Serial2
+ .bss.Serial3   0x20001418       0x10 build/../../libmaple/wirish/comm/HardwareSerial.o
+                0x20001418                Serial3
+ .bss.Timer1    0x20001428        0x4 build/../../libmaple/wirish/HardwareTimer.o
+                0x20001428                Timer1
+ .bss.Timer2    0x2000142c        0x4 build/../../libmaple/wirish/HardwareTimer.o
+                0x2000142c                Timer2
+ .bss.Timer3    0x20001430        0x4 build/../../libmaple/wirish/HardwareTimer.o
+                0x20001430                Timer3
+ .bss.Timer4    0x20001434        0x4 build/../../libmaple/wirish/HardwareTimer.o
+                0x20001434                Timer4
+ .bss.Timer5    0x20001438        0x4 build/../../libmaple/wirish/HardwareTimer.o
+                0x20001438                Timer5
+ .bss.Timer6    0x2000143c        0x4 build/../../libmaple/wirish/HardwareTimer.o
+                0x2000143c                Timer6
+ .bss.Timer7    0x20001440        0x4 build/../../libmaple/wirish/HardwareTimer.o
+                0x20001440                Timer7
+ .bss.Timer8    0x20001444        0x4 build/../../libmaple/wirish/HardwareTimer.o
+                0x20001444                Timer8
  .bss.SerialUSB
-                0x20001428        0x4 build/../../libmaple/wirish/usb_serial.o
-                0x20001428                SerialUSB
- .bss.Wire      0x2000142c       0x48 build/../../libmaple/libraries/Wire/Wire.o
-                0x2000142c                Wire
+                0x20001448        0x4 build/../../libmaple/wirish/usb_serial.o
+                0x20001448                SerialUSB
+ .bss.Wire      0x2000144c       0x48 build/../../libmaple/libraries/Wire/Wire.o
+                0x2000144c                Wire
  .bss.uxTopReadyPriority
-                0x20001474        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
+                0x20001494        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
  .bss.xTickCount
-                0x20001478        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
+                0x20001498        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
  .bss.pxReadyTasksLists
-                0x2000147c       0x64 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
- .bss.xTracing  0x200014e0        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
+                0x2000149c       0x64 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
+ .bss.xTracing  0x20001500        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
  .bss.xMissedYield
-                0x200014e4        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
+                0x20001504        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
  .bss.pcTraceBuffer
-                0x200014e8        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
+                0x20001508        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
  .bss.pxCurrentTCB
-                0x200014ec        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
-                0x200014ec                pxCurrentTCB
+                0x2000150c        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
+                0x2000150c                pxCurrentTCB
  .bss.uxSchedulerSuspended
-                0x200014f0        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
+                0x20001510        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
  .bss.pcTraceBufferEnd
-                0x200014f4        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
+                0x20001514        0x4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
+ .bss.infraredFiveBuffer
+                0x20001518       0xc8 build/Infrareds.o
+                0x20001518                infraredFiveBuffer
+ .bss.IRTimer   0x200015e0        0x4 build/Infrareds.o
+                0x200015e0                IRTimer
+ .bss.OverSampleBits
+                0x200015e4        0x1 build/Infrareds.o
+                0x200015e4                OverSampleBits
+ *fill*         0x200015e5        0x3 00
+ .bss.infraredOneBuffer
+                0x200015e8       0xc8 build/Infrareds.o
+                0x200015e8                infraredOneBuffer
+ .bss.infraredTwoBuffer
+                0x200016b0       0xc8 build/Infrareds.o
+                0x200016b0                infraredTwoBuffer
+ .bss.infraredFourBuffer
+                0x20001778       0xc8 build/Infrareds.o
+                0x20001778                infraredFourBuffer
+ .bss.infraredSixBuffer
+                0x20001840       0xc8 build/Infrareds.o
+                0x20001840                infraredSixBuffer
+ .bss.infraredThreeBuffer
+                0x20001908       0xc8 build/Infrareds.o
+                0x20001908                infraredThreeBuffer
+ .bss.ultrasonicTimer
+                0x200019d0        0x4 build/Ultrasonics.o
+                0x200019d0                ultrasonicTimer
+ .bss.mostRecentUltrasonicRangeOne
+                0x200019d4        0x4 build/Ultrasonics.o
+                0x200019d4                mostRecentUltrasonicRangeOne
+ .bss.mostRecentOversampleReadingTwo
+                0x200019d8        0x4 build/Ultrasonics.o
+                0x200019d8                mostRecentOversampleReadingTwo
+ .bss.mostRecentOversampleReadingOne
+                0x200019dc        0x4 build/Ultrasonics.o
+                0x200019dc                mostRecentOversampleReadingOne
+ .bss.mostRecentUltrasonicVoltageTwo
+                0x200019e0        0x4 build/Ultrasonics.o
+                0x200019e0                mostRecentUltrasonicVoltageTwo
+ .bss.lastADCOneReadMicros
+                0x200019e4        0x4 build/Ultrasonics.o
+                0x200019e4                lastADCOneReadMicros
+ .bss.lastADCTwoReadMicros
+                0x200019e8        0x4 build/Ultrasonics.o
+                0x200019e8                lastADCTwoReadMicros
+ .bss.mostRecentUltrasonicVoltageOne
+                0x200019ec        0x4 build/Ultrasonics.o
+                0x200019ec                mostRecentUltrasonicVoltageOne
+ .bss.mostRecentUltrasonicRangeTwo
+                0x200019f0        0x4 build/Ultrasonics.o
+                0x200019f0                mostRecentUltrasonicRangeTwo
  *(COMMON)
- COMMON         0x200014f8        0x4 build/../../libmaple/libmaple/systick.o
-                0x200014f8                systick_uptime_millis
- COMMON         0x200014fc        0x6 build/../../libmaple/libmaple/usb/usb.o
-                0x200014fc                SaveRState
-                0x200014fe                SaveTState
-                0x20001500                ResumeS
- *fill*         0x20001502        0x2 00
- COMMON         0x20001504        0x2 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
-                0x20001504                StatusInfo
- *fill*         0x20001506        0x2 00
- COMMON         0x20001508       0x32 build/../../libmaple/libmaple/usb/usb_lib/usb_init.o
-                0x20001508                SaveState
-                0x2000150c                pProperty
-                0x20001510                EPindex
-                0x20001514                Device_Info
-                0x20001530                pUser_Standard_Requests
-                0x20001534                pInformation
-                0x20001538                wInterrupt_Mask
-                0x20001540                . = ALIGN (0x8)
- *fill*         0x2000153a        0x6 00
-                0x20001540                _end = .
+ COMMON         0x200019f4        0x4 build/../../libmaple/libmaple/systick.o
+                0x200019f4                systick_uptime_millis
+ COMMON         0x200019f8        0x6 build/../../libmaple/libmaple/usb/usb.o
+                0x200019f8                SaveRState
+                0x200019fa                SaveTState
+                0x200019fc                ResumeS
+ *fill*         0x200019fe        0x2 00
+ COMMON         0x20001a00        0x2 build/../../libmaple/libmaple/usb/usb_lib/usb_core.o
+                0x20001a00                StatusInfo
+ *fill*         0x20001a02        0x2 00
+ COMMON         0x20001a04       0x32 build/../../libmaple/libmaple/usb/usb_lib/usb_init.o
+                0x20001a04                SaveState
+                0x20001a08                pProperty
+                0x20001a0c                EPindex
+                0x20001a10                Device_Info
+                0x20001a2c                pUser_Standard_Requests
+                0x20001a30                pInformation
+                0x20001a34                wInterrupt_Mask
+                0x20001a38                . = ALIGN (0x8)
+ *fill*         0x20001a36        0x2 00
+                0x20001a38                _end = .
                 0x08005000                __cs3_region_init_ram = DEFINED (_FLASH_BUILD)?LOADADDR (.data):LOADADDR (.text)
-                0x17ffc378                __cs3_region_init_size_ram = DEFINED (_FLASH_BUILD)?(_edata - ADDR (.data)):(_edata - ADDR (.text))
-                0x000001c8                __cs3_region_zero_size_ram = (_end - _edata)
+                0x17ffc398                __cs3_region_init_size_ram = DEFINED (_FLASH_BUILD)?(_edata - ADDR (.data)):(_edata - ADDR (.text))
+                0x000006a0                __cs3_region_zero_size_ram = (_end - _edata)
                 0x00000001                __cs3_region_num = 0x1
 
 .stab
@@ -2472,7 +2689,7 @@ END GROUP
 .debug_sfnames
  *(.debug_sfnames)
 
-.comment        0x00000000      0x6a2
+.comment        0x00000000      0x70e
  .comment       0x00000000       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtbegin.o
  .comment       0x00000012       0x12 build/../../libmaple/libmaple/adc.o
  .comment       0x00000024       0x12 build/../../libmaple/libmaple/bkp.o
@@ -2530,45 +2747,51 @@ END GROUP
  .comment       0x000003cc       0x12 build/../../libmaple/libraries/FreeRTOS/utility/timers.o
  .comment       0x000003de       0x12 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
  .comment       0x000003f0       0x12 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
- .comment       0x00000402       0x12 build/main.o
- .comment       0x00000414       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
- .comment       0x00000426       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
- .comment       0x00000438       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
- .comment       0x0000044a       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .comment       0x0000045c       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
- .comment       0x0000046e       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-errno.o)
- .comment       0x00000480       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-impure.o)
- .comment       0x00000492       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memcmp.o)
- .comment       0x000004a4       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memcpy.o)
- .comment       0x000004b6       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memset.o)
- .comment       0x000004c8       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-rand.o)
- .comment       0x000004da       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-sprintf.o)
- .comment       0x000004ec       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strcat.o)
- .comment       0x000004fe       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strlen.o)
- .comment       0x00000510       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strncpy.o)
- .comment       0x00000522       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-svfprintf.o)
- .comment       0x00000534       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-dtoa.o)
- .comment       0x00000546       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-freer.o)
- .comment       0x00000558       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-locale.o)
- .comment       0x0000056a       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-malloc.o)
- .comment       0x0000057c       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mallocr.o)
- .comment       0x0000058e       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memchr.o)
- .comment       0x000005a0       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memmove.o)
- .comment       0x000005b2       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mlock.o)
- .comment       0x000005c4       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mprec.o)
- .comment       0x000005d6       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-reallocr.o)
- .comment       0x000005e8       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-s_isinfd.o)
- .comment       0x000005fa       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-s_isnand.o)
- .comment       0x0000060c       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-sbrkr.o)
- .comment       0x0000061e       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
- .comment       0x00000630       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-callocr.o)
- .comment       0x00000642       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-reent.o)
- .comment       0x00000654       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
- .comment       0x00000666       0x2a ../../libmaple/support/ld/libcs3_stm32_high_density.a(start_c.o)
+ .comment       0x00000402       0x12 build/IO.o
+ .comment       0x00000414       0x12 build/Infrareds.o
+ .comment       0x00000426       0x12 build/Sensors.o
+ .comment       0x00000438       0x12 build/Ultrasonics.o
+ .comment       0x0000044a       0x12 build/main.o
+ .comment       0x0000045c       0x12 build/DriveControl.o
+ .comment       0x0000046e       0x12 build/MiceSensors.o
+ .comment       0x00000480       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .comment       0x00000492       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .comment       0x000004a4       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .comment       0x000004b6       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .comment       0x000004c8       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .comment       0x000004da       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-errno.o)
+ .comment       0x000004ec       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-impure.o)
+ .comment       0x000004fe       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memcmp.o)
+ .comment       0x00000510       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memcpy.o)
+ .comment       0x00000522       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memset.o)
+ .comment       0x00000534       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-rand.o)
+ .comment       0x00000546       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-sprintf.o)
+ .comment       0x00000558       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strcat.o)
+ .comment       0x0000056a       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strlen.o)
+ .comment       0x0000057c       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strncpy.o)
+ .comment       0x0000058e       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-svfprintf.o)
+ .comment       0x000005a0       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-dtoa.o)
+ .comment       0x000005b2       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-freer.o)
+ .comment       0x000005c4       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-locale.o)
+ .comment       0x000005d6       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-malloc.o)
+ .comment       0x000005e8       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mallocr.o)
+ .comment       0x000005fa       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memchr.o)
+ .comment       0x0000060c       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memmove.o)
+ .comment       0x0000061e       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mlock.o)
+ .comment       0x00000630       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mprec.o)
+ .comment       0x00000642       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-reallocr.o)
+ .comment       0x00000654       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-s_isinfd.o)
+ .comment       0x00000666       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-s_isnand.o)
+ .comment       0x00000678       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-sbrkr.o)
+ .comment       0x0000068a       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
+ .comment       0x0000069c       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-callocr.o)
+ .comment       0x000006ae       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-reent.o)
+ .comment       0x000006c0       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+ .comment       0x000006d2       0x2a ../../libmaple/support/ld/libcs3_stm32_high_density.a(start_c.o)
                                  0x2b (size before relaxing)
- .comment       0x00000690       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-init.o)
+ .comment       0x000006fc       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-init.o)
 
-.debug_aranges  0x00000000     0x18f8
+.debug_aranges  0x00000000     0x1a90
  *(.debug_aranges)
  .debug_aranges
                 0x00000000       0x28 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
@@ -2675,40 +2898,52 @@ END GROUP
  .debug_aranges
                 0x000016c8       0x20 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
  .debug_aranges
-                0x000016e8       0x28 build/main.o
+                0x000016e8       0x20 build/IO.o
  .debug_aranges
-                0x00001710       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+                0x00001708       0xb0 build/Infrareds.o
  .debug_aranges
-                0x00001730       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+                0x000017b8       0x20 build/Sensors.o
  .debug_aranges
-                0x00001750       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
+                0x000017d8       0x50 build/Ultrasonics.o
  .debug_aranges
-                0x00001770       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+                0x00001828       0x28 build/main.o
  .debug_aranges
-                0x00001790       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
+                0x00001850       0x38 build/DriveControl.o
  .debug_aranges
-                0x000017b0       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+                0x00001888       0x20 build/MiceSensors.o
  .debug_aranges
-                0x000017d0       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+                0x000018a8       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
  .debug_aranges
-                0x000017f0       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+                0x000018c8       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
  .debug_aranges
-                0x00001810       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
+                0x000018e8       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
  .debug_aranges
-                0x00001830       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+                0x00001908       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
  .debug_aranges
-                0x00001850       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+                0x00001928       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
  .debug_aranges
-                0x00001870       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+                0x00001948       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
  .debug_aranges
-                0x00001890       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
+                0x00001968       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
  .debug_aranges
-                0x000018b0       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
+                0x00001988       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
  .debug_aranges
-                0x000018d0       0x28 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+                0x000019a8       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
+ .debug_aranges
+                0x000019c8       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+ .debug_aranges
+                0x000019e8       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_aranges
+                0x00001a08       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_aranges
+                0x00001a28       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
+ .debug_aranges
+                0x00001a48       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
+ .debug_aranges
+                0x00001a68       0x28 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
 
 .debug_pubnames
-                0x00000000     0x3150
+                0x00000000     0x36e4
  *(.debug_pubnames)
  .debug_pubnames
                 0x00000000       0x9d build/../../libmaple/libmaple/adc.o
@@ -2813,19 +3048,31 @@ END GROUP
  .debug_pubnames
                 0x0000302c       0x34 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
  .debug_pubnames
-                0x00003060       0x29 build/main.o
+                0x00003060       0x22 build/IO.o
  .debug_pubnames
-                0x00003089       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+                0x00003082      0x2b2 build/Infrareds.o
  .debug_pubnames
-                0x000030a9       0x23 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+                0x00003334       0x23 build/Sensors.o
  .debug_pubnames
-                0x000030cc       0x45 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+                0x00003357      0x1cb build/Ultrasonics.o
  .debug_pubnames
-                0x00003111       0x1f /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+                0x00003522       0x34 build/main.o
  .debug_pubnames
-                0x00003130       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+                0x00003556       0xa0 build/DriveControl.o
+ .debug_pubnames
+                0x000035f6       0x27 build/MiceSensors.o
+ .debug_pubnames
+                0x0000361d       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .debug_pubnames
+                0x0000363d       0x23 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .debug_pubnames
+                0x00003660       0x45 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .debug_pubnames
+                0x000036a5       0x1f /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_pubnames
+                0x000036c4       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
 
-.debug_info     0x00000000    0x1ddde
+.debug_info     0x00000000    0x2022a
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0x8f /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
  .debug_info    0x0000008f      0x6c3 build/../../libmaple/libmaple/adc.o
@@ -2884,24 +3131,30 @@ END GROUP
  .debug_info    0x0001b506       0x57 build/../../libmaple/libraries/FreeRTOS/utility/timers.o
  .debug_info    0x0001b55d     0x101b build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
  .debug_info    0x0001c578       0xfa build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
- .debug_info    0x0001c672       0xe4 build/main.o
- .debug_info    0x0001c756       0xbf /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
- .debug_info    0x0001c815       0xbf /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
- .debug_info    0x0001c8d4       0xbf /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
- .debug_info    0x0001c993       0xbf /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
- .debug_info    0x0001ca52       0xba /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
- .debug_info    0x0001cb0c       0xca /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
- .debug_info    0x0001cbd6       0xf4 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
- .debug_info    0x0001ccca       0xe2 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
- .debug_info    0x0001cdac       0xc0 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
- .debug_info    0x0001ce6c       0xbf /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
- .debug_info    0x0001cf2b      0x665 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .debug_info    0x0001d590      0x63f /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
- .debug_info    0x0001dbcf       0xc0 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
- .debug_info    0x0001dc8f       0xc0 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
- .debug_info    0x0001dd4f       0x8f /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .debug_info    0x0001c672      0x10b build/IO.o
+ .debug_info    0x0001c77d     0x1079 build/Infrareds.o
+ .debug_info    0x0001d7f6       0x7e build/Sensors.o
+ .debug_info    0x0001d874      0xf3f build/Ultrasonics.o
+ .debug_info    0x0001e7b3      0x107 build/main.o
+ .debug_info    0x0001e8ba      0x222 build/DriveControl.o
+ .debug_info    0x0001eadc       0xc6 build/MiceSensors.o
+ .debug_info    0x0001eba2       0xbf /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+ .debug_info    0x0001ec61       0xbf /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+ .debug_info    0x0001ed20       0xbf /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
+ .debug_info    0x0001eddf       0xbf /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+ .debug_info    0x0001ee9e       0xba /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
+ .debug_info    0x0001ef58       0xca /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .debug_info    0x0001f022       0xf4 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .debug_info    0x0001f116       0xe2 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .debug_info    0x0001f1f8       0xc0 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x0001f2b8       0xbf /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+ .debug_info    0x0001f377      0x665 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_info    0x0001f9dc      0x63f /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_info    0x0002001b       0xc0 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
+ .debug_info    0x000200db       0xc0 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
+ .debug_info    0x0002019b       0x8f /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
 
-.debug_abbrev   0x00000000     0x6aa8
+.debug_abbrev   0x00000000     0x72a6
  *(.debug_abbrev)
  .debug_abbrev  0x00000000       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
  .debug_abbrev  0x00000012      0x22b build/../../libmaple/libmaple/adc.o
@@ -2960,24 +3213,30 @@ END GROUP
  .debug_abbrev  0x00006228       0x35 build/../../libmaple/libraries/FreeRTOS/utility/timers.o
  .debug_abbrev  0x0000625d      0x255 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
  .debug_abbrev  0x000064b2       0x90 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
- .debug_abbrev  0x00006542       0x8f build/main.o
- .debug_abbrev  0x000065d1       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
- .debug_abbrev  0x000065e5       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
- .debug_abbrev  0x000065f9       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
- .debug_abbrev  0x0000660d       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
- .debug_abbrev  0x00006621       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
- .debug_abbrev  0x00006635       0x66 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
- .debug_abbrev  0x0000669b       0x7c /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
- .debug_abbrev  0x00006717       0x6c /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
- .debug_abbrev  0x00006783       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
- .debug_abbrev  0x00006797       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
- .debug_abbrev  0x000067ab      0x169 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .debug_abbrev  0x00006914      0x15a /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
- .debug_abbrev  0x00006a6e       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
- .debug_abbrev  0x00006a82       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
- .debug_abbrev  0x00006a96       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .debug_abbrev  0x00006542       0x93 build/IO.o
+ .debug_abbrev  0x000065d5      0x2d1 build/Infrareds.o
+ .debug_abbrev  0x000068a6       0x44 build/Sensors.o
+ .debug_abbrev  0x000068ea      0x305 build/Ultrasonics.o
+ .debug_abbrev  0x00006bef       0xa3 build/main.o
+ .debug_abbrev  0x00006c92       0xcb build/DriveControl.o
+ .debug_abbrev  0x00006d5d       0x72 build/MiceSensors.o
+ .debug_abbrev  0x00006dcf       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+ .debug_abbrev  0x00006de3       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+ .debug_abbrev  0x00006df7       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
+ .debug_abbrev  0x00006e0b       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+ .debug_abbrev  0x00006e1f       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
+ .debug_abbrev  0x00006e33       0x66 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .debug_abbrev  0x00006e99       0x7c /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .debug_abbrev  0x00006f15       0x6c /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .debug_abbrev  0x00006f81       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x00006f95       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+ .debug_abbrev  0x00006fa9      0x169 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_abbrev  0x00007112      0x15a /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_abbrev  0x0000726c       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x00007280       0x14 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x00007294       0x12 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
 
-.debug_line     0x00000000     0xab7c
+.debug_line     0x00000000     0xc7ad
  *(.debug_line)
  .debug_line    0x00000000       0x6f /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
  .debug_line    0x0000006f      0x150 build/../../libmaple/libmaple/adc.o
@@ -3036,24 +3295,30 @@ END GROUP
  .debug_line    0x00008b27      0x14e build/../../libmaple/libraries/FreeRTOS/utility/timers.o
  .debug_line    0x00008c75      0x803 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
  .debug_line    0x00009478      0x5af build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
- .debug_line    0x00009a27      0x526 build/main.o
- .debug_line    0x00009f4d      0x20e /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
- .debug_line    0x0000a15b      0x22e /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
- .debug_line    0x0000a389      0x114 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
- .debug_line    0x0000a49d       0x8c /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
- .debug_line    0x0000a529       0x77 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
- .debug_line    0x0000a5a0       0x7b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
- .debug_line    0x0000a61b       0x82 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
- .debug_line    0x0000a69d       0x79 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
- .debug_line    0x0000a716       0x75 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
- .debug_line    0x0000a78b       0x88 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
- .debug_line    0x0000a813       0xe1 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .debug_line    0x0000a8f4       0xd5 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
- .debug_line    0x0000a9c9       0x98 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
- .debug_line    0x0000aa61       0xa9 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
- .debug_line    0x0000ab0a       0x72 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .debug_line    0x00009a27      0x519 build/IO.o
+ .debug_line    0x00009f40      0x686 build/Infrareds.o
+ .debug_line    0x0000a5c6       0xf6 build/Sensors.o
+ .debug_line    0x0000a6bc      0x58f build/Ultrasonics.o
+ .debug_line    0x0000ac4b      0x52a build/main.o
+ .debug_line    0x0000b175      0x533 build/DriveControl.o
+ .debug_line    0x0000b6a8      0x4d6 build/MiceSensors.o
+ .debug_line    0x0000bb7e      0x20e /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+ .debug_line    0x0000bd8c      0x22e /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+ .debug_line    0x0000bfba      0x114 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
+ .debug_line    0x0000c0ce       0x8c /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+ .debug_line    0x0000c15a       0x77 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
+ .debug_line    0x0000c1d1       0x7b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .debug_line    0x0000c24c       0x82 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .debug_line    0x0000c2ce       0x79 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .debug_line    0x0000c347       0x75 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x0000c3bc       0x88 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+ .debug_line    0x0000c444       0xe1 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_line    0x0000c525       0xd5 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_line    0x0000c5fa       0x98 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
+ .debug_line    0x0000c692       0xa9 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
+ .debug_line    0x0000c73b       0x72 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
 
-.debug_frame    0x00000000     0x3af8
+.debug_frame    0x00000000     0x3e3c
  *(.debug_frame)
  .debug_frame   0x00000000       0xb4 build/../../libmaple/libmaple/adc.o
  .debug_frame   0x000000b4       0xbc build/../../libmaple/libmaple/bkp.o
@@ -3106,16 +3371,22 @@ END GROUP
  .debug_frame   0x00003328      0x210 build/../../libmaple/libraries/FreeRTOS/utility/queue.o
  .debug_frame   0x00003538      0x3d4 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
  .debug_frame   0x0000390c       0x20 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
- .debug_frame   0x0000392c       0x3c build/main.o
- .debug_frame   0x00003968       0x38 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
- .debug_frame   0x000039a0       0x30 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
- .debug_frame   0x000039d0       0x60 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
- .debug_frame   0x00003a30       0x44 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .debug_frame   0x00003a74       0x44 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
- .debug_frame   0x00003ab8       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
- .debug_frame   0x00003ad8       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
+ .debug_frame   0x0000392c       0x2c build/IO.o
+ .debug_frame   0x00003958      0x18c build/Infrareds.o
+ .debug_frame   0x00003ae4       0x2c build/Sensors.o
+ .debug_frame   0x00003b10       0xb4 build/Ultrasonics.o
+ .debug_frame   0x00003bc4       0x3c build/main.o
+ .debug_frame   0x00003c00       0x8c build/DriveControl.o
+ .debug_frame   0x00003c8c       0x20 build/MiceSensors.o
+ .debug_frame   0x00003cac       0x38 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .debug_frame   0x00003ce4       0x30 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .debug_frame   0x00003d14       0x60 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .debug_frame   0x00003d74       0x44 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_frame   0x00003db8       0x44 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_frame   0x00003dfc       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
+ .debug_frame   0x00003e1c       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
 
-.debug_str      0x00000000     0x7d0a
+.debug_str      0x00000000     0x84d1
  *(.debug_str)
  .debug_str     0x00000000      0x557 build/../../libmaple/libmaple/adc.o
                                 0x5b2 (size before relaxing)
@@ -3173,76 +3444,88 @@ END GROUP
                                 0x170 (size before relaxing)
  .debug_str     0x000043d2      0x2b4 build/../../libmaple/wirish/Print.o
                                 0x3e2 (size before relaxing)
- .debug_str     0x00004686      0x36a build/../../libmaple/wirish/boards.o
+ .debug_str     0x00004686      0x364 build/../../libmaple/wirish/boards.o
                                 0xcdc (size before relaxing)
- .debug_str     0x000049f0       0x27 build/../../libmaple/wirish/boards/maple.o
+ .debug_str     0x000049ea       0x27 build/../../libmaple/wirish/boards/maple.o
                                  0x7c (size before relaxing)
- .debug_str     0x00004a17       0x2c build/../../libmaple/wirish/boards/maple_mini.o
+ .debug_str     0x00004a11       0x2c build/../../libmaple/wirish/boards/maple_mini.o
                                  0x81 (size before relaxing)
- .debug_str     0x00004a43       0x2e build/../../libmaple/wirish/boards/maple_native.o
+ .debug_str     0x00004a3d       0x2e build/../../libmaple/wirish/boards/maple_native.o
                                  0x83 (size before relaxing)
- .debug_str     0x00004a71      0x10b build/../../libmaple/wirish/boards/maple_RET6.o
+ .debug_str     0x00004a6b      0x10b build/../../libmaple/wirish/boards/maple_RET6.o
                                 0x5bd (size before relaxing)
- .debug_str     0x00004b7c       0x33 build/../../libmaple/wirish/boards/olimex_stm32_h103.o
+ .debug_str     0x00004b76       0x33 build/../../libmaple/wirish/boards/olimex_stm32_h103.o
                                  0x88 (size before relaxing)
- .debug_str     0x00004baf      0x174 build/../../libmaple/wirish/comm/HardwareSerial.o
+ .debug_str     0x00004ba9      0x174 build/../../libmaple/wirish/comm/HardwareSerial.o
                                 0xbe7 (size before relaxing)
- .debug_str     0x00004d23      0x3a0 build/../../libmaple/wirish/comm/HardwareSPI.o
+ .debug_str     0x00004d1d      0x3a0 build/../../libmaple/wirish/comm/HardwareSPI.o
                                 0xed6 (size before relaxing)
- .debug_str     0x000050c3      0x904 build/../../libmaple/wirish/HardwareTimer.o
+ .debug_str     0x000050bd      0x904 build/../../libmaple/wirish/HardwareTimer.o
                                 0xe01 (size before relaxing)
- .debug_str     0x000059c7      0x193 build/../../libmaple/wirish/usb_serial.o
+ .debug_str     0x000059c1      0x193 build/../../libmaple/wirish/usb_serial.o
                                 0x58e (size before relaxing)
- .debug_str     0x00005b5a       0x3b build/../../libmaple/wirish/cxxabi-compat.o
+ .debug_str     0x00005b54       0x3b build/../../libmaple/wirish/cxxabi-compat.o
                                  0x90 (size before relaxing)
- .debug_str     0x00005b95       0x51 build/../../libmaple/wirish/wirish_shift.o
+ .debug_str     0x00005b8f       0x51 build/../../libmaple/wirish/wirish_shift.o
                                 0x174 (size before relaxing)
- .debug_str     0x00005be6       0x43 build/../../libmaple/wirish/wirish_analog.o
+ .debug_str     0x00005be0       0x43 build/../../libmaple/wirish/wirish_analog.o
                                 0x4fe (size before relaxing)
- .debug_str     0x00005c29       0x59 build/../../libmaple/wirish/wirish_time.o
+ .debug_str     0x00005c23       0x59 build/../../libmaple/wirish/wirish_time.o
                                 0x155 (size before relaxing)
- .debug_str     0x00005c82       0x40 build/../../libmaple/wirish/pwm.o
+ .debug_str     0x00005c7c       0x40 build/../../libmaple/wirish/pwm.o
                                 0x51b (size before relaxing)
- .debug_str     0x00005cc2       0x97 build/../../libmaple/wirish/ext_interrupts.o
+ .debug_str     0x00005cbc       0x97 build/../../libmaple/wirish/ext_interrupts.o
                                 0x6ac (size before relaxing)
- .debug_str     0x00005d59      0x156 build/../../libmaple/wirish/wirish_digital.o
+ .debug_str     0x00005d53      0x156 build/../../libmaple/wirish/wirish_digital.o
                                 0x765 (size before relaxing)
- .debug_str     0x00005eaf      0x1b2 build/../../libmaple/libraries/Servo/Servo.o
+ .debug_str     0x00005ea9      0x1b2 build/../../libmaple/libraries/Servo/Servo.o
                                 0x81d (size before relaxing)
- .debug_str     0x00006061      0x4ba build/../../libmaple/libraries/LiquidCrystal/LiquidCrystal.o
+ .debug_str     0x0000605b      0x4ba build/../../libmaple/libraries/LiquidCrystal/LiquidCrystal.o
                                 0x696 (size before relaxing)
- .debug_str     0x0000651b      0x369 build/../../libmaple/libraries/Wire/Wire.o
+ .debug_str     0x00006515      0x369 build/../../libmaple/libraries/Wire/Wire.o
                                 0x595 (size before relaxing)
- .debug_str     0x00006884      0x365 build/../../libmaple/libraries/FreeRTOS/utility/croutine.o
+ .debug_str     0x0000687e      0x365 build/../../libmaple/libraries/FreeRTOS/utility/croutine.o
                                 0x40d (size before relaxing)
- .debug_str     0x00006be9      0x16e build/../../libmaple/libraries/FreeRTOS/utility/heap_2.o
+ .debug_str     0x00006be3      0x16e build/../../libmaple/libraries/FreeRTOS/utility/heap_2.o
                                 0x258 (size before relaxing)
- .debug_str     0x00006d57       0xb9 build/../../libmaple/libraries/FreeRTOS/utility/list.o
+ .debug_str     0x00006d51       0xb9 build/../../libmaple/libraries/FreeRTOS/utility/list.o
                                 0x23e (size before relaxing)
- .debug_str     0x00006e10      0x13b build/../../libmaple/libraries/FreeRTOS/utility/port.o
+ .debug_str     0x00006e0a      0x13b build/../../libmaple/libraries/FreeRTOS/utility/port.o
                                 0x1d5 (size before relaxing)
- .debug_str     0x00006f4b      0x3b1 build/../../libmaple/libraries/FreeRTOS/utility/queue.o
+ .debug_str     0x00006f45      0x3b1 build/../../libmaple/libraries/FreeRTOS/utility/queue.o
                                 0x550 (size before relaxing)
- .debug_str     0x000072fc       0x33 build/../../libmaple/libraries/FreeRTOS/utility/timers.o
+ .debug_str     0x000072f6       0x33 build/../../libmaple/libraries/FreeRTOS/utility/timers.o
                                  0xcd (size before relaxing)
- .debug_str     0x0000732f      0x76d build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
+ .debug_str     0x00007329      0x76d build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
                                 0x9e9 (size before relaxing)
- .debug_str     0x00007a9c       0x52 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
+ .debug_str     0x00007a96       0x52 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
                                 0x184 (size before relaxing)
- .debug_str     0x00007aee       0x5a build/main.o
-                                0x12c (size before relaxing)
- .debug_str     0x00007b48       0xb6 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .debug_str     0x00007ae8       0x6b build/IO.o
+                                0x1ac (size before relaxing)
+ .debug_str     0x00007b53      0x421 build/Infrareds.o
+                               0x114b (size before relaxing)
+ .debug_str     0x00007f74       0x1f build/Sensors.o
+                                 0xe9 (size before relaxing)
+ .debug_str     0x00007f93      0x238 build/Ultrasonics.o
+                                0xff7 (size before relaxing)
+ .debug_str     0x000081cb       0x28 build/main.o
+                                0x155 (size before relaxing)
+ .debug_str     0x000081f3       0xe5 build/DriveControl.o
+                                0x278 (size before relaxing)
+ .debug_str     0x000082d8       0x37 build/MiceSensors.o
+                                0x14b (size before relaxing)
+ .debug_str     0x0000830f       0xb6 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
                                 0x156 (size before relaxing)
- .debug_str     0x00007bfe       0x1d /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .debug_str     0x000083c5       0x1d /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
                                 0x162 (size before relaxing)
- .debug_str     0x00007c1b       0x73 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .debug_str     0x000083e2       0x73 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
                                 0x100 (size before relaxing)
- .debug_str     0x00007c8e       0x72 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_str     0x00008455       0x72 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
                                 0x1ce (size before relaxing)
- .debug_str     0x00007d00        0xa /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_str     0x000084c7        0xa /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
                                 0x1cf (size before relaxing)
 
-.debug_loc      0x00000000     0x9d7c
+.debug_loc      0x00000000     0xa1c3
  *(.debug_loc)
  .debug_loc     0x00000000      0x104 build/../../libmaple/libmaple/adc.o
  .debug_loc     0x00000104      0x108 build/../../libmaple/libmaple/bkp.o
@@ -3292,14 +3575,19 @@ END GROUP
  .debug_loc     0x000079b7       0x99 build/../../libmaple/libraries/FreeRTOS/utility/port.o
  .debug_loc     0x00007a50      0x732 build/../../libmaple/libraries/FreeRTOS/utility/queue.o
  .debug_loc     0x00008182      0xa32 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
- .debug_loc     0x00008bb4       0x1f build/main.o
- .debug_loc     0x00008bd3       0x67 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
- .debug_loc     0x00008c3a       0x57 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
- .debug_loc     0x00008c91      0x11e /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
- .debug_loc     0x00008daf      0x7bb /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .debug_loc     0x0000956a      0x812 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_loc     0x00008bb4       0x1f build/IO.o
+ .debug_loc     0x00008bd3      0x1da build/Infrareds.o
+ .debug_loc     0x00008dad       0x1f build/Sensors.o
+ .debug_loc     0x00008dcc       0xad build/Ultrasonics.o
+ .debug_loc     0x00008e79       0x1f build/main.o
+ .debug_loc     0x00008e98      0x182 build/DriveControl.o
+ .debug_loc     0x0000901a       0x67 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+ .debug_loc     0x00009081       0x57 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+ .debug_loc     0x000090d8      0x11e /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+ .debug_loc     0x000091f6      0x7bb /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_loc     0x000099b1      0x812 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
 
-.debug_macinfo  0x00000000   0x163f4d
+.debug_macinfo  0x00000000   0x1b78ea
  *(.debug_macinfo)
  .debug_macinfo
                 0x00000000     0x47d7 build/../../libmaple/libmaple/adc.o
@@ -3414,7 +3702,19 @@ END GROUP
  .debug_macinfo
                 0x00142217    0x12287 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
  .debug_macinfo
-                0x0015449e     0xfaaf build/main.o
+                0x0015449e     0xfaaf build/IO.o
+ .debug_macinfo
+                0x00163f4d     0xf9cb build/Infrareds.o
+ .debug_macinfo
+                0x00173918     0x4bc1 build/Sensors.o
+ .debug_macinfo
+                0x001784d9    0x10b47 build/Ultrasonics.o
+ .debug_macinfo
+                0x00189020     0xfaaf build/main.o
+ .debug_macinfo
+                0x00198acf     0xf786 build/DriveControl.o
+ .debug_macinfo
+                0x001a8255     0xf695 build/MiceSensors.o
 
 .debug_weaknames
  *(.debug_weaknames)
@@ -3553,109 +3853,121 @@ END GROUP
  .ARM.attributes
                 0x00000ae4       0x31 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
  .ARM.attributes
-                0x00000b15       0x31 build/main.o
+                0x00000b15       0x31 build/IO.o
  .ARM.attributes
-                0x00000b46       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
+                0x00000b46       0x31 build/Infrareds.o
  .ARM.attributes
-                0x00000b61       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
+                0x00000b77       0x31 build/Sensors.o
  .ARM.attributes
-                0x00000b7c       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
+                0x00000ba8       0x31 build/Ultrasonics.o
  .ARM.attributes
-                0x00000b97       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
+                0x00000bd9       0x31 build/main.o
  .ARM.attributes
-                0x00000bb2       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
+                0x00000c0a       0x31 build/DriveControl.o
  .ARM.attributes
-                0x00000bcd       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
+                0x00000c3b       0x31 build/MiceSensors.o
  .ARM.attributes
-                0x00000bf6       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
+                0x00000c6c       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
-                0x00000c1f       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
+                0x00000c87       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_muldivdf3.o)
  .ARM.attributes
-                0x00000c48       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
+                0x00000ca2       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_cmpdf2.o)
  .ARM.attributes
-                0x00000c63       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
+                0x00000cbd       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixdfsi.o)
  .ARM.attributes
-                0x00000c7e       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+                0x00000cd8       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_aeabi_uldivmod.o)
  .ARM.attributes
-                0x00000ca7       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+                0x00000cf3       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixdfdi.o)
  .ARM.attributes
-                0x00000cd0       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
+                0x00000d1c       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_fixunsdfdi.o)
  .ARM.attributes
-                0x00000ceb       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-errno.o)
+                0x00000d45       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(bpabi.o)
  .ARM.attributes
-                0x00000d14       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-impure.o)
+                0x00000d6e       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x00000d3d       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memcmp.o)
+                0x00000d89       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_arm_fixunsdfsi.o)
  .ARM.attributes
-                0x00000d66       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memcpy.o)
+                0x00000da4       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
  .ARM.attributes
-                0x00000d8f       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memset.o)
+                0x00000dcd       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
  .ARM.attributes
-                0x00000db8       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-rand.o)
+                0x00000df6       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivsi3.o)
  .ARM.attributes
-                0x00000de1       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-sprintf.o)
+                0x00000e11       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-errno.o)
  .ARM.attributes
-                0x00000e0a       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strcat.o)
+                0x00000e3a       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-impure.o)
  .ARM.attributes
-                0x00000e33       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strlen.o)
+                0x00000e63       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memcmp.o)
  .ARM.attributes
-                0x00000e5c       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strncpy.o)
+                0x00000e8c       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memcpy.o)
  .ARM.attributes
-                0x00000e85       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-svfprintf.o)
+                0x00000eb5       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memset.o)
  .ARM.attributes
-                0x00000eae       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-dtoa.o)
+                0x00000ede       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-rand.o)
  .ARM.attributes
-                0x00000ed7       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-freer.o)
+                0x00000f07       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-sprintf.o)
  .ARM.attributes
-                0x00000f00       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-locale.o)
+                0x00000f30       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strcat.o)
  .ARM.attributes
-                0x00000f29       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-malloc.o)
+                0x00000f59       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strlen.o)
  .ARM.attributes
-                0x00000f52       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mallocr.o)
+                0x00000f82       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strncpy.o)
  .ARM.attributes
-                0x00000f7b       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memchr.o)
+                0x00000fab       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-svfprintf.o)
  .ARM.attributes
-                0x00000fa4       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memmove.o)
+                0x00000fd4       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-dtoa.o)
  .ARM.attributes
-                0x00000fcd       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mlock.o)
+                0x00000ffd       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-freer.o)
  .ARM.attributes
-                0x00000ff6       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mprec.o)
+                0x00001026       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-locale.o)
  .ARM.attributes
-                0x0000101f       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-reallocr.o)
+                0x0000104f       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-malloc.o)
  .ARM.attributes
-                0x00001048       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-s_isinfd.o)
+                0x00001078       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mallocr.o)
  .ARM.attributes
-                0x00001071       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-s_isnand.o)
+                0x000010a1       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memchr.o)
  .ARM.attributes
-                0x0000109a       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-sbrkr.o)
+                0x000010ca       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-memmove.o)
  .ARM.attributes
-                0x000010c3       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
+                0x000010f3       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mlock.o)
  .ARM.attributes
-                0x000010ec       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-callocr.o)
+                0x0000111c       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-mprec.o)
  .ARM.attributes
-                0x00001115       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-reent.o)
+                0x00001145       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-reallocr.o)
  .ARM.attributes
-                0x0000113e       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
+                0x0000116e       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-s_isinfd.o)
  .ARM.attributes
-                0x00001159       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+                0x00001197       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-s_isnand.o)
  .ARM.attributes
-                0x00001182       0x19 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+                0x000011c0       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-sbrkr.o)
  .ARM.attributes
-                0x0000119b       0x16 ../../libmaple/support/ld/libcs3_stm32_high_density.a(stm32_vector_table.o)
+                0x000011e9       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-strcmp.o)
  .ARM.attributes
-                0x000011b1       0x16 ../../libmaple/support/ld/libcs3_stm32_high_density.a(stm32_isrs.o)
+                0x00001212       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-callocr.o)
  .ARM.attributes
-                0x000011c7       0x16 ../../libmaple/support/ld/libcs3_stm32_high_density.a(start.o)
+                0x0000123b       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-reent.o)
  .ARM.attributes
-                0x000011dd       0x31 ../../libmaple/support/ld/libcs3_stm32_high_density.a(start_c.o)
+                0x00001264       0x1b /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divsi3.o)
  .ARM.attributes
-                0x0000120e       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-init.o)
+                0x0000127f       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtend.o
+ .ARM.attributes
+                0x000012a8       0x19 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .ARM.attributes
+                0x000012c1       0x16 ../../libmaple/support/ld/libcs3_stm32_high_density.a(stm32_vector_table.o)
+ .ARM.attributes
+                0x000012d7       0x16 ../../libmaple/support/ld/libcs3_stm32_high_density.a(stm32_isrs.o)
+ .ARM.attributes
+                0x000012ed       0x16 ../../libmaple/support/ld/libcs3_stm32_high_density.a(start.o)
+ .ARM.attributes
+                0x00001303       0x31 ../../libmaple/support/ld/libcs3_stm32_high_density.a(start_c.o)
+ .ARM.attributes
+                0x00001334       0x29 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/../../../../arm-none-eabi/lib/thumb2/libc.a(lib_a-init.o)
 
 /DISCARD/
  *(.note.GNU-stack)
 OUTPUT(build/maple_RET6.elf elf32-littlearm)
 
-.debug_ranges   0x00000000     0x2078
+.debug_ranges   0x00000000     0x2288
  .debug_ranges  0x00000000       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crti.o
  .debug_ranges  0x00000020       0x48 build/../../libmaple/libmaple/adc.o
  .debug_ranges  0x00000068       0x48 build/../../libmaple/libmaple/bkp.o
@@ -3708,7 +4020,13 @@ OUTPUT(build/maple_RET6.elf elf32-littlearm)
  .debug_ranges  0x00001c10       0x98 build/../../libmaple/libraries/FreeRTOS/utility/queue.o
  .debug_ranges  0x00001ca8      0x1e0 build/../../libmaple/libraries/FreeRTOS/utility/tasks.o
  .debug_ranges  0x00001e88       0x18 build/../../libmaple/libraries/FreeRTOS/MapleFreeRTOS.o
- .debug_ranges  0x00001ea0       0x20 build/main.o
- .debug_ranges  0x00001ec0       0xd0 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
- .debug_ranges  0x00001f90       0xc8 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
- .debug_ranges  0x00002058       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o
+ .debug_ranges  0x00001ea0       0x18 build/IO.o
+ .debug_ranges  0x00001eb8       0xd8 build/Infrareds.o
+ .debug_ranges  0x00001f90       0x18 build/Sensors.o
+ .debug_ranges  0x00001fa8       0xc0 build/Ultrasonics.o
+ .debug_ranges  0x00002068       0x20 build/main.o
+ .debug_ranges  0x00002088       0x30 build/DriveControl.o
+ .debug_ranges  0x000020b8       0x18 build/MiceSensors.o
+ .debug_ranges  0x000020d0       0xd0 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_divdi3.o)
+ .debug_ranges  0x000021a0       0xc8 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/libgcc.a(_udivdi3.o)
+ .debug_ranges  0x00002268       0x20 /Users/alexanderryan/Programming/SmartMouse/MapleCode/arm/bin/../lib/gcc/arm-none-eabi/4.4.1/thumb2/crtn.o

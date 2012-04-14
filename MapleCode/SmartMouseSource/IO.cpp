@@ -7,9 +7,12 @@
 //
 
 #include "IO.h"
+#include "wirish.h"
 
 void setupIOPins(){
     setupDriveControlPins();
     setupSensors();
+    pinMode(11, INPUT_PULLDOWN);
+    pinMode(12, INPUT_PULLDOWN);
     return;
 }
