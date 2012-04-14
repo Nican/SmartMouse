@@ -4,8 +4,19 @@ PATH=$PATH:../arm/bin
 
 include ../../libmaple/Makefile
 
-$(BUILD_PATH)/main.o: main.cpp $(BUILD_PATH)/core.o
-	$(SILENT_CXX) $(CXX) $(CFLAGS) $(CXXFLAGS) $(LIBMAPLE_INCLUDES) $(WIRISH_INCLUDES) -o $@ -c $<
+#$(SILENT_CXX) 
+$(BUILD_PATH)/IO.o: IO.cpp
+	$(CXX) $(CFLAGS) $(CXXFLAGS) $(LIBMAPLE_INCLUDES) $(WIRISH_INCLUDES) -o $@ -c $<
 
-$(BUILD_PATH)/core.o: IO.cpp Infrareds.cpp Sensors.cpp Ultrasonics.cpp
-	$(SILENT_CXX) $(CXX) $(CFLAGS) $(CXXFLAGS) $(LIBMAPLE_INCLUDES) $(WIRISH_INCLUDES) -o $@ -c $< 
+$(BUILD_PATH)/Infrareds.o: Infrareds.cpp
+	$(CXX) $(CFLAGS) $(CXXFLAGS) $(LIBMAPLE_INCLUDES) $(WIRISH_INCLUDES) -o $@ -c $<
+
+$(BUILD_PATH)/Sensors.o: Sensors.cpp
+	$(CXX) $(CFLAGS) $(CXXFLAGS) $(LIBMAPLE_INCLUDES) $(WIRISH_INCLUDES) -o $@ -c $<
+
+$(BUILD_PATH)/Ultrasonics.o: Ultrasonics.cpp
+	$(CXX) $(CFLAGS) $(CXXFLAGS) $(LIBMAPLE_INCLUDES) $(WIRISH_INCLUDES) -o $@ -c $<
+
+
+$(BUILD_PATH)/main.o: main.cpp $(BUILD_PATH)/IO.o $(BUILD_PATH)/Infrareds.o $(BUILD_PATH)/Sensors.o $(BUILD_PATH)/Ultrasonics.o
+	$(CXX) $(CFLAGS) $(CXXFLAGS) $(LIBMAPLE_INCLUDES) $(WIRISH_INCLUDES) -o $@ -c $<
