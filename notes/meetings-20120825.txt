@@ -1,0 +1,47 @@
+# Meeting Minutes for 2012/08/25
+
+##SmartMouse Problems:
+-Wheel size + configuration
+-motor specs
+-casotr stability
+-IR sensor refresh rate
+-Optical mice sensor setup + configuration
+-Sonar minimum range
+-Maze inconsistenies+errors/deviation
+-Find new competition
+-New Sensing stuff
+	-Laser
+	-Own sonar
+	-IR camera->structured light
+	-contact
+-auto height adjustment
+-on board xbee
+
+##Timeline
+-Half through A-Term 1st iteration designs and a physical test bed for software team
+-End A-Term, competition grade prototype 
+
+##Design Methods
+-Modular 
+-Expandability
+
+##Component Viability
+###100%
+-4 Motors with a lower gear ratio
+-2 Optical Sensors
+-X-Y Dims < 10x10cm
+X-Bee Debugging
+###50%
+-IR Sensors
+-Sonar
+-Motor Encoders
+-IMU
+-Wireless Programming
+-Better Wheel
+-Whiskers
+
+###0%
+-Castors
+-Lasers
+-Vision
+
